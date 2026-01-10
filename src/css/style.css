@@ -1,0 +1,45 @@
+:root {
+    --color-primary: rgb(0 0 0 / .6);
+    --color-secondary: white;
+
+    --whitespace-xs: .5rem;
+    --whitespace-s: 1rem;
+    --whitespace-base: 1.5rem;
+    --whitespace-m: 2rem;
+    --whitespace-l: 3rem;
+
+    --font-size-s: .75rem;
+    --font-size-base: 1rem;
+    --font-size-m: 1.25rem;
+    --font-size-l: 1.5rem;
+    --font-size-xl: 2.5rem;
+
+    --font-family-serif: Georgia, serif;
+    --font-family-sans: Helvetica, Arial, sans-serif;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
