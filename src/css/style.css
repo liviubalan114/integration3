@@ -836,17 +836,123 @@ main {
 }
 
 /* ================================================
+   MOMU SECTION
+   ================================================ */
+
+.momu {
+    padding: var(--section-spacing-mobile) var(--whitespace-base);
+    overflow-x: clip;
+    overflow-y: visible;
+    position: relative;
+}
+
+.section-inner {
+    max-width: 75rem;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.momu-title {
+    font-family: var(--font-family-lalezar);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 400;
+    color: var(--color-yellow);
+    margin: 0 0 var(--whitespace-l);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.momu-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--whitespace-m);
+    color: var(--color-white);
+    margin-bottom: var(--whitespace-xl);
+}
+
+.momu-content p {
+    color: var(--color-white);
+    font-size: var(--font-size-text);
+    line-height: 1.6;
+}
+
+.momu-content strong {
+    font-weight: 700;
+    color: var(--color-white);
+}
+
+.momu-cta {
+    font-family: var(--font-family-lalezar);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 400;
+    color: var(--color-yellow);
+    margin: 0;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1.2;
+}
+
+/* Red block background using grid */
+.momu {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.momu-background {
+    grid-column: 1;
+    grid-row: 1;
+    width: 200vw;
+    height: auto;
+    object-fit: cover;
+    margin-left: calc(-75vw + 50%);
+    margin-top: -40%;
+    margin-bottom: -10%;
+    z-index: 1;
+}
+
+.momu .section-inner {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: center;
+    width: 100%;
+    max-width: 100%;
+}
+
+/* ================================================
    ABOUT WALTER SECTION
    ================================================ */
 
 .about-walter {
     padding: var(--section-spacing-mobile) var(--whitespace-base);
-    overflow: hidden;
+    overflow: visible;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+/* Red block background */
+.about-walter-background {
+    grid-column: 1;
+    grid-row: 1;
+    width: 100vw;
+    height: 100%;
+    object-fit: cover;
+    margin-left: calc(-50vw + 50%);
+    z-index: 1;
 }
 
 .about-walter__inner {
     max-width: 75rem;
     margin: 0 auto;
+    grid-column: 1;
+    grid-row: 1;
+    z-index: 2;
+    position: relative;
 }
 
 .about-walter__header {
@@ -864,7 +970,7 @@ main {
     font-family: var(--font-family-lalezar);
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 400;
-    color: var(--color-purple);
+    color: var(--color-yellow);
     margin: 0;
     letter-spacing: 0.02em;
 }
@@ -873,4 +979,14 @@ main {
     display: flex;
     flex-direction: column;
     gap: var(--whitespace-m);
+    color: var(--color-white);
+}
+
+.about-walter__content p {
+    color: var(--color-white);
+}
+
+.about-walter__content strong {
+    font-weight: 700;
+    color: var(--color-white);
 }
