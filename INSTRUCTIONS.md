@@ -86,10 +86,16 @@ Select ONE from:
 - Invite collaborators: **wouterverweirder** and **SimonVanherweghe**
 - Use **GitHub Flow** workflow
 - Main branch = always working code
-- Sufficient logical feature branches and commits
+- **MULTIPLE BRANCHES REQUIRED** - Create feature branches to show your development progress and workflow
+- **Sufficient logical feature branches and commits** - Graded on branch usage and commit history
 - Clear commit messages
-- **COMMIT OFTEN** - After each logical change (installed dependency, added section, fixed bug, etc.)
+- **COMMIT OFTEN** - After each logical change (installed dependency, added section, fixed bug, style update, etc.)
 - Commit message format: `feat: add hero section` or `fix: mobile layout` or `chore: install GSAP`
+- **Branch workflow example:**
+  - `feature/hero-section` → merge to main
+  - `feature/timeline-animation` → merge to main
+  - `fix/mobile-responsive` → merge to main
+- Push branches regularly to show active development
 
 **AI Usage Policy:**
 - Allowed for development BUT must explain everything
@@ -293,6 +299,29 @@ Integration3/
     - Convert px to rem: divide by 16 (e.g., 16px = 1rem, 32px = 2rem, 1200px = 75rem)
     - Use relative units for scalability and accessibility
 
+14. **CSS Layout Hierarchy - Use Modern Layout Methods** (CRITICAL - Teacher Feedback)
+    - **PREFER GRID AS MUCH AS POSSIBLE** - Most flexible and powerful
+    - Use modern layout methods in this order of preference:
+      1. **CSS Grid** - For both 1D and 2D layouts (preferred)
+      2. **Flexbox** - If Grid doesn't work for your use case
+      (also good if it works)
+      3. **Negative margins** - Your best friends for overlapping elements and creative layouts
+      4. **Position: relative** - For minor adjustments
+      5. **Position: absolute** - ONLY if absolutely necessary (overlays, decorative elements)
+    - Why avoid absolute positioning:
+      - Breaks document flow → responsive nightmare
+      - Hard to maintain and debug
+      - Doesn't adapt well to content changes
+      - Makes mobile responsiveness harder
+    - **Good use of absolute**: Decorative shapes, badges, overlays, tooltips
+    - **Bad use of absolute**: Main content sections, text blocks, images in layout
+    - **Negative margins trick**: Use for overlapping sections, creative positioning without breaking flow:
+      ```css
+      .overlap-section {
+        margin-top: -5rem; /* Pulls element up over previous section */
+      }
+      ```
+
 ---
 
 ## Before You Start Coding - Technical Setup
@@ -310,6 +339,7 @@ Integration3/
 2. **CSS Layout & Styling** → Mobile first, then media queries
 3. **Basic JavaScript** → Interactive elements (non-animation)
 4. **GSAP Animations** → Final enhancement layer
+5. **Final Optimization** → Linting, image optimization, performance audit
 
 ### Testing Checklist
 - [ ] Test with JavaScript disabled → Content still visible?
@@ -318,6 +348,14 @@ Integration3/
 - [ ] Test in Chrome (desktop & mobile)
 - [ ] Check image optimization and load times
 - [ ] Verify all git commits are logical and clear
+
+### Final Optimization Checklist (Before Submission)
+- [ ] **Run linter** - Use ESLint/Stylelint for code quality and optimization
+- [ ] **Optimize images** - Compress, convert to WebP/AVIF, use responsive image formats
+- [ ] **Performance audit** - Use Lighthouse or similar tools
+- [ ] **Check bundle size** - Run `npm run build` and verify output size
+- [ ] **Test load times** - Aim for < 3 seconds on 3G
+- [ ] **Validate HTML/CSS** - Use W3C validators
 
 ---
 
