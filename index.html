@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MoMu - Dress to Impress</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Lalezar&family=Playfair+Display:wght@400;700&display=swap"
+    rel="stylesheet">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/src/css/reset.css">
+  <link rel="stylesheet" href="/src/css/style.css">
+</head>
+
+<body>
+  <!-- Fixed Header -->
+  <header class="site-header">
+    <a href="#" class="logo-link">
+      <div class="logo">
+        <!-- First M - stays black -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="85" height="97" viewBox="0 0 85 97" fill="none"
+          class="momu-logo">
+          <path
+            d="M4.34705 0L42.1165 95.7807L78.1757 1.03753C78.3182 0.589344 78.3859 0.324668 78.4179 0H84.2342C84.1824 0.3529 84.1974 0.539938 84.1974 0.966947L84.1902 96.4865H83.0786L83.0714 47.6451C82.5334 48.118 82.4407 48.605 82.2305 49.1484L78.9204 57.671L64.037 96.4865H41.2186L21.8742 47.0204L21.8279 96.4865H0L0.0213781 0H4.35061H4.34705Z"
+            fill="black" />
+        </svg>
+        <!-- Second M - turns red on hover -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="85" height="97" viewBox="0 0 85 97" fill="none"
+          class="momu-logo momu-logo-hover">
+          <path
+            d="M4.34705 0L42.1165 95.7807L78.1757 1.03753C78.3182 0.589344 78.3859 0.324668 78.4179 0H84.2342C84.1824 0.3529 84.1974 0.539938 84.1974 0.966947L84.1902 96.4865H83.0786L83.0714 47.6451C82.5334 48.118 82.4407 48.605 82.2305 49.1484L78.9204 57.671L64.037 96.4865H41.2186L21.8742 47.0204L21.8279 96.4865H0L0.0213781 0H4.35061H4.34705Z"
+            fill="black" />
+        </svg>
+      </div>
+      <span class="visually-hidden">MoMu Fashion Museum</span>
+    </a>
+    <a href="https://visit.momu.be/#/tickets/time?group=timeSlot_and_day" class="tickets-btn" target="_blank"
+      rel="noopener">
+      TICKETS
+    </a>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="header-wrapper">
+      <!-- Walter Portrait -->
+      <div class="hero-portrait">
+        <img src="/src/assets/WalterHeader.png" alt="Walter Van Beirendonck portrait with decorative elements"
+          class="portrait-image">
+      </div>
+
+      <!-- Hero Title -->
+      <div class="hero-title">
+        <h1>
+          <span class="title-line-1">You are a <strong>BEAST</strong></span>
+          <span class="title-line-2">in a skin</span>
+        </h1>
+        <p class="hero-subtitle">
+          the story about <strong> Walter</strong> by Momu
+        </p>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <a href="#next-section" class="scroll-indicator" aria-label="Scroll to next section">
+        <img src="/src/assets/Arrow.svg" alt="" aria-hidden="true">
+      </a>
+    </div>
+  </section>
+
+  <!-- Who You Really Are Section -->
+  <section class="intro" id="next-section">
+
+    <div class="intro__inner">
+
+      <header class="intro__header">
+        <h2 class="intro__title">WHO YOU REALLY ARE</h2>
+      </header>
+
+      <div class="intro__content">
+
+        <!-- Desktop-only interactive trigger -->
+        <button class="intro__trigger desktop-only" aria-expanded="false" aria-controls="identity-text">
+          <span class="intro__trigger-label">Ask Walter</span>
+          <img src="/src/assets/walterinteraction.png" alt="" class="intro__trigger-image" aria-hidden="true">
+        </button>
+
+        <!-- Text content: visible on mobile, toggleable on desktop -->
+        <div class="intro__text" id="identity-text">
+          <p>
+            Your whole life, you've <strong>hidden yourself</strong> inside that skin
+            to blend in with the other beasts of this world.
+          </p>
+
+          <p>
+            You've tried to stay civilized. For years, this skin
+            <strong>was your shield</strong> a form of protection,
+            for yourself and for others.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="intro__image">
+        <img src="/src/assets/Doll.png" alt="Baby representing origin and vulnerability" class="intro__image-media">
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="octopus">
+    <div class="section-inner">
+
+      <div class="octopus__layout">
+
+        <!-- Title -->
+        <div class="octopus__image">
+          <img src="/src/assets/Octopus.png" alt="Man with octopus tentacles emerging" class="octopus__image-media">
+        </div>
+
+        <div class="octopus__title-wrapper">
+          <h2 class="octopus__title">
+            <span class="octopus__title-line">BUT SLOWLY,</span>
+            <span class="octopus__title-line">OVER TIME,</span>
+            <span class="octopus__title-line">YOUR BEASTLY IMPULSES</span>
+            <span class="octopus__title-line octopus__title-line--last">BEGIN PUSHING THROUGH.</span>
+          </h2>
+        </div>
+
+        <div class="octopus__text">
+          <p>
+            You can no longer suppress them. Your skin starts to melt,
+            <strong>to feel like a prison,</strong> something you desperately want to shed.
+            Your impulses, your desires, your rage, your cravings,your need of control
+            <strong>they will no longer sleep.</strong>
+          </p>
+        </div>
+
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Animation Section - TODO: GSAP Animation -->
+  <section class="animation">
+    <div class="section-inner">
+      <!-- Placeholder for GSAP animation -->
+      <p style="text-align: center; padding: 4rem; color: #999;">
+        [Animation Section - Coming Soon]
+      </p>
+    </div>
+  </section>
+
+  <!-- MoMu Section -->
+  <section class="momu">
+    <div class="section-inner">
+
+      <h2 class="momu-title">you need a new skin</h2>
+
+      <div class="momu-content">
+        <p>
+          Thankfully, there is someone who can help you. At MoMu, six pedestals wait. Each one honors a legendary figure
+          from Antwerp designers who shaped the soul of fashion.
+        </p>
+
+        <p>
+          Among them is the one whose vision can remake you. Find his artifact and he might help you with a new skin.
+        </p>
+      </div>
+
+      <h2 class="momu-cta">Summon the legend who speaks to your beast!</h2>
+
+    </div>
+  </section>
+
+  <!-- Artifacts Section -->
+  <section class="artifacts">
+    <div class="section-inner">
+      <p style="text-align: center; padding: 4rem; color: #999;">
+        [Artifacts Section - Coming Soon]
+      </p>
+    </div>
+  </section>
+
+  <!-- Pukpuk/Walter Section -->
+  <section class="pukpuk">
+    <div class="pukpuk__inner">
+
+      <!-- Section Title -->
+      <header class="pukpuk__header">
+        <h2 class="pukpuk__title">
+          <span class="pukpuk__title-line_1">THE VISIONARY</span>
+          <span class="pukpuk__title-line_2">STORYTELLER</span>
+        </h2>
+      </header>
+
+      <div class="pukpuk__layout">
+
+        <!-- Visual Stack -->
+        <div class="pukpuk__visual">
+
+          <!-- Blue Triangle (background entry) -->
+          <img src="/src/assets/blue-triangle.svg" alt="" class="pukpuk__shape pukpuk__shape--blue">
+
+          <!-- Card (interactive / animated object) -->
+          <img src="/src/assets/sketch.png" alt="Design sketch held by Walter" class="pukpuk__card">
+
+          <!-- Main Figure -->
+          <img src="/src/assets/pukpuk.png" alt="Walter Van Beirendonck reimagined figure" class="pukpuk__figure">
+
+        </div>
+
+
+        <div class="pukpuk__content">
+
+          <p class="pukpuk__description">
+            <strong>Last of the Antwerp Six</strong> still designing under his own label.
+            The one who revolutionized Belgian fashion and put Antwerp on the global map,
+            <strong>Walter Van Beirendonck</strong> describes himself as a
+            <em>“storyteller”</em> who always conceives his catwalk shows in tandem with
+            his collections.
+          </p>
+
+          <p class="pukpuk__subtitle">
+            KNOWN FOR HIS BOLD AESTHETIC ROOTED IN:
+          </p>
+
+          <ul class="pukpuk__tags">
+            <li class="pukpuk__tag">SUPERNATURAL</li>
+            <li class="pukpuk__tag">SCIENCE FICTION</li>
+            <li class="pukpuk__tag">SPIRITUALITY</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+      <img src="/src/assets/yellow-triangle.svg" alt="" class="pukpuk__shape pukpuk__shape--yellow">
+
+    </div>
+  </section>
+
+  <!-- About Walter Section -->
+  <section class="about-walter">
+    <div class="about-walter__inner">
+
+      <header class="about-walter__header">
+        <img src="/src/assets/red-costume.png" alt="Red Costume from Walter's collection" class="about-walter__image">
+        <h2 class="about-walter__title">Fashion as Statement, Skin as Story</h2>
+      </header>
+
+      <div class="about-walter__content">
+        <p>
+          Walter Van Beirendonck's designs fuse synthetic experimentation with traditional embroidery and craftsmanship,
+          blending a futuristic vision with tactile heritage. His garments, while wearable, are vehicles for philosophy,
+          protest, and identity. On the runway, his use of surreal silhouettes and symbolic accessories challenges how
+          we perceive both fashion and the body itself.
+        </p>
+
+        <p>
+          His bold aesthetic is defined by vibrant colours, sinister masks, and provocative titles. With a mix of strong
+          graphics, innovative cuts, and clashing colour palettes, Van Beirendonck draws from pop music, comics, and
+          global traditions creating a world that's both playful and confrontational.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- No More Hiding Section -->
+  <section class="no-more-hiding">
+    <div class="no-more-hiding__inner">
+
+      <header class="no-more-hiding__header">
+        <h2 class="no-more-hiding__title">No More Hiding</h2>
+      </header>
+
+      <blockquote class="no-more-hiding__quote">
+        "Clothes must represent the spirit of the wearer"
+      </blockquote>
+
+      <!-- Desktop-only interactive trigger -->
+      <button class="no-more-hiding__trigger desktop-only" aria-expanded="false" aria-controls="no-hiding-content">
+        <span class="no-more-hiding__trigger-label">what does he believe</span>
+        <img src="/src/assets/walterinteraction.png" alt="" class="no-more-hiding__trigger-image" aria-hidden="true">
+      </button>
+
+      <div class="no-more-hiding__image-container">
+        <img src="/src/assets/woman.png" alt="Angel figure" class="no-more-hiding__image no-more-hiding__image--angel">
+      </div>
+
+      <div class="no-more-hiding__text">
+        <p class="no-more-hiding__text-first">
+          The one you seek doesn't offer comfort. He doesn't soothe the beast he gives it form. Walter <strong>creates a
+            skin
+            that doesn't conceal, but reveals</strong>. A second layer not to protect you, but to express you.
+        </p>
+
+        <p>
+          He believes. This new skin will <strong>reflect everything you are</strong>. It will not hide the hunger. It
+          will not silence
+          the wild. But for the first time, it will fit. And in that...
+        </p>
+      </div>
+
+      <div class="no-more-hiding__image-container">
+        <img src="/src/assets/beast.png" alt="Beast emerging"
+          class="no-more-hiding__image no-more-hiding__image--beast">
+      </div>
+
+      <div class="no-more-hiding__freedom">
+        <p class="no-more-hiding__freedom-text">
+          YOU WILL<br>
+          FINALLY BE FREE
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Create the Skin Section (2nd Major Interaction) -->
+  <section class="create-skin">
+    <div class="section-inner">
+      <p style="text-align: center; padding: 4rem; color: #999;">
+        [Create the Skin - Interactive Section - Coming Soon]
+      </p>
+    </div>
+  </section>
+
+  <!-- Epilogue Section -->
+  <section class="epilogue">
+    <div class="section-inner">
+      <p style="text-align: center; padding: 4rem; color: #999;">
+        [Epilogue - Coming Soon]
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p class="site-footer__question">want to hear the stories of the other Antwerp six?</p>
+
+      <div class="site-footer__social">
+        <p class="site-footer__social-label">Follow momu on:</p>
+        <!-- Social media links will go here -->
+      </div>
+
+      <a href="#" class="site-footer__next-story">NEXT STORY</a>
+
+      <a href="https://visit.momu.be/#/tickets/time?group=timeSlot_and_day" class="site-footer__tickets" target="_blank"
+        rel="noopener">
+        TICKETS
+      </a>
+
+      <div class="site-footer__logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="85" height="97" viewBox="0 0 85 97" fill="none">
+          <path
+            d="M4.34705 0L42.1165 95.7807L78.1757 1.03753C78.3182 0.589344 78.3859 0.324668 78.4179 0H84.2342C84.1824 0.3529 84.1974 0.539938 84.1974 0.966947L84.1902 96.4865H83.0786L83.0714 47.6451C82.5334 48.118 82.4407 48.605 82.2305 49.1484L78.9204 57.671L64.037 96.4865H41.2186L21.8742 47.0204L21.8279 96.4865H0L0.0213781 0H4.35061H4.34705Z"
+            fill="black" />
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="85" height="97" viewBox="0 0 85 97" fill="none">
+          <path
+            d="M4.34705 0L42.1165 95.7807L78.1757 1.03753C78.3182 0.589344 78.3859 0.324668 78.4179 0H84.2342C84.1824 0.3529 84.1974 0.539938 84.1974 0.966947L84.1902 96.4865H83.0786L83.0714 47.6451C82.5334 48.118 82.4407 48.605 82.2305 49.1484L78.9204 57.671L64.037 96.4865H41.2186L21.8742 47.0204L21.8279 96.4865H0L0.0213781 0H4.35061H4.34705Z"
+            fill="black" />
+        </svg>
+      </div>
+    </div>
+  </footer>
+
+
+  <script type="module" src="/src/js/script.js"></script>
+</body>
+
+</html>
