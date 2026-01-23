@@ -26,7 +26,7 @@
     --font-size-xs: .35rem;
     --font-size-s: .75rem;
     --font-size-base: 1rem;
-    --font-size-text: 1.1875rem;
+    --font-size-text: 1rem;
     --font-size-m: 1.25rem;
     --font-size-l: 1.5rem;
     --font-size-xl: 2.5rem;
@@ -836,6 +836,26 @@ main {
 }
 
 /* ================================================
+   ANIMATION SECTION
+   ================================================ */
+
+.animation {
+    padding: var(--whitespace-2xl) var(--whitespace-base);
+    margin-top: var(--whitespace-2xl);
+    margin-bottom: var(--whitespace-2xl);
+}
+
+/* ================================================
+   ANIMATION SECTION
+   ================================================ */
+
+.animation {
+    padding: var(--whitespace-2xl) var(--whitespace-base);
+    margin-top: var(--whitespace-2xl);
+    margin-bottom: var(--whitespace-2xl);
+}
+
+/* ================================================
    MOMU SECTION
    ================================================ */
 
@@ -844,6 +864,9 @@ main {
     overflow-x: clip;
     overflow-y: visible;
     position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
 }
 
 .section-inner {
@@ -874,7 +897,7 @@ main {
 
 .momu-content p {
     color: var(--color-white);
-    font-size: var(--font-size-text);
+    font-size: var(--font-size-base);
     line-height: 1.6;
 }
 
@@ -896,20 +919,14 @@ main {
 }
 
 /* Red block background using grid */
-.momu {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-}
-
 .momu-background {
     grid-column: 1;
     grid-row: 1;
-    width: 200vw;
+    width: 150vw;
     height: auto;
     object-fit: cover;
     margin-left: calc(-75vw + 50%);
-    margin-top: -40%;
+    margin-top: -20%;
     margin-bottom: -10%;
     z-index: 1;
 }
@@ -920,6 +937,7 @@ main {
     justify-self: center;
     width: 100%;
     max-width: 100%;
+    z-index: 2;
 }
 
 /* ================================================
