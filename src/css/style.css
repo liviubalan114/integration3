@@ -860,13 +860,13 @@ main {
    ================================================ */
 
 .momu {
-    padding: var(--section-spacing-mobile) var(--whitespace-base);
-    overflow-x: clip;
-    overflow-y: visible;
+    padding: 0;
+    overflow: hidden;
     position: relative;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
+    min-height: 100vh;
 }
 
 .section-inner {
@@ -878,13 +878,14 @@ main {
 
 .momu-title {
     font-family: var(--font-family-lalezar);
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
     font-weight: 400;
-    color: var(--color-yellow);
+    color: #FFE100;
     margin: 0 0 var(--whitespace-l);
-    letter-spacing: 0.02em;
+    letter-spacing: 0.19em;
     text-transform: uppercase;
     text-align: left;
+    line-height: 1.3;
 }
 
 .momu-content {
@@ -893,41 +894,42 @@ main {
     gap: var(--whitespace-m);
     color: var(--color-white);
     margin-bottom: var(--whitespace-xl);
+    max-width: 28rem;
 }
 
 .momu-content p {
     color: var(--color-white);
     font-size: var(--font-size-base);
-    line-height: 1.6;
+    line-height: 1.4;
+    margin: 0;
+    width: 16rem;
 }
 
 .momu-content strong {
-    font-weight: 700;
+    font-weight: 600;
     color: var(--color-white);
 }
 
 .momu-cta {
     font-family: var(--font-family-lalezar);
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-size: clamp(1.25rem, 5vw, 1.5625rem);
     font-weight: 400;
-    color: var(--color-yellow);
+    color: #FFE100;
     margin: 0;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
     text-align: left;
-    line-height: 1.2;
+    line-height: 1.145;
+    max-width: 28rem;
 }
 
-/* Red block background using grid */
+/* SVG background - fills entire section */
 .momu-background {
     grid-column: 1;
     grid-row: 1;
-    width: 150vw;
-    height: auto;
-    object-fit: cover;
-    margin-left: calc(-75vw + 50%);
-    margin-top: -20%;
-    margin-bottom: -10%;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
     z-index: 1;
 }
 
@@ -935,9 +937,99 @@ main {
     grid-column: 1;
     grid-row: 1;
     justify-self: center;
+    align-self: center;
     width: 100%;
     max-width: 100%;
+    padding: var(--whitespace-xl) var(--whitespace-base);
     z-index: 2;
+}
+
+/* ================================================
+   ARTIFACTS SECTION
+   ================================================ */
+
+.artifacts {
+    position: relative;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+}
+
+.artifacts-background {
+    grid-column: 1;
+    grid-row: 1;
+    background-color: #942925;
+    width: 100%;
+    height: 100%;
+}
+
+.artifacts-content {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--whitespace-xl) var(--whitespace-base);
+    z-index: 2;
+}
+
+.artifacts-title {
+    font-family: 'Lalezar', cursive;
+    font-size: clamp(1.5rem, 5vw, 1.734rem);
+    color: #FFE100;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    line-height: 0.87;
+    text-align: center;
+    margin-bottom: var(--whitespace-lg);
+}
+
+.artifact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--whitespace-md);
+    max-width: 40rem;
+}
+
+.artifact-label {
+    font-family: 'Lalezar', cursive;
+    font-size: clamp(1rem, 3vw, 1.188rem);
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    text-align: center;
+    line-height: normal;
+}
+
+.artifact-quote {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 400;
+    color: #000000;
+    text-align: center;
+    line-height: 1.43;
+    margin: 0;
+}
+
+.artifact-quote strong {
+    font-weight: 700;
+}
+
+.artifact-pedestal {
+    width: 100%;
+    max-width: 20rem;
+    margin-top: var(--whitespace-md);
+}
+
+.pedestal-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.25));
 }
 
 /* ================================================

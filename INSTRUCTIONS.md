@@ -80,6 +80,28 @@ Select ONE from:
 - Responsive images optimization
 - npm dependency management
 
+**Development Priority & Best Practices (Teacher Guidelines):**
+1. **Priority Order:**
+   - Focus on **interactions first** - they are more valuable than media queries
+   - Build for mobile, tablet, and desktop as primary breakpoints
+   - Add additional breakpoints only when design breaks or looks ugly
+   
+2. **Image Optimization Workflow:**
+   - Optimize images at the **END** of development when layout is finalized
+   - Use **AVIF format** for best performance (fallback to WebP/PNG)
+   - Implement responsive images (srcset, sizes) only after you stop touching the layout
+   - Don't optimize too early - wait until design is locked in
+   
+3. **Responsive Design Philosophy:**
+   - Breakpoints should be content-driven, not device-driven
+   - Only add media queries when the design actually breaks or becomes ugly
+   - Don't add unnecessary breakpoints "just in case"
+   
+4. **Performance Testing:**
+   - Run **Lighthouse performance test** after everything is complete
+   - Use Lighthouse results to identify final optimization opportunities
+   - Performance optimization is the last step, not the first
+
 **Git Requirements:**
 - Private GitHub repository
 - Deploy online
