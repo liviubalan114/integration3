@@ -188,6 +188,11 @@ export const dragSnapBack = (centerImage) => {
 // ================================================
 
 export const initBrushEffect = () => {
+    // Only enable brush effect on desktop (>= 768px)
+    if (window.innerWidth < 768) {
+        return () => { }; // Return empty cleanup function
+    }
+
     // Website colors - gradient cycle
     const colors = [
         '#FFE100', // yellow

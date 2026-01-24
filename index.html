@@ -378,12 +378,122 @@
   </section>
 
   <!-- Create the Skin Section (2nd Major Interaction) -->
-  <section class="create-skin">
-    <div class="section-inner">
-      <p style="text-align: center; padding: 4rem; color: #999;">
-        [Create the Skin - Interactive Section - Coming Soon]
-      </p>
+  <section class="create-skin" id="createSkinSection">
+    <div class="create-skin__inner">
+      <h2 class="create-skin__title">Create the Skin</h2>
+
+      <div class="create-skin__info-panel">
+        <div class="create-skin__info-content">
+          <p id="createSkinInfoText">Hover over shapes to learn more...</p>
+        </div>
+      </div>
+
+      <div class="create-skin__drag-area" id="createSkinDragArea">
+        <!-- Shadow silhouette - non-interactive background -->
+        <div class="create-skin__shadow">
+          <img src="src/assets/ShadowDressUp.png" alt="Walter Shadow">
+        </div>
+
+        <!-- Fusion items (desktop only) -->
+        <div class="create-skin__draggable create-skin__draggable--normal-suit"
+          data-info="Suit - A normal fancy suit built for boardrooms and banquets. You can almost see the exact spot where a <strong>protection symbol would sit and ruin its politeness.</strong>">
+          <img src="src/assets/NormalSuitDressUp.png" alt="Normal Suit">
+        </div>
+        <div class="create-skin__draggable create-skin__draggable--shield"
+          data-info="Papilla warrior shield - A bright shield that turns the chest into a battlefield. It protects, but strapped alone it feels like it's <strong>searching for a more ordinary suit to corrupt.</strong>">
+          <img src="src/assets/ShieldDressUp.png" alt="Shield">
+        </div>
+        <div class="create-skin__draggable create-skin__draggable--voodoo"
+          data-info="Voodoo mask - An ancient carved mask that smells of rituals and old gods. Too sacred alone, as if <strong>it's waiting for something shameless</strong> to latch onto it.">
+          <img src="src/assets/VoodooDressUp.png" alt="Voodoo">
+        </div>
+        <div class="create-skin__draggable create-skin__draggable--bdsm"
+          data-info="BDSM mask - A studded leather hood with zipper mouth and eye slits. It screams control and surrender, but <strong>feels incomplete without an ancient mask</strong> to haunt its shine.">
+          <img src="src/assets/BdsmDressUp.png" alt="BDSM">
+        </div>
+        <div class="create-skin__draggable create-skin__draggable--wrong-mask"
+          data-info="Striped Walter mask - Voodoo spirit stitched to a fetish hood. Made from Voodoo and Bdsm. Good for your disguise but are you sure that color fits you?">
+          <img src="src/assets/WrongMaskDressUp.png" alt="Wrong Mask">
+        </div>
+
+        <!-- Other draggable items (desktop only) -->
+        <div class="create-skin__draggable create-skin__draggable--bow"
+          data-info="Neck bow - A soft ribbon tied too perfectly to be innocent. It's decoration now, one that would make people suspect nothing.">
+          <img src="src/assets/BowDressUp.png" alt="Bow">
+        </div>
+        <div class="create-skin__draggable create-skin__draggable--hat"
+          data-info="Walter hat - A hand‑made Walter hat that turns the head into a cartoon thought bubble. Optional armor for when you want the joke to sit on top.">
+          <img src="src/assets/HatDressUp.png" alt="Hat">
+        </div>
+        <div class="create-skin__draggable create-skin__draggable--stick"
+          data-info="Right handed cane - A gentleman's cane with a dangling chain leash. Authority meets restrain, the perfect prop to tame the beast your collar is struggling to contain.">
+          <img src="src/assets/CorrectStickDressUp.png" alt="Correct Stick">
+        </div>
+        <div class="create-skin__draggable create-skin__draggable--wrong-cane"
+          data-info="Left handed cane - A gentleman's cane with a dangling chain leash. Authority meets restraint. Close enough to confuse you but maybe try the right hand.">
+          <img src="src/assets/WrongCaneDressUp.png" alt="Wrong Cane">
+        </div>
+        <div class="create-skin__draggable create-skin__draggable--lock"
+          data-info="Lock - A sleek metal collar that keeps the beast on a leash. A reminder that the thing is still trapped underneath.">
+          <img src="src/assets/LockDressUp.png" alt="Lock">
+        </div>
+        <div class="create-skin__draggable create-skin__draggable--pants"
+          data-info="Walter pants - Runway trousers cut with Walter's exaggerated proportions. They already bend the body into a new silhouette, but they need the right top half to feel complete.">
+          <img src="src/assets/PantsDressUp.png" alt="Pants">
+        </div>
+      </div>
+
+      <!-- Mobile Drawer -->
+      <div class="create-skin__drawer" id="createSkinDrawer">
+        <div class="create-skin__drawer-bar">
+          <div class="create-skin__drawer-content" id="createSkinDrawerContent">
+            <!-- Preview shapes will be cloned here by JS -->
+          </div>
+          <div class="create-skin__drawer-handle" id="createSkinDrawerHandle">
+            <span class="create-skin__drawer-arrow"></span>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- Fallback content for when JavaScript is disabled -->
+    <noscript>
+      <div class="create-skin__fallback">
+        <h3>Dress-Up Items</h3>
+        <p>This interactive dress-up experience requires JavaScript. Here are the items you can explore:</p>
+        <ul>
+          <li><strong>Suit</strong> - A normal fancy suit built for boardrooms and banquets. You can almost see the
+            exact spot where a protection symbol would sit and ruin its politeness.</li>
+          <li><strong>Papilla warrior shield</strong> - A bright shield that turns the chest into a battlefield. It
+            protects, but strapped alone it feels like it's searching for a more ordinary suit to corrupt.</li>
+          <li><strong>Voodoo mask</strong> - An ancient carved mask that smells of rituals and old gods. Too sacred
+            alone, as if it's waiting for something shameless to latch onto it.</li>
+          <li><strong>BDSM mask</strong> - A studded leather hood with zipper mouth and eye slits. It screams control
+            and surrender, but feels incomplete without an ancient mask to haunt its shine.</li>
+          <li><strong>Striped Walter mask</strong> - Voodoo spirit stitched to a fetish hood. Made from Voodoo and Bdsm.
+            Good for your disguise but are you sure that color fits you?</li>
+          <li><strong>Neck bow</strong> - A soft ribbon tied too perfectly to be innocent. It's decoration now, one that
+            would make people suspect nothing.</li>
+          <li><strong>Walter hat</strong> - A hand-made Walter hat that turns the head into a cartoon thought bubble.
+            Optional armor for when you want the joke to sit on top.</li>
+          <li><strong>Right handed cane</strong> - A gentleman's cane with a dangling chain leash. Authority meets
+            restrain, the perfect prop to tame the beast your collar is struggling to contain.</li>
+          <li><strong>Left handed cane</strong> - A gentleman's cane with a dangling chain leash. Authority meets
+            restraint. Close enough to confuse you but maybe try the right hand.</li>
+          <li><strong>Lock</strong> - A sleek metal collar that keeps the beast on a leash. A reminder that the thing is
+            still trapped underneath.</li>
+          <li><strong>Walter pants</strong> - Runway trousers cut with Walter's exaggerated proportions. They already
+            bend the body into a new silhouette, but they need the right top half to feel complete.</li>
+        </ul>
+        <p><strong>Fusion combinations:</strong></p>
+        <ul>
+          <li><strong>Walter Suit</strong> - Tailored suit fused with a papilla shield. Perfect protection, perfect
+            blend, half office, half battlefield. For the one that never sleeps.</li>
+          <li><strong>Walter Mask</strong> - Voodoo spirit stitched to a fetish hood. Sacred and obscene at once, looks
+            like you are hiding your darkest secrets under it.</li>
+        </ul>
+      </div>
+    </noscript>
   </section>
 
   <!-- Epilogue Section -->
