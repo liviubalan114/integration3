@@ -167,29 +167,76 @@
 
   <!-- Artifacts Section -->
   <section class="artifacts">
-    <div class="artifacts__background"></div>
+    <div class="artifacts__background-text" id="artifactsBackgroundText">WALTER</div>
 
     <div class="artifacts__content">
-      <div class="artifacts__card">
-        <h3 class="artifacts__label">The visionary storyteller</h3>
-        <p class="artifacts__quote"><span>"For me, it is important that clothes are representative of the
-          </span><strong>spirit of the wearer</strong><span>, as opposed </span><strong>to the body wearing
-            them.</strong><span>"</span></p>
-        <div class="artifacts__pedestal">
-          <img src="/src/assets/podium.png" alt="White pedestal" class="artifacts__pedestal-image">
-          <img src="/src/assets/WalterHat.png" alt="Walter's cap artifact" class="artifacts__artifact-image">
+      <h3 class="artifacts__label" id="artifactsLabel">The visionary storyteller</h3>
+      <p class="artifacts__quote" id="artifactsQuote">"For me, it is important that clothes are representative of the
+        <strong>spirit of the wearer</strong>, as opposed <strong>to the body wearing them.</strong>"
+      </p>
+
+      <div class="artifacts__carousel">
+        <button class="artifacts__nav artifacts__nav--prev" id="artifactsPrev" aria-label="Previous artifact">
+          <img src="src/assets/Arrow.svg" alt="" class="artifacts__nav-icon">
+        </button>
+
+        <!-- Left pedestal (tablet/desktop only) -->
+        <div class="artifacts__pedestal artifacts__pedestal--side artifacts__pedestal--left" id="artifactsPedestalLeft">
+          <img src="src/assets/podium.png" alt="" class="artifacts__pedestal-image">
+          <img src="src/assets/drikSpray.png" alt="" class="artifacts__artifact-image" id="artifactsImageLeft">
         </div>
+
+        <!-- Center pedestal (main) -->
+        <div class="artifacts__pedestal artifacts__pedestal--center" id="artifactsPedestalCenter">
+          <img src="src/assets/podium.png" alt="" class="artifacts__pedestal-image">
+          <img src="src/assets/WalterHat.png" alt="Walter's cap artifact" class="artifacts__artifact-image"
+            id="artifactsImageCenter">
+        </div>
+
+        <!-- Right pedestal (tablet/desktop only) -->
+        <div class="artifacts__pedestal artifacts__pedestal--side artifacts__pedestal--right"
+          id="artifactsPedestalRight">
+          <img src="src/assets/podium.png" alt="" class="artifacts__pedestal-image">
+          <img src="src/assets/AnnInk.png" alt="" class="artifacts__artifact-image" id="artifactsImageRight">
+        </div>
+
+        <button class="artifacts__nav artifacts__nav--next" id="artifactsNext" aria-label="Next artifact">
+          <img src="/src/assets/Arrow.svg" alt="" class="artifacts__nav-icon">
+        </button>
       </div>
 
       <h2 class="artifacts__title">Choose the artifact</h2>
 
+      <div class="artifacts__dots" id="artifactsDots">
+        <button class="artifacts__dot artifacts__dot--active" data-index="0" aria-label="Go to Walter"></button>
+        <button class="artifacts__dot" data-index="1" aria-label="Go to Ann"></button>
+        <button class="artifacts__dot" data-index="2" aria-label="Go to Dries"></button>
+        <button class="artifacts__dot" data-index="3" aria-label="Go to Marina"></button>
+        <button class="artifacts__dot" data-index="4" aria-label="Go to Dirk Bikkembergs"></button>
+        <button class="artifacts__dot" data-index="5" aria-label="Go to Dirk Van Saene"></button>
+      </div>
+
       <!-- All options visible when JavaScript is disabled -->
-      <div class="artifacts__all-options">
+      <div class="artifacts__all-options" id="artifactsAllOptions">
+        <div class="artifacts__option">
+          <h4 class="artifacts__option-name">WALTER</h4>
+          <p class="artifacts__option-title">The visionary storyteller</p>
+          <p class="artifacts__option-quote">"For me, it is important that clothes are representative of the spirit of
+            the wearer, as opposed to the body wearing them."</p>
+        </div>
+
         <div class="artifacts__option">
           <h4 class="artifacts__option-name">ANN</h4>
           <p class="artifacts__option-title">The gothic romantic</p>
           <p class="artifacts__option-quote">"For me, Black is poetic. How do you imagine a poet? In a bright yellow
             jacket? Probably not."</p>
+        </div>
+
+        <div class="artifacts__option">
+          <h4 class="artifacts__option-name">DRIES</h4>
+          <p class="artifacts__option-title">The textile poet</p>
+          <p class="artifacts__option-quote">"Clothes is just something you put on to cover yourself. Fashion is a way
+            to communicate."</p>
         </div>
 
         <div class="artifacts__option">
@@ -206,15 +253,8 @@
         </div>
 
         <div class="artifacts__option">
-          <h4 class="artifacts__option-name">DRIES</h4>
-          <p class="artifacts__option-title">The textile poet</p>
-          <p class="artifacts__option-quote">"Clothes is just something you put on to cover yourself. Fashion is a way
-            to communicate."</p>
-        </div>
-
-        <div class="artifacts__option">
           <h4 class="artifacts__option-name">DIRK VAN SAENE</h4>
-          <p class="artifacts__option-title">The street visionary</p>
+          <p class="artifacts__option-title">The playful experimenter</p>
           <p class="artifacts__option-quote">"I don't like perfection or being too literal. I need to be able to break
             it in order to create a balance."</p>
         </div>
@@ -223,7 +263,7 @@
   </section>
 
   <!-- Pukpuk/Walter Section -->
-  <section class="pukpuk">
+  <section class="pukpuk" id="pukpukSection">
     <div class="pukpuk__inner">
 
       <!-- Section Title -->
