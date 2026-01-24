@@ -182,3 +182,161 @@ export const dragSnapBack = (centerImage) => {
         ease: "elastic.out(1, 0.5)"
     });
 };
+
+// ================================================
+// BRUSH EFFECT - MOUSE TRAIL
+// ================================================
+
+export const initBrushEffect = () => {
+    // Website colors - gradient cycle
+    const colors = [
+        '#FFE100', // yellow
+        '#FF6B35', // orange
+        '#D32227', // red
+        '#7B1FA2', // purple
+        '#2196F3', // blue
+    ];
+
+    // Create canvas
+    const canvas = document.createElement('canvas');
+    canvas.id = 'brush-canvas';
+    canvas.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 9999;
+    `;
+    document.body.appendChild(canvas);
+
+    const ctx = canvas.getContext('2d');
+
+    // Trail points array - stores position and color info
+    const trail = [];
+    const maxTrailLength = 80;
+    const lineWidth = 8;
+    let colorIndex = 0;
+    let colorProgress = 0;
+
+    // Resize handler
+    const resize = () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    };
+    resize();
+    window.addEventListener('resize', resize);
+
+    // Interpolate between two hex colors
+    const lerpColor = (color1, color2, t) => {
+        const r1 = parseInt(color1.slice(1, 3), 16);
+        const g1 = parseInt(color1.slice(3, 5), 16);
+        const b1 = parseInt(color1.slice(5, 7), 16);
+        const r2 = parseInt(color2.slice(1, 3), 16);
+        const g2 = parseInt(color2.slice(3, 5), 16);
+        const b2 = parseInt(color2.slice(5, 7), 16);
+
+        const r = Math.round(r1 + (r2 - r1) * t);
+        const g = Math.round(g1 + (g2 - g1) * t);
+        const b = Math.round(b1 + (b2 - b1) * t);
+
+        return `rgb(${r}, ${g}, ${b})`;
+    };
+
+    // Get current gradient color
+    const getCurrentColor = () => {
+        const nextIndex = (colorIndex + 1) % colors.length;
+        return lerpColor(colors[colorIndex], colors[nextIndex], colorProgress);
+    };
+
+    // Mouse move handler
+    const handleMouseMove = (e) => {
+        const x = e.clientX;
+        const y = e.clientY;
+
+        // Add point to trail with current color
+        trail.push({
+            x,
+            y,
+            color: getCurrentColor(),
+            life: 1
+        });
+
+        // Keep trail at max length
+        if (trail.length > maxTrailLength) {
+            trail.shift();
+        }
+
+        // Progress through colors gradually
+        colorProgress += 0.02;
+        if (colorProgress >= 1) {
+            colorProgress = 0;
+            colorIndex = (colorIndex + 1) % colors.length;
+        }
+    };
+
+    // Touch support
+    const handleTouchMove = (e) => {
+        e.preventDefault();
+        const touch = e.touches[0];
+        handleMouseMove({ clientX: touch.clientX, clientY: touch.clientY });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('touchmove', handleTouchMove, { passive: false });
+
+    // Animation loop
+    const animate = () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Fade out trail points over time
+        for (let i = trail.length - 1; i >= 0; i--) {
+            trail[i].life -= 0.015;
+            if (trail[i].life <= 0) {
+                trail.splice(i, 1);
+            }
+        }
+
+        // Draw the trail as connected line segments with gradient
+        if (trail.length > 1) {
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+
+            for (let i = 1; i < trail.length; i++) {
+                const prev = trail[i - 1];
+                const curr = trail[i];
+
+                // Calculate opacity based on position in trail and life
+                const positionOpacity = i / trail.length;
+                const lifeOpacity = curr.life;
+                const opacity = positionOpacity * lifeOpacity;
+
+                // Draw segment
+                ctx.beginPath();
+                ctx.moveTo(prev.x, prev.y);
+                ctx.lineTo(curr.x, curr.y);
+
+                // Line width tapers toward the tail
+                ctx.lineWidth = lineWidth * positionOpacity * lifeOpacity;
+                ctx.strokeStyle = curr.color;
+                ctx.globalAlpha = opacity;
+                ctx.stroke();
+            }
+
+            ctx.globalAlpha = 1;
+        }
+
+        requestAnimationFrame(animate);
+    };
+
+    animate();
+
+    // Return cleanup function
+    return () => {
+        window.removeEventListener('mousemove', handleMouseMove);
+        window.removeEventListener('touchmove', handleTouchMove);
+        window.removeEventListener('resize', resize);
+        canvas.remove();
+    };
+};

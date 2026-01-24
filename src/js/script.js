@@ -8,8 +8,12 @@ import {
     showWalterSuccess,
     initContinuousAnimations,
     dragFeedback,
-    dragSnapBack
+    dragSnapBack,
+    initBrushEffect
 } from './gsap.js';
+
+// Initialize brush effect
+initBrushEffect();
 
 const ArtifactsCarousel = () => {
     // Data for each artifact
