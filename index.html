@@ -60,9 +60,7 @@
           <span class="title-line-1">You are a <strong>BEAST</strong></span>
           <span class="title-line-2">in a skin</span>
         </h1>
-        <p class="hero-subtitle">
-          the story about <strong> Walter</strong> by Momu
-        </p>
+        <p class="hero-subtitle">the story about <strong> Walter</strong> by Momu</p>
       </div>
 
       <!-- Scroll Indicator -->
@@ -91,16 +89,10 @@
 
         <!-- Text content: visible on mobile, toggleable on desktop -->
         <div class="intro__text" id="identity-text">
-          <p>
-            Your whole life, you've <strong>hidden yourself</strong> inside that skin
-            to blend in with the other beasts of this world.
-          </p>
-
-          <p>
-            You've tried to stay civilized. For years, this skin
-            <strong>was your shield</strong> a form of protection,
-            for yourself and for others.
-          </p>
+          <p>Your whole life, you've <strong>hidden yourself</strong> inside that skin to blend in with the other beasts
+            of this world.</p>
+          <p>You've tried to stay civilized. For years, this skin <strong>was your shield</strong> a form of protection,
+            for yourself and for others.</p>
         </div>
 
       </div>
@@ -133,12 +125,9 @@
         </div>
 
         <div class="octopus__text">
-          <p>
-            You can no longer suppress them. Your skin starts to melt,
-            <strong>to feel like a prison,</strong> something you desperately want to shed.
-            Your impulses, your desires, your rage, your cravings,your need of control
-            <strong>they will no longer sleep.</strong>
-          </p>
+          <p>You can no longer suppress them. Your skin starts to melt, <strong>to feel like a prison,</strong>
+            something you desperately want to shed. Your impulses, your desires, your rage, your cravings,your need of
+            control <strong>they will no longer sleep.</strong></p>
         </div>
 
 
@@ -147,49 +136,120 @@
     </div>
   </section>
 
-  <!-- Animation Section - TODO: GSAP Animation -->
-  <section class="animation">
-    <div class="section-inner">
-      <!-- Placeholder for GSAP animation -->
-      <p style="text-align: center; padding: 4rem; color: #999;">
-        [Animation Section - Coming Soon]
-      </p>
-    </div>
-  </section>
-
   <!-- MoMu Section -->
   <section class="momu">
+    <img src="/src/assets/museum-background.svg" alt="" class="momu-background" aria-hidden="true">
     <div class="section-inner">
 
       <h2 class="momu-title">you need a new skin</h2>
 
       <div class="momu-content">
-        <p>
-          Thankfully, there is someone who can help you. At MoMu, six pedestals wait. Each one honors a legendary figure
-          from Antwerp designers who shaped the soul of fashion.
-        </p>
-
-        <p>
-          Among them is the one whose vision can remake you. Find his artifact and he might help you with a new skin.
-        </p>
+        <p>Thankfully, there is someone who can help you. <strong>At MoMu, six pedestals wait</strong>. Each one honors
+          a legendary figure from Antwerp designers who <strong>shaped the soul of fashion</strong>.</p>
+        <p>Among them is the one whose vision can <strong>remake you</strong>. Summon the legend who speaks to your
+          beast. By <strong>touching their artifact</strong>.</p>
       </div>
 
-      <h2 class="momu-cta">Summon the legend who speaks to your beast!</h2>
+      <h2 class="momu-cta">Summon the legend who speaks to your beast</h2>
 
     </div>
   </section>
 
   <!-- Artifacts Section -->
   <section class="artifacts">
-    <div class="section-inner">
-      <p style="text-align: center; padding: 4rem; color: #999;">
-        [Artifacts Section - Coming Soon]
+    <div class="artifacts__background-text" id="artifactsBackgroundText">WALTER</div>
+
+    <div class="artifacts__content">
+      <h3 class="artifacts__label" id="artifactsLabel">The visionary storyteller</h3>
+      <p class="artifacts__quote" id="artifactsQuote">"For me, it is important that clothes are representative of the
+        <strong>spirit of the wearer</strong>, as opposed <strong>to the body wearing them.</strong>"
       </p>
+
+      <div class="artifacts__carousel">
+        <button class="artifacts__nav artifacts__nav--prev" id="artifactsPrev" aria-label="Previous artifact"></button>
+
+        <!-- Left pedestal (tablet/desktop only) -->
+        <div class="artifacts__pedestal artifacts__pedestal--side artifacts__pedestal--left" id="artifactsPedestalLeft">
+          <img src="src/assets/podium.png" alt="" class="artifacts__pedestal-image">
+          <img src="src/assets/drikSpray.png" alt="" class="artifacts__artifact-image" id="artifactsImageLeft">
+        </div>
+
+        <!-- Center pedestal (main) -->
+        <div class="artifacts__pedestal artifacts__pedestal--center" id="artifactsPedestalCenter">
+          <img src="src/assets/podium.png" alt="" class="artifacts__pedestal-image">
+          <img src="src/assets/WalterHat.png" alt="Walter's cap artifact" class="artifacts__artifact-image"
+            id="artifactsImageCenter">
+        </div>
+
+        <!-- Right pedestal (tablet/desktop only) -->
+        <div class="artifacts__pedestal artifacts__pedestal--side artifacts__pedestal--right"
+          id="artifactsPedestalRight">
+          <img src="src/assets/podium.png" alt="" class="artifacts__pedestal-image">
+          <img src="src/assets/AnnInk.png" alt="" class="artifacts__artifact-image" id="artifactsImageRight">
+        </div>
+
+        <button class="artifacts__nav artifacts__nav--next" id="artifactsNext" aria-label="Next artifact"></button>
+      </div>
+
+      <h2 class="artifacts__title">Choose the artifact</h2>
+
+      <div class="artifacts__dots" id="artifactsDots">
+        <button class="artifacts__dot artifacts__dot--active" data-index="0" aria-label="Go to Walter"></button>
+        <button class="artifacts__dot" data-index="1" aria-label="Go to Ann"></button>
+        <button class="artifacts__dot" data-index="2" aria-label="Go to Dries"></button>
+        <button class="artifacts__dot" data-index="3" aria-label="Go to Marina"></button>
+        <button class="artifacts__dot" data-index="4" aria-label="Go to Dirk Bikkembergs"></button>
+        <button class="artifacts__dot" data-index="5" aria-label="Go to Dirk Van Saene"></button>
+      </div>
+
+      <!-- All options visible when JavaScript is disabled -->
+      <div class="artifacts__all-options" id="artifactsAllOptions">
+        <div class="artifacts__option">
+          <h4 class="artifacts__option-name">WALTER</h4>
+          <p class="artifacts__option-title">The visionary storyteller</p>
+          <p class="artifacts__option-quote">"For me, it is important that clothes are representative of the spirit of
+            the wearer, as opposed to the body wearing them."</p>
+        </div>
+
+        <div class="artifacts__option">
+          <h4 class="artifacts__option-name">ANN</h4>
+          <p class="artifacts__option-title">The gothic romantic</p>
+          <p class="artifacts__option-quote">"For me, Black is poetic. How do you imagine a poet? In a bright yellow
+            jacket? Probably not."</p>
+        </div>
+
+        <div class="artifacts__option">
+          <h4 class="artifacts__option-name">DRIES</h4>
+          <p class="artifacts__option-title">The textile poet</p>
+          <p class="artifacts__option-quote">"Clothes is just something you put on to cover yourself. Fashion is a way
+            to communicate."</p>
+        </div>
+
+        <div class="artifacts__option">
+          <h4 class="artifacts__option-name">MARINA</h4>
+          <p class="artifacts__option-title">The quiet deconstructor</p>
+          <p class="artifacts__option-quote">"Reworking is not about recycling. It's about reconciliation"</p>
+        </div>
+
+        <div class="artifacts__option">
+          <h4 class="artifacts__option-name">DIRK BIKKEMBERGS</h4>
+          <p class="artifacts__option-title">The athletic revolutionary</p>
+          <p class="artifacts__option-quote">"Fashion and football were two different and remote worlds, impossible to
+            synthesize."</p>
+        </div>
+
+        <div class="artifacts__option">
+          <h4 class="artifacts__option-name">DIRK VAN SAENE</h4>
+          <p class="artifacts__option-title">The playful experimenter</p>
+          <p class="artifacts__option-quote">"I don't like perfection or being too literal. I need to be able to break
+            it in order to create a balance."</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Pukpuk/Walter Section -->
-  <section class="pukpuk">
+  <section class="pukpuk" id="pukpukSection">
     <div class="pukpuk__inner">
 
       <!-- Section Title -->
@@ -216,20 +276,15 @@
 
         </div>
 
+        <p class="pukpuk__alternate-message">perhaps it's not them who can help you</p>
 
         <div class="pukpuk__content">
 
-          <p class="pukpuk__description">
-            <strong>Last of the Antwerp Six</strong> still designing under his own label.
-            The one who revolutionized Belgian fashion and put Antwerp on the global map,
-            <strong>Walter Van Beirendonck</strong> describes himself as a
-            <em>“storyteller”</em> who always conceives his catwalk shows in tandem with
-            his collections.
-          </p>
-
-          <p class="pukpuk__subtitle">
-            KNOWN FOR HIS BOLD AESTHETIC ROOTED IN:
-          </p>
+          <p class="pukpuk__description"><strong>Last of the Antwerp Six</strong> still designing under his own label.
+            The one who revolutionized Belgian fashion and put Antwerp on the global map, <strong>Walter Van
+              Beirendonck</strong> describes himself as a <em>"storyteller"</em> who always conceives his catwalk shows
+            in tandem with his collections.</p>
+          <p class="pukpuk__subtitle">KNOWN FOR HIS BOLD AESTHETIC ROOTED IN:</p>
 
           <ul class="pukpuk__tags">
             <li class="pukpuk__tag">SUPERNATURAL</li>
@@ -248,26 +303,23 @@
 
   <!-- About Walter Section -->
   <section class="about-walter">
+    <img src="/src/assets/costumes.png" alt="Walter figure" class="about-walter__figure">
+    <img src="/src/assets/secondBlock.svg" alt="" class="about-walter__background" aria-hidden="true">
     <div class="about-walter__inner">
 
-      <header class="about-walter__header">
-        <img src="/src/assets/red-costume.png" alt="Red Costume from Walter's collection" class="about-walter__image">
-        <h2 class="about-walter__title">Fashion as Statement, Skin as Story</h2>
-      </header>
-
       <div class="about-walter__content">
-        <p>
-          Walter Van Beirendonck's designs fuse synthetic experimentation with traditional embroidery and craftsmanship,
-          blending a futuristic vision with tactile heritage. His garments, while wearable, are vehicles for philosophy,
-          protest, and identity. On the runway, his use of surreal silhouettes and symbolic accessories challenges how
-          we perceive both fashion and the body itself.
-        </p>
+        <h2 class="about-walter__title">Fashion as Statement, Skin as Story</h2>
 
-        <p>
-          His bold aesthetic is defined by vibrant colours, sinister masks, and provocative titles. With a mix of strong
-          graphics, innovative cuts, and clashing colour palettes, Van Beirendonck draws from pop music, comics, and
-          global traditions creating a world that's both playful and confrontational.
-        </p>
+        <p class="about-walter__text">Walter Van Beirendonck's designs fuse synthetic experimentation with traditional
+          embroidery and craftsmanship, blending a futuristic vision with tactile heritage. His garments, <strong>while
+            wearable</strong>, are vehicles for philosophy, protest, and <strong>identity</strong>. On the runway, his
+          use of surreal silhouettes and symbolic accessories challenges how we perceive both fashion and the body
+          itself.</p>
+
+        <p class="about-walter__text">His bold aesthetic is defined by <strong>vibrant colours, sinister masks, and
+            provocative titles.</strong> With a mix of strong graphics, innovative cuts, and clashing colour palettes,
+          Van Beirendonck draws from pop music, comics, and global traditions creating a world that's both playful and
+          confrontational.</p>
       </div>
 
     </div>
@@ -296,17 +348,11 @@
       </div>
 
       <div class="no-more-hiding__text">
-        <p class="no-more-hiding__text-first">
-          The one you seek doesn't offer comfort. He doesn't soothe the beast he gives it form. Walter <strong>creates a
-            skin
-            that doesn't conceal, but reveals</strong>. A second layer not to protect you, but to express you.
-        </p>
-
-        <p>
-          He believes. This new skin will <strong>reflect everything you are</strong>. It will not hide the hunger. It
-          will not silence
-          the wild. But for the first time, it will fit. And in that...
-        </p>
+        <p class="no-more-hiding__text-first">The one you seek doesn't offer comfort. He doesn't soothe the beast he
+          gives it form. Walter <strong>creates a skin that doesn't conceal, but reveals</strong>. A second layer not to
+          protect you, but to express you.</p>
+        <p>He believes. This new skin will <strong>reflect everything you are</strong>. It will not hide the hunger. It
+          will not silence the wild. But for the first time, it will fit. And in that...</p>
       </div>
 
       <div class="no-more-hiding__image-container">
@@ -315,62 +361,252 @@
       </div>
 
       <div class="no-more-hiding__freedom">
-        <p class="no-more-hiding__freedom-text">
-          YOU WILL<br>
-          FINALLY BE FREE
-        </p>
+        <p class="no-more-hiding__freedom-text">YOU WILL<br>FINALLY BE FREE</p>
       </div>
 
     </div>
   </section>
 
   <!-- Create the Skin Section (2nd Major Interaction) -->
-  <section class="create-skin">
-    <div class="section-inner">
-      <p style="text-align: center; padding: 4rem; color: #999;">
-        [Create the Skin - Interactive Section - Coming Soon]
-      </p>
+  <section class="create-skin" id="createSkinSection">
+    <div class="create-skin__inner">
+      <h2 class="create-skin__title">CREATE YOUR NEW SKIN</h2>
+
+      <div class="create-skin__info-panel">
+        <div class="create-skin__info-content">
+          <p id="createSkinInfoText">Hover over shapes to learn more...</p>
+        </div>
+      </div>
+
+      <div class="create-skin__drag-area" id="createSkinDragArea">
+        <!-- Shadow silhouette - non-interactive background -->
+        <div class="create-skin__shadow">
+          <img src="src/assets/ShadowDressUp.png" alt="Walter Shadow">
+        </div>
+
+        <!-- Fusion items (desktop only) -->
+        <div class="create-skin__draggable create-skin__draggable--normal-suit"
+          data-info="Suit - A normal fancy suit built for boardrooms and banquets. You can almost see the exact spot where a <strong>protection symbol would sit and ruin its politeness.</strong>">
+          <img src="src/assets/NormalSuitDressUp.png" alt="Normal Suit">
+        </div>
+        <div class="create-skin__draggable create-skin__draggable--shield"
+          data-info="Papilla warrior shield - A bright shield that turns the chest into a battlefield. It protects, but strapped alone it feels like it's <strong>searching for a more ordinary suit to corrupt.</strong>">
+          <img src="src/assets/ShieldDressUp.png" alt="Shield">
+        </div>
+        <div class="create-skin__draggable create-skin__draggable--voodoo"
+          data-info="Voodoo mask - An ancient carved mask that smells of rituals and old gods. Too sacred alone, as if <strong>it's waiting for something shameless</strong> to latch onto it.">
+          <img src="src/assets/VoodooDressUp.png" alt="Voodoo">
+        </div>
+        <div class="create-skin__draggable create-skin__draggable--bdsm"
+          data-info="BDSM mask - A studded leather hood with zipper mouth and eye slits. It screams control and surrender, but <strong>feels incomplete without an ancient mask</strong> to haunt its shine.">
+          <img src="src/assets/BdsmDressUp.png" alt="BDSM">
+        </div>
+        <div class="create-skin__draggable create-skin__draggable--wrong-mask"
+          data-info="Striped Walter mask - Voodoo spirit stitched to a fetish hood. Made from Voodoo and Bdsm. Good for your disguise but are you sure that color fits you?">
+          <img src="src/assets/WrongMaskDressUp.png" alt="Wrong Mask">
+        </div>
+
+        <!-- Other draggable items (desktop only) -->
+        <div class="create-skin__draggable create-skin__draggable--bow"
+          data-info="Neck bow - A soft ribbon tied too perfectly to be innocent. It's decoration now, one that would make people suspect nothing.">
+          <img src="src/assets/BowDressUp.png" alt="Bow">
+        </div>
+        <div class="create-skin__draggable create-skin__draggable--hat"
+          data-info="Walter hat - A hand‑made Walter hat that turns the head into a cartoon thought bubble. Optional armor for when you want the joke to sit on top.">
+          <img src="src/assets/HatDressUp.png" alt="Hat">
+        </div>
+        <div class="create-skin__draggable create-skin__draggable--stick"
+          data-info="Right handed cane - A gentleman's cane with a dangling chain leash. Authority meets restrain, the perfect prop to tame the beast your collar is struggling to contain.">
+          <img src="src/assets/CorrectStickDressUp.png" alt="Correct Stick">
+        </div>
+        <div class="create-skin__draggable create-skin__draggable--wrong-cane"
+          data-info="Left handed cane - A gentleman's cane with a dangling chain leash. Authority meets restraint. Close enough to confuse you but maybe try the right hand.">
+          <img src="src/assets/WrongCaneDressUp.png" alt="Wrong Cane">
+        </div>
+        <div class="create-skin__draggable create-skin__draggable--lock"
+          data-info="Lock - A sleek metal collar that keeps the beast on a leash. A reminder that the thing is still trapped underneath.">
+          <img src="src/assets/LockDressUp.png" alt="Lock">
+        </div>
+        <div class="create-skin__draggable create-skin__draggable--pants"
+          data-info="Walter pants - Runway trousers cut with Walter's exaggerated proportions. They already bend the body into a new silhouette, but they need the right top half to feel complete.">
+          <img src="src/assets/PantsDressUp.png" alt="Pants">
+        </div>
+      </div>
+
+      <!-- Mobile Drawer -->
+      <div class="create-skin__drawer" id="createSkinDrawer">
+        <div class="create-skin__drawer-bar">
+          <div class="create-skin__drawer-content" id="createSkinDrawerContent">
+            <!-- Preview shapes will be cloned here by JS -->
+          </div>
+          <div class="create-skin__drawer-handle" id="createSkinDrawerHandle">
+            <span class="create-skin__drawer-arrow"></span>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- Fallback content for when JavaScript is disabled -->
+    <noscript>
+      <div class="create-skin__fallback">
+        <ul>
+          <li><strong>Suit</strong> - A normal fancy suit built for boardrooms and banquets. You can almost see the
+            exact spot where a protection symbol would sit and ruin its politeness.</li>
+          <li><strong>Papilla warrior shield</strong> - A bright shield that turns the chest into a battlefield. It
+            protects, but strapped alone it feels like it's searching for a more ordinary suit to corrupt.</li>
+          <li><strong>Voodoo mask</strong> - An ancient carved mask that smells of rituals and old gods. Too sacred
+            alone, as if it's waiting for something shameless to latch onto it.</li>
+          <li><strong>BDSM mask</strong> - A studded leather hood with zipper mouth and eye slits. It screams control
+            and surrender, but feels incomplete without an ancient mask to haunt its shine.</li>
+          <li><strong>Striped Walter mask</strong> - Voodoo spirit stitched to a fetish hood. Made from Voodoo and Bdsm.
+            Good for your disguise but are you sure that color fits you?</li>
+          <li><strong>Neck bow</strong> - A soft ribbon tied too perfectly to be innocent. It's decoration now, one that
+            would make people suspect nothing.</li>
+          <li><strong>Walter hat</strong> - A hand-made Walter hat that turns the head into a cartoon thought bubble.
+            Optional armor for when you want the joke to sit on top.</li>
+          <li><strong>Right handed cane</strong> - A gentleman's cane with a dangling chain leash. Authority meets
+            restrain, the perfect prop to tame the beast your collar is struggling to contain.</li>
+          <li><strong>Left handed cane</strong> - A gentleman's cane with a dangling chain leash. Authority meets
+            restraint. Close enough to confuse you but maybe try the right hand.</li>
+          <li><strong>Lock</strong> - A sleek metal collar that keeps the beast on a leash. A reminder that the thing is
+            still trapped underneath.</li>
+          <li><strong>Walter pants</strong> - Runway trousers cut with Walter's exaggerated proportions. They already
+            bend the body into a new silhouette, but they need the right top half to feel complete.</li>
+        </ul>
+        <p><strong>Fusion combinations:</strong></p>
+        <ul>
+          <li><strong>Walter Suit</strong> - Tailored suit fused with a papilla shield. Perfect protection, perfect
+            blend, half office, half battlefield. For the one that never sleeps.</li>
+          <li><strong>Walter Mask</strong> - Voodoo spirit stitched to a fetish hood. Sacred and obscene at once, looks
+            like you are hiding your darkest secrets under it.</li>
+        </ul>
+      </div>
+    </noscript>
   </section>
 
-  <!-- Epilogue Section -->
-  <section class="epilogue">
-    <div class="section-inner">
-      <p style="text-align: center; padding: 4rem; color: #999;">
-        [Epilogue - Coming Soon]
-      </p>
+  <!-- The New You Section -->
+  <section class="new-you">
+    <div class="new-you__inner">
+      <h2 class="new-you__title">The New You</h2>
+
+      <!-- Horizontal scroll costumes -->
+      <div class="epilogue__scroll-container">
+        <div class="epilogue__scroll-content">
+
+          <div class="epilogue__item epilogue__item--red">
+            <img src="/src/assets/RedHorizontal1.png" alt="Costume 1" class="epilogue__image epilogue__image--red">
+          </div>
+
+          <div class="epilogue__item epilogue__item--yellow">
+            <img src="/src/assets/YellowHorizontal2.png" alt="Costume 2"
+              class="epilogue__image epilogue__image--yellow">
+          </div>
+
+          <div class="epilogue__item epilogue__item--green">
+            <img src="/src/assets/GreenHorizontal3.png" alt="Costume 3" class="epilogue__image epilogue__image--green">
+          </div>
+
+          <div class="epilogue__item epilogue__item--brown">
+            <img src="/src/assets/BornwHorizontal4.png" alt="Costume 4" class="epilogue__image epilogue__image--brown">
+          </div>
+
+          <div class="epilogue__item epilogue__item--orange">
+            <img src="/src/assets/OrangeHorizontal5.png" alt="Costume 5"
+              class="epilogue__image epilogue__image--orange">
+          </div>
+
+          <!-- Add more costume items as needed -->
+
+        </div>
+      </div>
+      <p class="new-you__scroll-hint">Scroll to see all possible skins →</p>
+
+      <div class="new-you__content">
+        <p class="new-you__text">
+          In Walter's world, fashion doesn't cover
+          <strong>, it reveals.</strong> Now, not just you, but every beast wears their truth. Each stitch a story, each
+          silhouette a signal. There is <strong>no more hiding</strong> not for you, not for them. Your siblings, your
+          lovers, your shadows all step forward, adorned. <strong>The costume is no longer a mask.</strong>
+        </p>
+
+        <div class="new-you__message">
+          <p class="new-you__message-text">It's a message.</p>
+        </div>
+
+        <p class="new-you__tribe">
+          You are <strong>not alone</strong> in your unveiling.<br>
+          You are part of a tribe that dares to be <strong>seen</strong>.
+        </p>
+
+        <p class="new-you__final">You are a beast in a world of beasts in new skins.</p>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="site-footer">
+    <img src="/src/assets/MobileFooter.svg" alt="" class="site-footer__background" aria-hidden="true">
     <div class="site-footer__inner">
-      <p class="site-footer__question">want to hear the stories of the other Antwerp six?</p>
 
-      <div class="site-footer__social">
-        <p class="site-footer__social-label">Follow momu on:</p>
-        <!-- Social media links will go here -->
-      </div>
+      <h2 class="site-footer__heading">want to hear the stories of the other Antwerp six?</h2>
+      <p class="site-footer__subheading">Six stories. <strong class="site-footer__emphasis">One</strong> museum</p>
 
-      <a href="#" class="site-footer__next-story">NEXT STORY</a>
+      <a href="#" class="site-footer__button site-footer__button--primary">NEXT STORY</a>
+      <a href="https://visit.momu.be/#/tickets/time?group=timeSlot_and_day"
+        class="site-footer__button site-footer__button--secondary" target="_blank" rel="noopener">TICKETS</a>
 
-      <a href="https://visit.momu.be/#/tickets/time?group=timeSlot_and_day" class="site-footer__tickets" target="_blank"
-        rel="noopener">
-        TICKETS
+
+      <a href="https://www.momu.be/nl/collection-stories/christian-dior" target="_blank" rel="noopener"
+        class="site-footer__image-link">
+        <img src="/src/assets/dior-dress.png" alt="Dior dress" class="site-footer__dress">
       </a>
 
+      <a href="https://www.momu.be" target="_blank" rel="noopener" class="site-footer__image-link">
+        <img src="/src/assets/museum-exhibit.png" alt="Museum exhibition" class="site-footer__museum">
+      </a>
+
+      <p class="site-footer__social-label">Follow momu on:</p>
+
+      <div class="site-footer__social-icons">
+        <a href="https://www.instagram.com/momuantwerp/" class="site-footer__social-link" target="_blank" rel="noopener"
+          aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="29" viewBox="0 0 30 29" fill="none">
+            <path
+              d="M21.875 7.85449H21.8875M8.75 2.41699H21.25C24.7018 2.41699 27.5 5.12194 27.5 8.45866V20.542C27.5 23.8787 24.7018 26.5837 21.25 26.5837H8.75C5.29822 26.5837 2.5 23.8787 2.5 20.542V8.45866C2.5 5.12194 5.29822 2.41699 8.75 2.41699ZM20 13.7391C20.1543 14.7447 19.9766 15.7718 19.4922 16.6741C19.0078 17.5765 18.2414 18.3083 17.302 18.7653C16.3626 19.2224 15.2981 19.3815 14.2597 19.22C13.2214 19.0585 12.2622 18.5846 11.5185 17.8657C10.7749 17.1469 10.2847 16.2196 10.1176 15.2159C9.9505 14.2122 10.1151 13.1831 10.5879 12.275C11.0607 11.3669 11.8177 10.6261 12.7512 10.1579C13.6847 9.68964 14.7472 9.51787 15.7875 9.66699C16.8487 9.8191 17.8311 10.2971 18.5896 11.0304C19.3482 11.7636 19.8426 12.7133 20 13.7391Z"
+              stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+        <a href="https://www.tiktok.com/@momuantwerp" class="site-footer__social-link" target="_blank" rel="noopener"
+          aria-label="TikTok">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="27" viewBox="0 0 22 27" fill="none">
+            <path
+              d="M15.5988 18.0655V8.20024C17.4011 9.56372 19.6135 10.3699 22 10.3699V6.60083C20.6203 6.29283 19.4084 5.5062 18.5136 4.42458C17.0717 3.43483 16.0339 1.84851 15.7045 0H12.3361L12.3299 19.4486C12.2554 21.6248 10.5525 23.3751 8.47065 23.3751C7.17795 23.3751 6.04066 22.6999 5.3322 21.6773C4.10168 20.989 3.25649 19.6322 3.25649 18.0655C3.25649 15.8172 4.99038 13.9883 7.12202 13.9883C7.51976 13.9883 7.90507 14.0604 8.26553 14.1784V10.3765C3.69152 10.4814 0 14.4406 0 19.2979C0 21.6445 0.863842 23.7815 2.27457 25.3809C3.64801 26.3969 5.32598 27 7.12824 27C11.7955 27 15.5988 22.9883 15.5988 18.0655Z"
+              fill="white" />
+          </svg>
+        </a>
+        <a href="https://www.facebook.com/momuantwerp/?locale=nl_BE" class="site-footer__social-link" target="_blank"
+          rel="noopener" aria-label="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" width="30" height="29" viewBox="0 0 30 29" fill="none">
+            <path
+              d="M22.5 2.41699H18.75C17.0924 2.41699 15.5027 3.05352 14.3306 4.18656C13.1585 5.31959 12.5 5.85631 12.5 8.45866V12.0837H8.75V16.917H12.5V26.5837H17.5V16.917H21.25L22.5 12.0837H17.5V8.45866C17.5 8.13819 17.6317 7.83084 17.8661 7.60424C18.1005 7.37763 18.4185 7.25033 18.75 7.25033H22.5V2.41699Z"
+              stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+      </div>
+
       <div class="site-footer__logo">
-        <svg xmlns="http://www.w3.org/2000/svg" width="85" height="97" viewBox="0 0 85 97" fill="none">
+        <svg xmlns="http://www.w3.org/2000/svg" width="52" height="59" viewBox="0 0 52 59" fill="none">
           <path
-            d="M4.34705 0L42.1165 95.7807L78.1757 1.03753C78.3182 0.589344 78.3859 0.324668 78.4179 0H84.2342C84.1824 0.3529 84.1974 0.539938 84.1974 0.966947L84.1902 96.4865H83.0786L83.0714 47.6451C82.5334 48.118 82.4407 48.605 82.2305 49.1484L78.9204 57.671L64.037 96.4865H41.2186L21.8742 47.0204L21.8279 96.4865H0L0.0213781 0H4.35061H4.34705Z"
-            fill="black" />
+            d="M2.66421 0L25.77 58.4633L47.8533 0.56865C47.9318 0.320943 47.9645 0.17878 47.9841 0H51.3896L51.4136 58.8919H50.8315L50.8009 28.691L39.1804 58.8919H25.2032L25.0789 58.3965L13.4017 28.8138L13.3516 58.8919H0L0.0130812 0H2.66203H2.66421Z"
+            fill="white" />
         </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" width="85" height="97" viewBox="0 0 85 97" fill="none">
+        <svg xmlns="http://www.w3.org/2000/svg" width="52" height="59" viewBox="0 0 52 59" fill="none">
           <path
-            d="M4.34705 0L42.1165 95.7807L78.1757 1.03753C78.3182 0.589344 78.3859 0.324668 78.4179 0H84.2342C84.1824 0.3529 84.1974 0.539938 84.1974 0.966947L84.1902 96.4865H83.0786L83.0714 47.6451C82.5334 48.118 82.4407 48.605 82.2305 49.1484L78.9204 57.671L64.037 96.4865H41.2186L21.8742 47.0204L21.8279 96.4865H0L0.0213781 0H4.35061H4.34705Z"
-            fill="black" />
+            d="M2.66421 0L25.77 58.4633L47.8533 0.56865C47.9318 0.320943 47.9645 0.17878 47.9841 0H51.3896L51.4136 58.8919H50.8315L50.8009 28.691L39.1804 58.8919H25.2032L25.0789 58.3965L13.4017 28.8138L13.3516 58.8919H0L0.0130812 0H2.66203H2.66421Z"
+            fill="white" />
         </svg>
       </div>
+
     </div>
   </footer>
 
