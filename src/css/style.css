@@ -137,14 +137,14 @@ strong {
 /* Yellow Circle using ::before pseudo-element */
 .logo-link::before {
     content: '';
-    width: 15.625rem;
-    height: 15.625rem;
+    width: 11em;
+    height: 10em;
     border-radius: 50%;
     background-color: #FFE100;
-    display: none;
+    display: block;
     position: absolute;
-    top: -5rem;
-    left: -5rem;
+    top: -4.5rem;
+    left: -4rem;
     z-index: -1;
 }
 
@@ -443,7 +443,10 @@ strong {
     }
 
     .logo-link::before {
-        display: block;
+        width: 15.625rem;
+        height: 15.625rem;
+        top: -5rem;
+        left: -5rem;
     }
 
     .momu-logo {
@@ -585,11 +588,6 @@ strong {
 
     .hero-title {
         margin-top: 10rem;
-    }
-
-    .title-line-1,
-    .title-line-2 {
-        display: block;
     }
 
     /* Identity Section - Desktop */
@@ -1071,37 +1069,14 @@ strong {
 }
 
 /* ================================================
-   EPILOGUE SECTION - HORIZONTAL SCROLL
+   HORIZONTAL SCROLL (Costumes)
    ================================================ */
-
-.epilogue {
-    padding: var(--section-spacing-mobile) 0;
-    overflow: hidden;
-    background-color: var(--color-white);
-}
-
-.epilogue__inner {
-    max-width: 100%;
-}
-
-.epilogue__title {
-    font-family: var(--font-family-lalezar);
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 400;
-    color: var(--color-purple);
-    margin: 0 0 var(--whitespace-l) var(--whitespace-m);
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
-}
 
 /* Horizontal scroll container */
 .epilogue__scroll-container {
     width: 100%;
     overflow-x: auto;
     overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-    scrollbar-color: var(--color-purple) transparent;
 }
 
 /* Webkit scrollbar styling */
@@ -1177,25 +1152,8 @@ strong {
     margin-top: 2.2rem;
 }
 
-.epilogue__caption {
-    font-family: var(--font-family-inter);
-    font-size: var(--font-size-base);
-    font-weight: 600;
-    color: var(--color-black);
-    text-align: center;
-    margin: 0;
-}
-
 /* Tablet adjustments */
 @media (min-width: 48rem) {
-    .epilogue {
-        padding: var(--section-spacing-desktop) 0;
-    }
-
-    .epilogue__title {
-        margin-left: var(--whitespace-xl);
-    }
-
     .epilogue__scroll-content {
         padding: 0 var(--whitespace-xl) var(--whitespace-xl);
         gap: var(--whitespace-l);
@@ -1208,10 +1166,6 @@ strong {
 
 /* Desktop adjustments */
 @media (min-width: 64rem) {
-    .epilogue__title {
-        margin-left: 6rem;
-    }
-
     .epilogue__scroll-content {
         padding: 0 6rem var(--whitespace-xl);
         gap: var(--whitespace-xl);
@@ -1222,16 +1176,6 @@ strong {
     }
 }
 
-
-/* ================================================
-   ANIMATION SECTION
-   ================================================ */
-
-.animation {
-    padding: var(--whitespace-2xl) var(--whitespace-base);
-    margin-top: var(--whitespace-2xl);
-    margin-bottom: var(--whitespace-2xl);
-}
 
 /* ================================================
    MOMU SECTION
@@ -2230,7 +2174,6 @@ strong {
     align-items: center;
     margin-left: -100%;
     transition: margin-left 0.3s ease;
-    scrollbar-width: thin;
 }
 
 /* Webkit scrollbar styling for Chrome/Safari */
@@ -2264,8 +2207,6 @@ strong {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* min-width: 3.75rem;
-    height: 4.375rem; */
     min-width: 5.75rem;
     height: 6.375rem;
     flex-shrink: 0;
