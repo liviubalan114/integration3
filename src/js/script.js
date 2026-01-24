@@ -2,6 +2,7 @@
 // ARTIFACTS CAROUSEL
 // ================================================
 
+import gsap from 'gsap';
 import {
     entranceAnimation,
     transitionAnimation,
