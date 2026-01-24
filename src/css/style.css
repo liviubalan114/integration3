@@ -988,7 +988,7 @@ strong {
 .new-you__content {
     display: flex;
     flex-direction: column;
-    gap: var(--whitespace-l);
+    gap: var(--whitespace-base);
     padding: 0 var(--whitespace-m);
 }
 
@@ -1007,7 +1007,7 @@ strong {
 
 .new-you__message {
     background-color: var(--color-purple);
-    padding: var(--whitespace-s) var(--whitespace-m);
+    padding: var(--whitespace-xs) var(--whitespace-m);
     display: inline-block;
     align-self: center;
 }
