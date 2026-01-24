@@ -3,7 +3,7 @@
 // ================================================
 
 import gsap from 'gsap';
-import { Draggable } from 'gsap/Draggable';
+import { Draggable } from 'gsap/draggable';
 import {
     entranceAnimation,
     transitionAnimation,
@@ -17,8 +17,10 @@ import {
 // Register GSAP plugins
 gsap.registerPlugin(Draggable);
 
-// Initialize brush effect
-initBrushEffect();
+// Initialize brush effect only on desktop (1024px and above)
+if (window.innerWidth >= 1024) {
+    initBrushEffect();
+}
 
 const ArtifactsCarousel = () => {
     // Data for each artifact
@@ -86,7 +88,6 @@ const ArtifactsCarousel = () => {
     const nextBtn = document.getElementById('artifactsNext');
     const dotsContainer = document.getElementById('artifactsDots');
     const dots = dotsContainer ? dotsContainer.querySelectorAll('.artifacts__dot') : [];
-    const allOptions = document.getElementById('artifactsAllOptions');
     const pukpukSection = document.getElementById('pukpukSection');
 
     // Check if elements exist
@@ -300,6 +301,20 @@ const CreateSkinInteraction = () => {
 
     if (!dragArea) return;
 
+    // Default info text
+    const DEFAULT_INFO = 'Hover over shapes to learn more...';
+
+    // Helper function to add info hover handlers
+    const addInfoHoverHandlers = (element) => {
+        element.addEventListener('mouseenter', function () {
+            const info = this.getAttribute('data-info');
+            if (info && infoText) infoText.innerHTML = info;
+        });
+        element.addEventListener('mouseleave', function () {
+            if (infoText) infoText.textContent = DEFAULT_INFO;
+        });
+    };
+
     // Fusion pairs configuration
     const fusionPairs = {
         suit: {
@@ -374,17 +389,7 @@ const CreateSkinInteraction = () => {
             : 'Walter mask - Voodoo spirit stitched to a fetish hood. Sacred and obscene at once, looks like you are hiding your darkest secrets under it..';
 
         fusedDiv.setAttribute('data-info', fusedInfoText);
-        fusedDiv.addEventListener('mouseenter', function () {
-            const info = this.getAttribute('data-info');
-            if (info && infoText) {
-                infoText.innerHTML = info;
-            }
-        });
-        fusedDiv.addEventListener('mouseleave', function () {
-            if (infoText) {
-                infoText.textContent = 'Hover over shapes to learn more...';
-            }
-        });
+        addInfoHoverHandlers(fusedDiv);
 
         Draggable.create(fusedDiv, {
             bounds: dragArea,
@@ -503,20 +508,7 @@ const CreateSkinInteraction = () => {
             });
 
             // Info panel hover functionality
-            const draggableItems = document.querySelectorAll('.create-skin__draggable');
-            draggableItems.forEach(item => {
-                item.addEventListener('mouseenter', function () {
-                    const info = this.getAttribute('data-info');
-                    if (info && infoText) {
-                        infoText.innerHTML = info;
-                    }
-                });
-                item.addEventListener('mouseleave', function () {
-                    if (infoText) {
-                        infoText.textContent = 'Hover over shapes to learn more...';
-                    }
-                });
-            });
+            document.querySelectorAll('.create-skin__draggable').forEach(addInfoHoverHandlers);
         }
     };
 
@@ -609,17 +601,7 @@ const CreateSkinInteraction = () => {
             }
         }
 
-        fullSize.addEventListener('mouseenter', function () {
-            const info = this.getAttribute('data-info');
-            if (info && infoText) {
-                infoText.innerHTML = info;
-            }
-        });
-        fullSize.addEventListener('mouseleave', function () {
-            if (infoText) {
-                infoText.textContent = 'Hover over shapes to learn more...';
-            }
-        });
+        addInfoHoverHandlers(fullSize);
 
         Draggable.create(fullSize, {
             bounds: dragArea,
