@@ -107,12 +107,6 @@ strong {
     display: none;
 }
 
-@media (min-width: 64rem) {
-    .desktop-only {
-        display: block;
-    }
-}
-
 /* ===================================
    SITE HEADER (Fixed Navigation)
    =================================== */
@@ -432,196 +426,6 @@ strong {
 .octopus__text {
     max-width: 50rem;
     margin: 0 auto;
-}
-
-/* ===================================
-   TABLET STYLES  
-   =================================== */
-@media (min-width: 48rem) {
-    .site-header {
-        padding: 2.5rem 4rem 0;
-    }
-
-    .logo-link::before {
-        width: 15.625rem;
-        height: 15.625rem;
-        top: -5rem;
-        left: -5rem;
-    }
-
-    .momu-logo {
-        height: 4.5rem;
-        width: auto;
-    }
-
-    .tickets-btn {
-        padding: 0.875rem 2.5rem;
-        font-size: 1.125rem;
-        font-weight: 700;
-    }
-
-    /* Tablet Hero Layout - side by side */
-    .hero {
-        padding-top: 0;
-    }
-
-    .header-wrapper {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr auto;
-        align-items: start;
-        padding: 0 4rem 4rem;
-        min-height: calc(100vh - 8rem);
-        padding-bottom: 2rem;
-    }
-
-    .hero-title {
-        grid-column: 1;
-        grid-row: 1;
-        text-align: left;
-        width: 100%;
-        margin-top: 8rem;
-        z-index: 2;
-        padding-right: 2rem;
-    }
-
-    .hero-title h1 {
-        font-size: 4rem;
-        line-height: 1;
-        margin: 0;
-    }
-
-    .title-line-1 {
-        font-family: var(--font-family-playfair);
-        font-size: 4rem;
-        font-weight: 400;
-        margin: 0;
-        line-height: 1;
-    }
-
-    .title-line-1 strong {
-        font-family: var(--font-family-lalezar);
-        font-size: 4rem;
-        font-weight: 400;
-        display: inline;
-    }
-
-    .title-line-2 {
-        font-family: var(--font-family-playfair);
-        font-size: 4rem;
-        font-weight: 400;
-        line-height: 1;
-    }
-
-    .hero-subtitle {
-        margin-top: 1.5rem;
-        font-size: 1.125rem;
-        line-height: 1.2;
-    }
-
-    .hero-portrait {
-        grid-column: 2;
-        grid-row: 1 / 3;
-        max-width: none;
-        width: 100%;
-        height: auto;
-        margin: 0;
-        align-self: start;
-        justify-self: end;
-        z-index: 1;
-    }
-
-    .portrait-image {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-        margin: 0;
-        margin-top: -2rem;
-    }
-
-    .scroll-indicator {
-        grid-column: 1;
-        grid-row: 2;
-        margin-top: auto;
-        align-self: end;
-    }
-}
-
-/* ===================================
-   DESKTOP STYLES
-   =================================== */
-@media (min-width: 64rem) {
-    .site-header {
-        padding: 2.5rem 6rem 0;
-    }
-
-    .momu-logo {
-        height: 5rem;
-    }
-
-    .tickets-btn {
-        padding: 1rem 3rem;
-        font-size: 1.25rem;
-    }
-
-    .header-wrapper {
-        padding: 0 6rem 4rem;
-    }
-
-    .hero-title h1 {
-        font-size: 5.5rem;
-    }
-
-    .title-line-1,
-    .title-line-1 strong,
-    .title-line-2 {
-        font-size: 5.5rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.25rem;
-    }
-
-    .portrait-image {
-        margin-top: -4rem;
-    }
-
-    .hero-title {
-        margin-top: 10rem;
-    }
-
-    /* Identity Section - Desktop */
-    .intro {
-        padding: var(--section-spacing-desktop) var(--whitespace-xl);
-    }
-
-    .intro__title {
-        font-size: 3rem;
-    }
-
-    .intro__trigger {
-        display: block;
-    }
-
-    .intro__text {
-        opacity: 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: opacity 0.4s ease, max-height 0.4s ease;
-    }
-
-    .intro__text.is-visible {
-        opacity: 1;
-        max-height: 30rem;
-    }
-
-    .intro__content {
-        margin-bottom: var(--whitespace-2xl);
-    }
-
-    .intro__image-media {
-        max-width: 70rem;
-    }
 }
 
 
@@ -1040,34 +844,6 @@ strong {
     line-height: 1.5;
 }
 
-/* Tablet adjustments */
-@media (min-width: 48rem) {
-    .new-you {
-        padding: var(--section-spacing-desktop) 0;
-    }
-
-    .new-you__title {
-        font-size: 2.3125rem;
-        padding: 0 var(--whitespace-xl);
-    }
-
-    .new-you__content {
-        gap: var(--whitespace-xl);
-        padding: 0 var(--whitespace-xl);
-    }
-}
-
-/* Desktop adjustments */
-@media (min-width: 64rem) {
-    .new-you__title {
-        padding: 0 6rem;
-    }
-
-    .new-you__content {
-        padding: 0 6rem;
-    }
-}
-
 /* ================================================
    HORIZONTAL SCROLL (Costumes)
    ================================================ */
@@ -1151,31 +927,6 @@ strong {
     width: 9rem;
     margin-top: 2.2rem;
 }
-
-/* Tablet adjustments */
-@media (min-width: 48rem) {
-    .epilogue__scroll-content {
-        padding: 0 var(--whitespace-xl) var(--whitespace-xl);
-        gap: var(--whitespace-l);
-    }
-
-    .epilogue__item {
-        width: 22rem;
-    }
-}
-
-/* Desktop adjustments */
-@media (min-width: 64rem) {
-    .epilogue__scroll-content {
-        padding: 0 6rem var(--whitespace-xl);
-        gap: var(--whitespace-xl);
-    }
-
-    .epilogue__item {
-        width: 25rem;
-    }
-}
-
 
 /* ================================================
    MOMU SECTION
@@ -1292,12 +1043,6 @@ strong {
     pointer-events: none;
     white-space: nowrap;
     transition: opacity 0.3s ease;
-}
-
-@media (min-width: 48rem) {
-    .artifacts__background-text {
-        display: block;
-    }
 }
 
 .artifacts__content {
@@ -1600,44 +1345,6 @@ strong {
     overflow-wrap: break-word;
     word-wrap: break-word;
     max-width: 100%;
-}
-
-/* Tablet: Show side pedestals */
-@media (min-width: 48rem) {
-    .artifacts__pedestal--side {
-        display: grid;
-    }
-
-    .artifacts__nav {
-        display: none;
-    }
-}
-
-/* Desktop: Larger pedestals, hide dots */
-@media (min-width: 64rem) {
-    .artifacts__pedestal--side {
-        opacity: 0.6;
-        -webkit-filter: blur(1px);
-        filter: blur(1px);
-    }
-
-    .artifacts__pedestal--side:hover {
-        opacity: 0.8;
-        -webkit-filter: blur(0);
-        filter: blur(0);
-    }
-
-    .artifacts__dots {
-        display: none;
-    }
-
-    .artifacts__pedestal--center {
-        width: clamp(12rem, 20vw, 16rem);
-    }
-
-    .artifacts__pedestal--center .artifacts__artifact-image {
-        margin-top: -4rem;
-    }
 }
 
 /* ================================================
@@ -2318,7 +2025,8 @@ strong {
 }
 
 /* ==========================================================================
-   CREATE THE SKIN - MOBILE (hide desktop items, show drawer)
+   CREATE THE SKIN - MOBILE ONLY (max-width: 47.9375rem / 767px)
+   Hide desktop draggable items on mobile, show the drawer instead
    ========================================================================== */
 @media (max-width: 47.9375rem) {
     .create-skin__drag-area {
@@ -2334,10 +2042,164 @@ strong {
     }
 }
 
+
 /* ==========================================================================
-   CREATE THE SKIN - TABLET (min-width: 48rem)
+   ==========================================================================
+   
+   THIS IS FOR TABLET (min-width: 48rem / 768px)
+   All tablet responsive styles consolidated here
+   
+   ==========================================================================
    ========================================================================== */
 @media (min-width: 48rem) {
+
+    /* --- HEADER & HERO --- */
+    .site-header {
+        padding: 2.5rem 4rem 0;
+    }
+
+    .logo-link::before {
+        width: 15.625rem;
+        height: 15.625rem;
+        top: -5rem;
+        left: -5rem;
+    }
+
+    .momu-logo {
+        height: 4.5rem;
+        width: auto;
+    }
+
+    .tickets-btn {
+        padding: 0.875rem 2.5rem;
+        font-size: 1.125rem;
+        font-weight: 700;
+    }
+
+    .hero {
+        padding-top: 0;
+    }
+
+    .header-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr auto;
+        align-items: start;
+        padding: 0 4rem 4rem;
+        min-height: calc(100vh - 8rem);
+        padding-bottom: 2rem;
+    }
+
+    .hero-title {
+        grid-column: 1;
+        grid-row: 1;
+        text-align: left;
+        width: 100%;
+        margin-top: 8rem;
+        z-index: 2;
+        padding-right: 2rem;
+    }
+
+    .hero-title h1 {
+        font-size: 4rem;
+        line-height: 1;
+        margin: 0;
+    }
+
+    .title-line-1 {
+        font-family: var(--font-family-playfair);
+        font-size: 4rem;
+        font-weight: 400;
+        margin: 0;
+        line-height: 1;
+    }
+
+    .title-line-1 strong {
+        font-family: var(--font-family-lalezar);
+        font-size: 4rem;
+        font-weight: 400;
+        display: inline;
+    }
+
+    .title-line-2 {
+        font-family: var(--font-family-playfair);
+        font-size: 4rem;
+        font-weight: 400;
+        line-height: 1;
+    }
+
+    .hero-subtitle {
+        margin-top: 1.5rem;
+        font-size: 1.125rem;
+        line-height: 1.2;
+    }
+
+    .hero-portrait {
+        grid-column: 2;
+        grid-row: 1 / 3;
+        max-width: none;
+        width: 100%;
+        height: auto;
+        margin: 0;
+        align-self: start;
+        justify-self: end;
+        z-index: 1;
+    }
+
+    .portrait-image {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        margin: 0;
+        margin-top: -2rem;
+    }
+
+    .scroll-indicator {
+        grid-column: 1;
+        grid-row: 2;
+        margin-top: auto;
+        align-self: end;
+    }
+
+    /* --- NEW YOU SECTION --- */
+    .new-you {
+        padding: var(--section-spacing-desktop) 0;
+    }
+
+    .new-you__title {
+        font-size: 2.3125rem;
+        padding: 0 var(--whitespace-xl);
+    }
+
+    .new-you__content {
+        gap: var(--whitespace-xl);
+        padding: 0 var(--whitespace-xl);
+    }
+
+    /* --- EPILOGUE / COSTUMES --- */
+    .epilogue__scroll-content {
+        padding: 0 var(--whitespace-xl) var(--whitespace-xl);
+        gap: var(--whitespace-l);
+    }
+
+    .epilogue__item {
+        width: 22rem;
+    }
+
+    /* --- ARTIFACTS CAROUSEL --- */
+    .artifacts__background-text {
+        display: block;
+    }
+
+    .artifacts__pedestal--side {
+        display: grid;
+    }
+
+    .artifacts__nav {
+        display: none;
+    }
+
+    /* --- CREATE SKIN INTERACTION --- */
     .create-skin__inner {
         max-width: 90vw;
     }
@@ -2356,21 +2218,149 @@ strong {
         height: 4.375rem;
     }
 
-    /* Hide mobile drawer on tablet */
     .create-skin__drawer {
         display: none;
     }
 
-    /* Show original shapes on tablet */
     .create-skin__drag-area .create-skin__draggable {
         display: flex;
     }
 }
 
+
 /* ==========================================================================
-   CREATE THE SKIN - DESKTOP (min-width: 64rem)
+   ==========================================================================
+   
+   THIS IS FOR DESKTOP (min-width: 64rem / 1024px)
+   All desktop responsive styles consolidated here
+   
+   ==========================================================================
    ========================================================================== */
 @media (min-width: 64rem) {
+
+    /* --- UTILITY CLASSES --- */
+    .desktop-only {
+        display: block;
+    }
+
+    /* --- HEADER & HERO --- */
+    .site-header {
+        padding: 2.5rem 6rem 0;
+    }
+
+    .momu-logo {
+        height: 5rem;
+    }
+
+    .tickets-btn {
+        padding: 1rem 3rem;
+        font-size: 1.25rem;
+    }
+
+    .header-wrapper {
+        padding: 0 6rem 4rem;
+    }
+
+    .hero-title h1 {
+        font-size: 5.5rem;
+    }
+
+    .title-line-1,
+    .title-line-1 strong,
+    .title-line-2 {
+        font-size: 5.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+
+    .portrait-image {
+        margin-top: -4rem;
+    }
+
+    .hero-title {
+        margin-top: 10rem;
+    }
+
+    /* --- INTRO / IDENTITY SECTION --- */
+    .intro {
+        padding: var(--section-spacing-desktop) var(--whitespace-xl);
+    }
+
+    .intro__title {
+        font-size: 3rem;
+    }
+
+    .intro__trigger {
+        display: block;
+    }
+
+    .intro__text {
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: opacity 0.4s ease, max-height 0.4s ease;
+    }
+
+    .intro__text.is-visible {
+        opacity: 1;
+        max-height: 30rem;
+    }
+
+    .intro__content {
+        margin-bottom: var(--whitespace-2xl);
+    }
+
+    .intro__image-media {
+        max-width: 70rem;
+    }
+
+    /* --- NEW YOU SECTION --- */
+    .new-you__title {
+        padding: 0 6rem;
+    }
+
+    .new-you__content {
+        padding: 0 6rem;
+    }
+
+    /* --- EPILOGUE / COSTUMES --- */
+    .epilogue__scroll-content {
+        padding: 0 6rem var(--whitespace-xl);
+        gap: var(--whitespace-xl);
+    }
+
+    .epilogue__item {
+        width: 25rem;
+    }
+
+    /* --- ARTIFACTS CAROUSEL --- */
+    .artifacts__pedestal--side {
+        opacity: 0.6;
+        -webkit-filter: blur(1px);
+        filter: blur(1px);
+    }
+
+    .artifacts__pedestal--side:hover {
+        opacity: 0.8;
+        -webkit-filter: blur(0);
+        filter: blur(0);
+    }
+
+    .artifacts__dots {
+        display: none;
+    }
+
+    .artifacts__pedestal--center {
+        width: clamp(12rem, 20vw, 16rem);
+    }
+
+    .artifacts__pedestal--center .artifacts__artifact-image {
+        margin-top: -4rem;
+    }
+
+    /* --- CREATE SKIN INTERACTION --- */
     .create-skin {
         padding: 1.25rem;
     }
@@ -2405,12 +2395,10 @@ strong {
         color: var(--color-purple);
     }
 
-    /* Hide mobile drawer on desktop */
     .create-skin__drawer {
         display: none;
     }
 
-    /* Show original shapes on desktop */
     .create-skin__drag-area .create-skin__draggable {
         display: flex;
     }
