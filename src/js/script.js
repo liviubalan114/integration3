@@ -2,6 +2,15 @@
 // ARTIFACTS CAROUSEL
 // ================================================
 
+import {
+    entranceAnimation,
+    transitionAnimation,
+    showWalterSuccess,
+    initContinuousAnimations,
+    dragFeedback,
+    dragSnapBack
+} from './gsap.js';
+
 const ArtifactsCarousel = () => {
     // Data for each artifact
     const artifacts = [
@@ -77,10 +86,34 @@ const ArtifactsCarousel = () => {
     // Add js-enabled class to body to hide fallback content
     document.body.classList.add('js-enabled');
 
-    // Initialize
+    // Track if entrance animation has played
+    let hasPlayedEntrance = false;
+
+    // Initialize with entrance animation
     const init = () => {
-        updateContent();
         setupEventListeners();
+        initContinuousAnimations(leftPedestal, rightPedestal, backgroundTextEl);
+        setupScrollTrigger();
+    };
+
+    // Setup scroll trigger for entrance animation
+    const setupScrollTrigger = () => {
+        const artifactsSection = document.querySelector('.artifacts');
+        if (!artifactsSection) return;
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !hasPlayedEntrance) {
+                    hasPlayedEntrance = true;
+                    updateContent(true); // Trigger entrance animation
+                    observer.disconnect(); // Stop observing after first trigger
+                }
+            });
+        }, {
+            threshold: 0.3 // Trigger when 30% of section is visible
+        });
+
+        observer.observe(artifactsSection);
     };
 
     // Get wrapped index for infinite loop
@@ -91,46 +124,25 @@ const ArtifactsCarousel = () => {
     };
 
     // Update all content
-    const updateContent = () => {
+    const updateContent = (isInitial = false) => {
         const current = artifacts[currentIndex];
         const prevIndex = getWrappedIndex(currentIndex - 1);
         const nextIndex = getWrappedIndex(currentIndex + 1);
 
-        // Use GSAP if available, otherwise instant update
-        if (typeof gsap !== 'undefined') {
-            const tl = gsap.timeline();
-
-            // Fade out
-            tl.to([labelEl, quoteEl, backgroundTextEl], {
-                opacity: 0,
-                duration: 0.3,
-                ease: "power2.inOut"
-            })
-                .to(centerImage, {
-                    scale: 0.8,
-                    opacity: 0.5,
-                    duration: 0.3,
-                    ease: "power2.inOut"
-                }, "<")
-                .call(() => {
-                    // Update content
-                    applyContent(current, prevIndex, nextIndex);
-                })
-                // Fade in
-                .to(centerImage, {
-                    scale: 1,
-                    opacity: 1,
-                    duration: 0.4,
-                    ease: "back.out(1.2)"
-                })
-                .to([labelEl, quoteEl, backgroundTextEl], {
-                    opacity: 1,
-                    duration: 0.4,
-                    stagger: 0.1,
-                    ease: "power2.out"
-                }, "<0.1");
+        if (isInitial) {
+            // Initial entrance animation from below
+            entranceAnimation(labelEl, quoteEl, centerPedestal, () => {
+                applyContent(current, prevIndex, nextIndex);
+            });
         } else {
-            applyContent(current, prevIndex, nextIndex);
+            // Transition animation with rotation and scale
+            transitionAnimation(labelEl, quoteEl, backgroundTextEl, centerImage, currentIndex, () => {
+                applyContent(current, prevIndex, nextIndex);
+                // Walter success indicator
+                if (currentIndex === 0) {
+                    showWalterSuccess(centerPedestal);
+                }
+            });
         }
 
         // Update dots
@@ -228,6 +240,7 @@ const ArtifactsCarousel = () => {
         centerImage.style.cursor = 'grabbing';
     };
 
+    // Enhanced drag with elastic snap
     const handleDragMove = (e) => {
         if (!isDragging) return;
         if (e.type === 'touchmove') e.preventDefault();
@@ -235,14 +248,8 @@ const ArtifactsCarousel = () => {
         const currentX = e.type === 'touchmove' ? e.touches[0].clientX : e.clientX;
         const diff = startX - currentX;
 
-        // Visual feedback
-        if (typeof gsap !== 'undefined') {
-            gsap.to(centerImage, {
-                x: -diff * 0.5,
-                rotation: diff * 0.02,
-                duration: 0.1
-            });
-        }
+        // Visual feedback with elastic resistance
+        dragFeedback(centerImage, diff);
     };
 
     const handleDragEnd = (e) => {
@@ -251,14 +258,8 @@ const ArtifactsCarousel = () => {
         const currentX = e.type === 'touchend' ? e.changedTouches[0].clientX : e.clientX;
         const diff = startX - currentX;
 
-        // Reset visual
-        if (typeof gsap !== 'undefined') {
-            gsap.to(centerImage, {
-                x: 0,
-                rotation: 0,
-                duration: 0.3
-            });
-        }
+        // Elastic snap back with bounce
+        dragSnapBack(centerImage);
 
         // Threshold for swipe (50px)
         if (Math.abs(diff) > 50) {

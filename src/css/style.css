@@ -706,11 +706,57 @@ main {
 .pukpuk {
     padding: var(--section-spacing-mobile) var(--whitespace-base);
     overflow: hidden;
+    position: relative;
+    transition: all 0.5s ease;
 }
 
 .pukpuk__inner {
     max-width: 75rem;
     margin: 0 auto;
+}
+
+/* Inactive state - when not Walter */
+.pukpuk--inactive {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    opacity: 0.5;
+}
+
+.pukpuk--inactive .pukpuk__content {
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, max-height 0.3s ease;
+}
+
+.pukpuk--inactive .pukpuk__title {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Alternate message when inactive */
+.pukpuk__alternate-message {
+    font-family: var(--font-family-lalezar);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: var(--color-purple);
+    text-align: center;
+    text-transform: lowercase;
+    letter-spacing: 0.02em;
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease 0.3s, visibility 0.3s ease 0.3s, max-height 0.3s ease 0.3s;
+    margin: 0;
+    padding: 0;
+}
+
+.pukpuk--inactive .pukpuk__alternate-message {
+    opacity: 1;
+    visibility: visible;
+    max-height: 10rem;
+    padding: var(--whitespace-l) 0;
 }
 
 .pukpuk__header {
@@ -738,7 +784,7 @@ main {
 .pukpuk__layout {
     display: flex;
     flex-direction: column;
-    gap: var(--whitespace-l);
+    gap: var(--whitespace-s);
 }
 
 /* Visual Stack with Grid */
@@ -1031,7 +1077,7 @@ main {
     justify-content: center;
     gap: var(--whitespace-s);
     width: 100%;
-    margin-bottom: var(--whitespace-m);
+    margin-bottom: var(--whitespace-s);
 }
 
 /* Navigation arrows */
@@ -1166,6 +1212,24 @@ main {
 
 .artifact--dirkvs {
     margin-top: -6.5rem !important;
+}
+
+/* Walter success glow effect */
+.artifacts__walter-glow {
+    position: absolute;
+    inset: -3rem;
+    border-radius: 50%;
+    background: radial-gradient(circle,
+            rgba(255, 240, 0, 1) 0%,
+            rgba(255, 200, 0, 0.95) 20%,
+            rgba(255, 100, 50, 0.9) 35%,
+            rgba(200, 0, 0, 0.8) 50%,
+            rgba(148, 41, 37, 0.6) 60%,
+            transparent 75%);
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(12px);
+    -webkit-filter: blur(12px);
 }
 
 /* Title bar */
@@ -1309,66 +1373,75 @@ main {
    ================================================ */
 
 .about-walter {
-    padding: var(--section-spacing-mobile) var(--whitespace-base);
-    overflow: visible;
+    padding: 0;
     position: relative;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
+    min-height: 100vh;
+    margin-top: 5rem;
 }
 
-/* Red block background */
-.about-walter-background {
+.about-walter__figure {
     grid-column: 1;
     grid-row: 1;
-    width: 100vw;
-    height: 100%;
-    object-fit: cover;
-    margin-left: calc(-50vw + 50%);
+    width: clamp(9rem, 25vw, 12rem);
+    justify-self: center;
+    align-self: start;
+    padding-top: 2rem;
+    margin-top: -7rem;
+    margin-right: 15rem;
     z-index: 1;
 }
 
-.about-walter__inner {
-    max-width: 75rem;
-    margin: 0 auto;
+.about-walter__background {
     grid-column: 1;
     grid-row: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
     z-index: 2;
+}
+
+.about-walter__inner {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: center;
+    align-self: center;
+    max-width: 75rem;
+    width: 100%;
+    padding: var(--whitespace-2xl) var(--whitespace-base);
+    z-index: 3;
     position: relative;
-}
-
-.about-walter__header {
-    margin-bottom: var(--whitespace-l);
-    text-align: left;
-}
-
-.about-walter__image {
-    width: 50%;
-    max-width: 9.375rem;
-    margin: 0 auto var(--whitespace-m);
-}
-
-.about-walter__title {
-    font-family: var(--font-family-lalezar);
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 400;
-    color: var(--color-yellow);
-    margin: 0;
-    letter-spacing: 0.02em;
 }
 
 .about-walter__content {
     display: flex;
     flex-direction: column;
     gap: var(--whitespace-m);
-    color: var(--color-white);
 }
 
-.about-walter__content p {
-    color: var(--color-white);
+.about-walter__title {
+    font-family: var(--font-family-lalezar);
+    font-size: clamp(1.25rem, 5vw, 2rem);
+    font-weight: 400;
+    color: #FFE100;
+    letter-spacing: 0.27em;
+    text-transform: uppercase;
+    line-height: 1.145;
 }
 
-.about-walter__content strong {
+.about-walter__text {
+    font-family: var(--font-family-inter);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-white);
+    line-height: 1.4;
+    margin: 0;
+    max-width: 17rem;
+}
+
+.about-walter__text strong {
     font-weight: 700;
     color: var(--color-white);
 }
