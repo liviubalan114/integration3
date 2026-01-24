@@ -41,8 +41,8 @@
     --font-family-lalezar: 'Lalezar', Arial, sans-serif;
 
 
-    --breakpoint-tablet: 768px;
-    --breakpoint-desktop: 1024px;
+    --breakpoint-tablet: 48rem;
+    --breakpoint-desktop: 64rem;
 
     /* Header height */
     --header-height: 2rem;
@@ -107,7 +107,7 @@ strong {
     display: none;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 64rem) {
     .desktop-only {
         display: block;
     }
@@ -125,6 +125,7 @@ strong {
     align-items: center;
     padding: 1rem var(--whitespace-m) 0;
     z-index: 100;
+    position: relative;
 }
 
 .logo-link {
@@ -136,14 +137,14 @@ strong {
 /* Yellow Circle using ::before pseudo-element */
 .logo-link::before {
     content: '';
-    width: 20rem;
-    height: 15rem;
+    width: 15.625rem;
+    height: 15.625rem;
     border-radius: 50%;
-    background-color: var(--color-yellow);
-    display: block;
+    background-color: #FFE100;
+    display: none;
     position: absolute;
-    top: -8rem;
-    left: -12rem;
+    top: -5rem;
+    left: -5rem;
     z-index: -1;
 }
 
@@ -193,6 +194,7 @@ strong {
     padding-top: var(--header-height);
     position: relative;
     overflow: hidden;
+    min-height: 100vh;
 }
 
 .header-wrapper {
@@ -202,7 +204,6 @@ strong {
     align-items: center;
     position: relative;
     padding-bottom: var(--whitespace-2xl);
-
 }
 
 /* Portrait Container */
@@ -256,9 +257,14 @@ strong {
 
 .hero-subtitle {
     margin-top: var(--whitespace-m);
-    font-size: var(--font-size-m);
-    font-weight: 300;
-    color: gray;
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: var(--color-black);
+    font-family: var(--font-family-inter);
+}
+
+.hero-subtitle strong {
+    font-weight: 700;
 }
 
 /* Scroll Indicator */
@@ -429,46 +435,156 @@ strong {
 }
 
 /* ===================================
-   DESKTOP STYLES
+   TABLET STYLES  
    =================================== */
-@media (min-width: 1024px) {
+@media (min-width: 48rem) {
     .site-header {
-        padding: 0 var(--whitespace-xl);
+        padding: 2.5rem 4rem 0;
+    }
+
+    .logo-link::before {
+        display: block;
     }
 
     .momu-logo {
-        height: 2.5rem;
+        height: 4.5rem;
+        width: auto;
     }
 
     .tickets-btn {
-        padding: 0.75rem 2rem;
-        font-size: 1rem;
+        padding: 0.875rem 2.5rem;
+        font-size: 1.125rem;
+        font-weight: 700;
     }
 
-    /* Desktop Hero Layout */
+    /* Tablet Hero Layout - side by side */
+    .hero {
+        padding-top: 0;
+    }
+
     .header-wrapper {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        align-items: center;
-        justify-items: end;
+        grid-template-rows: 1fr auto;
+        align-items: start;
+        padding: 0 4rem 4rem;
+        min-height: calc(100vh - 8rem);
+        padding-bottom: 2rem;
     }
 
-    .hero-portrait {
-        max-width: none;
-        width: 42.75025rem;
-        height: 54.39231rem;
-        margin: 0;
-        grid-column: 2;
-    }
-
-    .portrait-image {
+    .hero-title {
+        grid-column: 1;
+        grid-row: 1;
+        text-align: left;
         width: 100%;
-        height: 100%;
-        object-fit: contain;
+        margin-top: 8rem;
+        z-index: 2;
+        padding-right: 2rem;
     }
 
     .hero-title h1 {
         font-size: 4rem;
+        line-height: 1;
+        margin: 0;
+    }
+
+    .title-line-1 {
+        font-family: var(--font-family-playfair);
+        font-size: 4rem;
+        font-weight: 400;
+        margin: 0;
+        line-height: 1;
+    }
+
+    .title-line-1 strong {
+        font-family: var(--font-family-lalezar);
+        font-size: 4rem;
+        font-weight: 400;
+        display: inline;
+    }
+
+    .title-line-2 {
+        font-family: var(--font-family-playfair);
+        font-size: 4rem;
+        font-weight: 400;
+        line-height: 1;
+    }
+
+    .hero-subtitle {
+        margin-top: 1.5rem;
+        font-size: 1.125rem;
+        line-height: 1.2;
+    }
+
+    .hero-portrait {
+        grid-column: 2;
+        grid-row: 1 / 3;
+        max-width: none;
+        width: 100%;
+        height: auto;
+        margin: 0;
+        align-self: start;
+        justify-self: end;
+        z-index: 1;
+    }
+
+    .portrait-image {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        margin: 0;
+        margin-top: -2rem;
+    }
+
+    .scroll-indicator {
+        grid-column: 1;
+        grid-row: 2;
+        margin-top: auto;
+        align-self: end;
+    }
+}
+
+/* ===================================
+   DESKTOP STYLES
+   =================================== */
+@media (min-width: 64rem) {
+    .site-header {
+        padding: 2.5rem 6rem 0;
+    }
+
+    .momu-logo {
+        height: 5rem;
+    }
+
+    .tickets-btn {
+        padding: 1rem 3rem;
+        font-size: 1.25rem;
+    }
+
+    .header-wrapper {
+        padding: 0 6rem 4rem;
+    }
+
+    .hero-title h1 {
+        font-size: 5.5rem;
+    }
+
+    .title-line-1,
+    .title-line-1 strong,
+    .title-line-2 {
+        font-size: 5.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+
+    .portrait-image {
+        margin-top: -4rem;
+    }
+
+    .hero-title {
+        margin-top: 10rem;
     }
 
     .title-line-1,
@@ -834,6 +950,280 @@ strong {
 }
 
 /* ================================================
+   THE NEW YOU SECTION
+   ================================================ */
+
+.new-you {
+    padding: var(--section-spacing-mobile) 0;
+    background-color: var(--color-white);
+    overflow: visible;
+}
+
+.new-you__inner {
+    max-width: 75rem;
+    margin: 0 auto;
+}
+
+.new-you__title {
+    font-family: var(--font-family-lalezar);
+    font-size: clamp(2rem, 5vw, 2.3125rem);
+    font-weight: 400;
+    color: var(--color-purple);
+    padding: 0 var(--whitespace-m);
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    line-height: 1.334;
+}
+
+.new-you__scroll-hint {
+    font-family: var(--font-family-inter);
+    font-size: 0.875rem;
+    color: var(--color-black);
+    opacity: 0.6;
+    margin: var(--whitespace-s) 0 var(--whitespace-m);
+    padding: 0 var(--whitespace-m);
+    text-align: left;
+}
+
+.new-you__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--whitespace-l);
+    padding: 0 var(--whitespace-m);
+}
+
+.new-you__text {
+    font-family: var(--font-family-inter);
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--color-black);
+    margin: 0;
+    letter-spacing: -0.011em;
+}
+
+.new-you__text strong {
+    font-weight: 700;
+}
+
+.new-you__message {
+    background-color: var(--color-purple);
+    padding: var(--whitespace-s) var(--whitespace-m);
+    display: inline-block;
+    align-self: center;
+}
+
+.new-you__message-text {
+    font-family: var(--font-family-lalezar);
+    font-size: clamp(1.125rem, 3vw, 1.3rem);
+    font-weight: 400;
+    color: #16E3FE;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    line-height: normal;
+}
+
+.new-you__tribe {
+    font-family: var(--font-family-inter);
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--color-black);
+    margin: 0;
+    letter-spacing: -0.011em;
+}
+
+.new-you__final {
+    font-family: var(--font-family-lalezar);
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
+    font-weight: 400;
+    color: var(--color-black);
+    margin: 0;
+    letter-spacing: -0.011em;
+    line-height: 1.5;
+}
+
+/* Tablet adjustments */
+@media (min-width: 48rem) {
+    .new-you {
+        padding: var(--section-spacing-desktop) 0;
+    }
+
+    .new-you__title {
+        font-size: 2.3125rem;
+        padding: 0 var(--whitespace-xl);
+    }
+
+    .new-you__content {
+        gap: var(--whitespace-xl);
+        padding: 0 var(--whitespace-xl);
+    }
+}
+
+/* Desktop adjustments */
+@media (min-width: 64rem) {
+    .new-you__title {
+        padding: 0 6rem;
+    }
+
+    .new-you__content {
+        padding: 0 6rem;
+    }
+}
+
+/* ================================================
+   EPILOGUE SECTION - HORIZONTAL SCROLL
+   ================================================ */
+
+.epilogue {
+    padding: var(--section-spacing-mobile) 0;
+    overflow: hidden;
+    background-color: var(--color-white);
+}
+
+.epilogue__inner {
+    max-width: 100%;
+}
+
+.epilogue__title {
+    font-family: var(--font-family-lalezar);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 400;
+    color: var(--color-purple);
+    margin: 0 0 var(--whitespace-l) var(--whitespace-m);
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+/* Horizontal scroll container */
+.epilogue__scroll-container {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-purple) transparent;
+}
+
+/* Webkit scrollbar styling */
+.epilogue__scroll-container::-webkit-scrollbar {
+    height: 0.5rem;
+}
+
+.epilogue__scroll-container::-webkit-scrollbar-track {
+    background: rgba(108, 60, 214, 0.1);
+}
+
+.epilogue__scroll-container::-webkit-scrollbar-thumb {
+    background: var(--color-purple);
+    border-radius: 0.25rem;
+}
+
+.epilogue__scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #5A26CA;
+}
+
+/* Scroll content - flex row */
+.epilogue__scroll-content {
+    display: flex;
+    gap: var(--whitespace-xl);
+    padding: 0 var(--whitespace-m) var(--whitespace-l);
+    width: max-content;
+}
+
+/* Individual costume items */
+.epilogue__item {
+    flex-shrink: 0;
+    width: 15rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--whitespace-s);
+}
+
+.epilogue__image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.epilogue__item:hover .epilogue__image {
+    transform: scale(1.02);
+}
+
+/* Individual costume image sizing - customize these */
+.epilogue__item--red {
+    width: 9.8rem;
+    margin-top: 2rem;
+}
+
+.epilogue__item--yellow {
+    width: 7.8rem;
+    margin-top: 1rem;
+}
+
+.epilogue__item--green {
+    width: 10rem;
+    margin-top: 1.5rem;
+}
+
+.epilogue__item--brown {
+    width: 10.5rem;
+    margin-top: 2.5rem;
+}
+
+.epilogue__item--orange {
+    width: 9rem;
+    margin-top: 2.2rem;
+}
+
+.epilogue__caption {
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--color-black);
+    text-align: center;
+    margin: 0;
+}
+
+/* Tablet adjustments */
+@media (min-width: 48rem) {
+    .epilogue {
+        padding: var(--section-spacing-desktop) 0;
+    }
+
+    .epilogue__title {
+        margin-left: var(--whitespace-xl);
+    }
+
+    .epilogue__scroll-content {
+        padding: 0 var(--whitespace-xl) var(--whitespace-xl);
+        gap: var(--whitespace-l);
+    }
+
+    .epilogue__item {
+        width: 22rem;
+    }
+}
+
+/* Desktop adjustments */
+@media (min-width: 64rem) {
+    .epilogue__title {
+        margin-left: 6rem;
+    }
+
+    .epilogue__scroll-content {
+        padding: 0 6rem var(--whitespace-xl);
+        gap: var(--whitespace-xl);
+    }
+
+    .epilogue__item {
+        width: 25rem;
+    }
+}
+
+
+/* ================================================
    ANIMATION SECTION
    ================================================ */
 
@@ -960,7 +1350,7 @@ strong {
     transition: opacity 0.3s ease;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 48rem) {
     .artifacts__background-text {
         display: block;
     }
@@ -1269,7 +1659,7 @@ strong {
 }
 
 /* Tablet: Show side pedestals */
-@media (min-width: 768px) {
+@media (min-width: 48rem) {
     .artifacts__pedestal--side {
         display: grid;
     }
@@ -1280,7 +1670,7 @@ strong {
 }
 
 /* Desktop: Larger pedestals, hide dots */
-@media (min-width: 1024px) {
+@media (min-width: 64rem) {
     .artifacts__pedestal--side {
         opacity: 0.6;
         -webkit-filter: blur(1px);
@@ -1621,13 +2011,12 @@ strong {
     border-radius: 0.9375rem;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    border: 0.125rem solid rgba(255, 255, 255, 0.3);
+    border: 0.125rem solid #B71C1C;
     margin-bottom: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0.625rem 0.9375rem;
-    box-shadow: 0 0.3125rem 0.9375rem rgba(0, 0, 0, 0.2);
     overflow: hidden;
     flex-shrink: 0;
     box-sizing: border-box;
@@ -1668,12 +2057,11 @@ strong {
     border-radius: 1.25rem;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
-    border: 0.25rem solid rgba(255, 255, 255, 0.6);
+    border: 0.25rem solid #B71C1C;
     padding: 1.875rem;
     touch-action: none;
     -webkit-user-select: none;
     user-select: none;
-    box-shadow: inset 0 0 1.875rem rgba(255, 255, 255, 0.15), 0 0 1.25rem rgba(0, 0, 0, 0.2);
     overflow: hidden;
 }
 
@@ -1836,7 +2224,6 @@ strong {
     max-width: calc(100vw - 3.75rem);
     overflow-x: auto;
     overflow-y: hidden;
-    -webkit-overflow-scrolling: touch;
     touch-action: pan-x;
     display: flex;
     gap: 0.9375rem;
@@ -1844,6 +2231,21 @@ strong {
     margin-left: -100%;
     transition: margin-left 0.3s ease;
     scrollbar-width: thin;
+}
+
+/* Webkit scrollbar styling for Chrome/Safari */
+.create-skin__drawer-content::-webkit-scrollbar {
+    height: 0.375rem;
+}
+
+.create-skin__drawer-content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.1875rem;
+}
+
+.create-skin__drawer-content::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 0.1875rem;
 }
 
 .create-skin__drawer--open .create-skin__drawer-content {
@@ -1977,7 +2379,7 @@ strong {
 /* ==========================================================================
    CREATE THE SKIN - MOBILE (hide desktop items, show drawer)
    ========================================================================== */
-@media (max-width: 767px) {
+@media (max-width: 47.9375rem) {
     .create-skin__drag-area {
         touch-action: pan-y;
     }
@@ -1992,9 +2394,9 @@ strong {
 }
 
 /* ==========================================================================
-   CREATE THE SKIN - TABLET (min-width: 768px)
+   CREATE THE SKIN - TABLET (min-width: 48rem)
    ========================================================================== */
-@media (min-width: 768px) {
+@media (min-width: 48rem) {
     .create-skin__inner {
         max-width: 90vw;
     }
@@ -2025,9 +2427,9 @@ strong {
 }
 
 /* ==========================================================================
-   CREATE THE SKIN - DESKTOP (min-width: 1024px)
+   CREATE THE SKIN - DESKTOP (min-width: 64rem)
    ========================================================================== */
-@media (min-width: 1024px) {
+@media (min-width: 64rem) {
     .create-skin {
         padding: 1.25rem;
     }
