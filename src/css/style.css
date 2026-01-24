@@ -558,20 +558,22 @@ main {
 }
 
 .no-more-hiding__quote {
-    display: block;
-    text-align: left;
-    background-color: #8B1E1E;
-    max-width: 50rem;
-    color: #FFE100;
-    font-family: var(--font-family-inter);
-    font-size: 1.262rem;
-    font-style: italic;
-    font-weight: 400;
-    line-height: 129.071%;
-    margin-left: -2rem;
-    padding-left: 3rem;
-    padding-right: 2rem;
-    width: 20rem;
+        display: block;
+            text-align: left;
+            background-color: #8B1E1E;
+            max-width: 50rem;
+            color: #FFE100;
+            font-family: var(--font-family-inter);
+            font-size: 1.262rem;
+            font-style: italic;
+            font-weight: 400;
+            line-height: 129.071%;
+            margin-left: -2rem;
+            padding-left: 3rem;
+            padding-bottom: 0.5rem;
+            padding-top: 0.5rem;
+            padding-right: 2rem;
+            width: 20rem;
 }
 
 /* Trigger (Desktop only) */
@@ -955,26 +957,6 @@ main {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(to bottom,
-            transparent 0%,
-            transparent 40%,
-            #D4C5E0 40%,
-            #D4C5E0 45%,
-            transparent 45%,
-            transparent 70%,
-            #D4C5E0 70%,
-            #D4C5E0 75%,
-            transparent 75%);
-}
-
-.artifacts__background {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: #FFFFFF;
-    z-index: 0;
 }
 
 .artifacts__content {
@@ -990,27 +972,23 @@ main {
 
 .artifacts__title {
     font-family: 'Lalezar', cursive;
-    font-size: clamp(1.5rem, 5vw, 1.734rem);
+    font-size: clamp(2rem, 5vw, 1.734rem);
     color: #FFE100;
     text-transform: uppercase;
     letter-spacing: 0.07em;
     line-height: 0.87;
     text-align: center;
     background-color: #942925;
-    width: 100%;
-    padding: var(--whitespace-md) var(--whitespace-base);
-    margin: 0;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 3;
+    width: 30rem;
+    padding: 1rem;
+    margin: 0 0 var(--whitespace-m) 0;
 }
 
 .artifacts__card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--whitespace-md);
+    gap: var(--whitespace-m);
     max-width: 40rem;
 }
 
@@ -1040,9 +1018,9 @@ main {
 }
 
 .artifacts__pedestal {
-    width: 100%;
+    width: 80%;
     max-width: 20rem;
-    margin-top: var(--whitespace-md);
+    margin-top: var(--whitespace-m);
     position: relative;
     display: flex;
     align-items: center;
@@ -1064,6 +1042,56 @@ main {
     width: 50%;
     height: auto;
     z-index: 2;
+}
+
+/* All options list (visible when JS is off) */
+.artifacts__all-options {
+    margin-top: var(--whitespace-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--whitespace-l);
+    max-width: 40rem;
+    width: 100%;
+}
+
+.artifacts__option {
+    text-align: left;
+    max-width: 100%;
+}
+
+.artifacts__option-name {
+    font-family: 'Lalezar', cursive;
+    font-size: 1.5rem;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin: 0 0 0.5rem 0;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.artifacts__option-title {
+    font-family: 'Lalezar', cursive;
+    font-size: 1rem;
+    color: #000000;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    margin: 0 0 0.5rem 0;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.artifacts__option-quote {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 400;
+    color: #000000;
+    line-height: 1.43;
+    margin: 0;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    max-width: 100%;
 }
 
 /* ================================================
