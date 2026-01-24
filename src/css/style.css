@@ -1015,7 +1015,7 @@ main {
     line-height: 1.43;
     max-width: 40rem;
     padding: 0 var(--whitespace-base);
-    margin-bottom: var(--whitespace-l);
+    margin-bottom: calc(var(--whitespace-l) + 2rem);
     min-height: 6rem;
     transition: opacity 0.3s ease;
 }
@@ -1047,24 +1047,38 @@ main {
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    position: relative;
+}
+
+.artifacts__nav::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.artifacts__nav--prev::after {
+    border-width: 0.5rem 0.75rem 0.5rem 0;
+    border-color: transparent #000 transparent transparent;
+    margin-left: -0.15rem;
+}
+
+.artifacts__nav--next::after {
+    border-width: 0.5rem 0 0.5rem 0.75rem;
+    border-color: transparent transparent transparent #000;
+    margin-right: -0.15rem;
 }
 
 .artifacts__nav:hover {
     background: #000;
 }
 
-.artifacts__nav:hover .artifacts__nav-icon {
-    filter: invert(1);
+.artifacts__nav:hover::after {
+    border-color: transparent #fff transparent transparent;
 }
 
-.artifacts__nav--prev .artifacts__nav-icon {
-    transform: rotate(180deg);
-}
-
-.artifacts__nav-icon {
-    width: 1rem;
-    height: 1rem;
-    transition: filter 0.3s ease;
+.artifacts__nav--next:hover::after {
+    border-color: transparent transparent transparent #fff;
 }
 
 /* Pedestals */
@@ -1075,7 +1089,7 @@ main {
 }
 
 .artifacts__pedestal--center {
-    width: clamp(10rem, 25vw, 14rem);
+    width: clamp(12rem, 25vw, 16rem);
 }
 
 .artifacts__pedestal--side {
@@ -1107,7 +1121,7 @@ main {
 .artifacts__artifact-image {
     grid-column: 1;
     grid-row: 1;
-    width: 60%;
+    width: 66%;
     height: auto;
     align-self: start;
     margin-top: -2rem;
@@ -1123,7 +1137,7 @@ main {
 }
 
 .artifacts__pedestal--center .artifacts__artifact-image {
-    width: 50%;
+    width: 55%;
     margin-top: -3rem;
 }
 
@@ -1133,23 +1147,25 @@ main {
 }
 
 .artifact--ann {
-    margin-top: -2rem !important;
+    margin-top: -6.5rem !important;
+    margin-left: 2.5rem !important;
 }
 
 .artifact--dries {
-    margin-top: -5rem !important;
+    margin-top: -7.5rem !important;
 }
 
 .artifact--marina {
-    margin-top: -2.5rem !important;
+    margin-top: -5.2rem !important;
 }
 
 .artifact--dirkb {
-    margin-top: -1rem !important;
+    margin-top: -3rem !important;
+    width: 70% !important;
 }
 
 .artifact--dirkvs {
-    margin-top: -4rem !important;
+    margin-top: -6.5rem !important;
 }
 
 /* Title bar */

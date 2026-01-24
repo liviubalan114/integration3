@@ -49,8 +49,8 @@ const ArtifactsCarousel = () => {
         }
     ];
 
-    // State
-    let currentIndex = 0;
+    // State - start at Ann (index 1) instead of Walter
+    let currentIndex = 1;
     let startX = 0;
     let isDragging = false;
 
