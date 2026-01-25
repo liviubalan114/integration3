@@ -42,6 +42,8 @@ export const transitionAnimation = (labelEl, quoteEl, backgroundTextEl, centerIm
         ease: "power2.inOut"
     })
         .to(backgroundTextEl, {
+            xPercent: -50,
+            yPercent: -50,
             scale: 1.1,
             opacity: 0,
             duration: 0.3,
@@ -71,6 +73,8 @@ export const transitionAnimation = (labelEl, quoteEl, backgroundTextEl, centerIm
             ease: "power2.out"
         }, "<0.1")
         .to(backgroundTextEl, {
+            xPercent: -50,
+            yPercent: -50,
             scale: 1,
             opacity: 1,
             duration: 0.4,
