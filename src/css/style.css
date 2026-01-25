@@ -1252,19 +1252,18 @@ strong {
 /* Walter success glow effect */
 .artifacts__walter-glow {
     position: absolute;
-    inset: -3rem;
+    inset: -4rem;
     border-radius: 50%;
     background: radial-gradient(circle,
-            rgba(255, 240, 0, 1) 0%,
-            rgba(255, 200, 0, 0.95) 20%,
-            rgba(255, 100, 50, 0.9) 35%,
-            rgba(200, 0, 0, 0.8) 50%,
-            rgba(148, 41, 37, 0.6) 60%,
-            transparent 75%);
+            rgba(0, 255, 255, 0.8) 0%,
+            rgba(138, 43, 226, 0.75) 25%,
+            rgba(255, 240, 0, 0.7) 50%,
+            rgba(255, 0, 0, 0.5) 70%,
+            transparent 90%);
     pointer-events: none;
     z-index: 0;
-    -webkit-filter: blur(12px);
-    filter: blur(12px);
+    -webkit-filter: blur(6px);
+    filter: blur(6px);
 }
 
 /* Title bar */

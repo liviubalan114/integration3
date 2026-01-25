@@ -3,6 +3,9 @@
 // ================================================
 
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 // Initial entrance animation from below
 export const entranceAnimation = (labelEl, quoteEl, centerPedestal, callback) => {
@@ -91,11 +94,11 @@ export const showWalterSuccess = (centerPedestal) => {
 
     // Animate glow pulse
     gsap.fromTo(glow,
-        { scale: 0.3, opacity: 1 },
+        { scale: 0.5, opacity: 1 },
         {
-            scale: 3.5,
+            scale: 2,
             opacity: 0,
-            duration: 2.5,
+            duration: 4,
             ease: "power2.out",
             onComplete: () => glow.remove()
         }
@@ -340,4 +343,87 @@ export const initBrushEffect = () => {
         window.removeEventListener('resize', resize);
         canvas.remove();
     };
+};
+
+// Text fade animations on scroll
+export const initTextScrollAnimations = () => {
+    // Select all text elements to animate (excluding artifacts title and footer)
+    const textElements = gsap.utils.toArray('h1, h2, h3, h4, p, blockquote, .artifacts__label, .artifacts__quote');
+
+    // Filter out artifacts title and footer elements
+    const filteredElements = textElements.filter(el => {
+        return !el.classList.contains('artifacts__title') &&
+            !el.closest('.site-footer');
+    });
+
+    filteredElements.forEach(element => {
+        gsap.fromTo(element,
+            {
+                opacity: 0,
+                y: 40,
+                rotation: -2
+            },
+            {
+                opacity: 1,
+                y: 0,
+                rotation: 0,
+                duration: 0.5,
+                ease: "back.out(1.5)",
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top 95%",
+                    end: "top 25%",
+                    toggleActions: "play reverse play reverse",
+                    scrub: 0.3
+                }
+            }
+        );
+    });
+
+    // Animate colored block elements sliding in from left
+    const coloredBlocks = gsap.utils.toArray('.artifacts__title, .no-more-hiding__quote, .pukpuk__tag');
+
+    coloredBlocks.forEach(block => {
+        gsap.fromTo(block,
+            {
+                x: -100,
+                opacity: 0
+            },
+            {
+                x: 0,
+                opacity: 1,
+                duration: 0.8,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: block,
+                    start: "top 90%",
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
+    });
+
+    // Pukpuk card falling animation
+    const pukpukCard = document.querySelector('.pukpuk__card');
+    if (pukpukCard) {
+        gsap.fromTo(pukpukCard,
+            {
+                y: -200,
+                rotation: -30,
+                opacity: 0
+            },
+            {
+                y: 0,
+                rotation: 17,
+                opacity: 1,
+                duration: 1.5,
+                ease: "bounce.out",
+                scrollTrigger: {
+                    trigger: pukpukCard,
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
+    }
 };
