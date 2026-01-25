@@ -347,38 +347,38 @@ export const initBrushEffect = () => {
 
 // Text fade animations on scroll
 export const initTextScrollAnimations = () => {
-    // // Select all text elements to animate (excluding artifacts title and footer)
-    // const textElements = gsap.utils.toArray('h1, h2, h3, h4, p, blockquote, .artifacts__label, .artifacts__quote');
+    // Select all text elements to animate (excluding artifacts title and footer)
+    const textElements = gsap.utils.toArray('h1, h2, h3, h4, p, blockquote, .artifacts__label, .artifacts__quote');
 
-    // // Filter out artifacts title and footer elements
-    // const filteredElements = textElements.filter(el => {
-    //     return !el.classList.contains('artifacts__title') &&
-    //         !el.closest('.site-footer');
-    // });
+    // Filter out artifacts title and footer elements
+    const filteredElements = textElements.filter(el => {
+        return !el.classList.contains('artifacts__title') &&
+            !el.closest('.site-footer');
+    });
 
-    // filteredElements.forEach(element => {
-    //     gsap.fromTo(element,
-    //         {
-    //             opacity: 0,
-    //             y: 40,
-    //             rotation: -2
-    //         },
-    //         {
-    //             opacity: 1,
-    //             y: 0,
-    //             rotation: 0,
-    //             duration: 0.5,
-    //             ease: "back.out(1.5)",
-    //             scrollTrigger: {
-    //                 trigger: element,
-    //                 start: "top 95%",
-    //                 end: "top 25%",
-    //                 toggleActions: "play reverse play reverse",
-    //                 scrub: 0.3
-    //             }
-    //         }
-    //     );
-    // });
+    filteredElements.forEach(element => {
+        gsap.fromTo(element,
+            {
+                opacity: 0,
+                y: 40,
+                rotation: -2
+            },
+            {
+                opacity: 1,
+                y: 0,
+                rotation: 0,
+                duration: 0.5,
+                ease: "back.out(1.5)",
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top 95%",
+                    end: "top 25%",
+                    toggleActions: "play reverse play reverse",
+                    scrub: 0.3
+                }
+            }
+        );
+    });
 
     // Animate colored block elements sliding in from left
     const coloredBlocks = gsap.utils.toArray('.artifacts__title, .no-more-hiding__quote, .pukpuk__tag');

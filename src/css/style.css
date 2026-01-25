@@ -1023,6 +1023,12 @@ strong {
 
 .momu-title-svg {
     display: none;
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: center;
+    align-self: start;
+    z-index: 3;
+    margin-top: 2rem;
 }
 
 .momu .section-inner {
@@ -1593,7 +1599,6 @@ strong {
     margin-top: 2rem;
 }
 
-.site-footer__social-label {}
 
 .site-footer__social-label {
     font-family: var(--font-family-inter);
@@ -1679,6 +1684,18 @@ strong {
     margin-bottom: 1rem;
     padding: 1rem 1.5rem;
     font-weight: 400;
+    text-align: left;
+    width: fit-content;
+}
+
+.create-skin__intro {
+    font-family: var(--font-family-lalezar);
+    color: #00BCD4;
+    font-size: 1.3rem;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+    text-align: left;
 }
 
 /* Info Panel */
@@ -2273,7 +2290,28 @@ strong {
         margin-left: 19rem;
     }
 
+    .octopus {
+        padding: var(--section-spacing-tablet) var(--whitespace-m);
+        overflow: hidden;
+        margin-top: -7rem;
+        margin-bottom: 13rem;
+    }
+
     /* --- MOMU SECTION --- */
+    .momu {
+        background-image: url('/src/assets/MomuDesktopTablet.svg');
+        background-size: 120%;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 120vh;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .momu-background {
+        display: none;
+    }
+
     .momu .section-inner {
         display: flex;
         flex-direction: column;
@@ -2286,7 +2324,7 @@ strong {
         gap: var(--whitespace-m);
         color: var(--color-white);
         margin-bottom: var(--whitespace-xl);
-        max-width: 28rem;
+        max-width: 37rem;
         justify-content: center;
         align-items: flex-start;
     }
@@ -2305,10 +2343,7 @@ strong {
     }
 
     .momu-background-desktop {
-        display: block;
-        width: 120%;
-        height: 120%;
-        object-fit: cover;
+        display: none;
     }
 
     .momu-title-text {
@@ -2317,8 +2352,8 @@ strong {
 
     .momu-title-svg {
         display: block;
-        margin: 0 0 var(--whitespace-l);
-        width: 25rem;
+        margin-top: 1rem;
+        width: 31rem;
         height: auto;
     }
 
@@ -2378,6 +2413,7 @@ strong {
     /* --- CREATE SKIN SECTION --- */
     .create-skin__drag-area {
         height: 80vh !important;
+        background: rgba(255, 255, 255, 0.02);
     }
 
     /* Scale all draggable items proportionally to match silhouette scaling */
@@ -2388,11 +2424,11 @@ strong {
 
     /* Fused item sizes for tablet - !important needed to override inline JS styles */
     .create-skin__fused-item[style*="width: 11.2rem"] {
-        width: 9.2rem !important;
+        width: 10.8rem !important;
     }
 
     .create-skin__fused-item[style*="width: 5rem"] {
-        width: 4rem !important;
+        width: 4.9rem !important;
     }
 
     /* --- EPILOGUE SECTION --- */
@@ -2609,6 +2645,24 @@ strong {
         justify-self: flex-start;
         align-self: flex-start;
         margin-left: 0rem;
+        margin-top: -2rem;
+        transform: translateZ(0);
+        will-change: filter;
+    }
+
+    .pukpuk--inactive .pukpuk__figure {
+        margin-top: -22rem;
+    }
+
+    .pukpuk__alternate-message {
+        display: none;
+    }
+
+    .pukpuk--inactive .pukpuk__alternate-message {
+        display: block;
+        text-align: left;
+        margin-left: 4rem;
+        margin-top: 6rem;
     }
 
     .pukpuk__shape--blue {
@@ -2634,6 +2688,10 @@ strong {
         align-items: flex-start;
         gap: var(--whitespace-l);
         margin-top: -25rem;
+    }
+
+    .pukpuk--inactive .pukpuk__row {
+        margin-top: -20rem;
     }
 
     .pukpuk__card {
@@ -2688,6 +2746,10 @@ strong {
     .create-skin__title {
         font-size: 2.2rem;
         padding: 1.25rem 2rem;
+    }
+
+    .create-skin__intro {
+        width: 31rem;
     }
 
     .create-skin__drag-area {
@@ -2844,6 +2906,31 @@ strong {
     /* --- CREATE SKIN INTERACTION --- */
     .create-skin {
         padding: 1.25rem;
+    }
+
+    .create-skin::before,
+    .create-skin::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 50%;
+        z-index: 0;
+        pointer-events: none;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+
+    .create-skin::before {
+        left: 0;
+        background-image: url('/src/assets/leftRed.svg');
+        background-position: left center;
+    }
+
+    .create-skin::after {
+        right: 0;
+        background-image: url('/src/assets/rightPurple.svg');
+        background-position: right center;
     }
 
     .create-skin__inner {

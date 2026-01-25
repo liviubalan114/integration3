@@ -141,10 +141,11 @@
     <img src="/src/assets/museum-background.svg" alt="" class="momu-background momu-background-mobile"
       aria-hidden="true">
     <img src="" alt="" class="momu-background momu-background-desktop" aria-hidden="true">
+    <img src="" alt="you need a new skin" class="momu-title momu-title-svg">
+
     <div class="section-inner">
 
       <h2 class="momu-title momu-title-text">you need a new skin</h2>
-      <img src="" alt="you need a new skin" class="momu-title momu-title-svg">
 
       <div class="momu-content">
         <p>Thankfully, there is someone who can help you. <strong>At MoMu, six pedestals wait</strong>. Each one honors
@@ -276,7 +277,7 @@
 
         </div>
 
-        <p class="pukpuk__alternate-message">perhaps it's not them who can help you</p>
+        <p class="pukpuk__alternate-message">Perhaps the wrong artifact was chosen</p>
 
         <div class="pukpuk__row">
 
@@ -379,10 +380,12 @@
   <section class="create-skin" id="createSkinSection">
     <div class="create-skin__inner">
       <h2 class="create-skin__title">CREATE YOUR NEW SKIN</h2>
+      <p class="create-skin__intro">This is where you create your new skin, drag, combine and learn to see how to make
+        the best skin suited for you</p>
 
       <div class="create-skin__info-panel">
         <div class="create-skin__info-content">
-          <p id="createSkinInfoText">Hover over shapes to learn more...</p>
+          <p id="createSkinInfoText">Interact with the clothes to learn more and create your new skin</p>
         </div>
       </div>
 
@@ -394,49 +397,60 @@
 
         <!-- Fusion items (desktop only) -->
         <div class="create-skin__draggable create-skin__draggable--normal-suit"
-          data-info="Suit - A normal fancy suit built for boardrooms and banquets. You can almost see the exact spot where a <strong>protection symbol would sit and ruin its politeness.</strong>">
+          data-info="Suit - A normal fancy suit built for boardrooms and banquets. You can almost see the exact spot where a <strong>protection symbol would sit and ruin its politeness.</strong>"
+          data-info-mobile="Built for boardrooms. A <strong>protection symbol would ruin its politeness.</strong>">
           <img src="/src/assets/NormalSuitDressUp.png" alt="Normal Suit">
         </div>
         <div class="create-skin__draggable create-skin__draggable--shield"
-          data-info="Papilla warrior shield - A bright shield that turns the chest into a battlefield. It protects, but strapped alone it feels like it's <strong>searching for a more ordinary suit to corrupt.</strong>">
+          data-info="Papilla warrior shield - A bright shield that turns the chest into a battlefield. It protects, but strapped alone it feels like it's <strong>searching for a more ordinary suit to corrupt.</strong>"
+          data-info-mobile="Protects the chest. <strong>Searching for a suit to corrupt.</strong>">
           <img src="/src/assets/ShieldDressUp.png" alt="Shield">
         </div>
         <div class="create-skin__draggable create-skin__draggable--voodoo"
-          data-info="Voodoo mask - An ancient carved mask that smells of rituals and old gods. Too sacred alone, as if <strong>it's waiting for something shameless</strong> to latch onto it.">
+          data-info="Voodoo mask - An ancient carved mask that smells of rituals and old gods. Too sacred alone, as if <strong>it's waiting for something shameless</strong> to latch onto it."
+          data-info-mobile="Smells of rituals and old gods. <strong>Waiting for something shameless.</strong>">
           <img src="/src/assets/VoodooDressUp.png" alt="Voodoo">
         </div>
         <div class="create-skin__draggable create-skin__draggable--bdsm"
-          data-info="BDSM mask - A studded leather hood with zipper mouth and eye slits. It screams control and surrender, but <strong>feels incomplete without an ancient mask</strong> to haunt its shine.">
+          data-info="BDSM mask - A studded leather hood with zipper mouth and eye slits. It screams control and surrender, but <strong>feels incomplete without an ancient mask</strong> to haunt its shine."
+          data-info-mobile="Control and surrender. <strong>Incomplete without an ancient mask.</strong>">
           <img src="/src/assets/BdsmDressUp.png" alt="BDSM">
         </div>
         <div class="create-skin__draggable create-skin__draggable--wrong-mask"
-          data-info="Striped Walter mask - Voodoo spirit stitched to a fetish hood. Made from Voodoo and Bdsm. Good for your disguise but are you sure that color fits you?">
+          data-info="Striped Walter mask - Voodoo spirit stitched to a fetish hood. Made from Voodoo and Bdsm. Good for your disguise but are you sure that color fits you?"
+          data-info-mobile="Made from voodoo and bdsm. Good disguise but are you sure that color fits you?">
           <img src="/src/assets/WrongMaskDressUp.png" alt="Wrong Mask">
         </div>
 
         <!-- Other draggable items (desktop only) -->
         <div class="create-skin__draggable create-skin__draggable--bow"
-          data-info="Neck bow - A soft ribbon tied too perfectly to be innocent. It's decoration now, one that would make people suspect nothing.">
+          data-info="Neck bow - A soft ribbon tied too perfectly to be innocent. It's decoration now, one that would make people suspect nothing."
+          data-info-mobile="Tied too perfectly to be innocent. Makes people suspect nothing.">
           <img src="/src/assets/BowDressUp.png" alt="Bow">
         </div>
         <div class="create-skin__draggable create-skin__draggable--hat"
-          data-info="Walter hat - A hand‑made Walter hat that turns the head into a cartoon thought bubble. Optional armor for when you want the joke to sit on top.">
+          data-info="Walter hat - A hand‑made Walter hat that turns the head into a cartoon thought bubble. Optional armor for when you want the joke to sit on top."
+          data-info-mobile="Turns the head into a cartoon. Optional armor for when you want the joke on top.">
           <img src="/src/assets/HatDressUp.png" alt="Hat">
         </div>
         <div class="create-skin__draggable create-skin__draggable--stick"
-          data-info="Right handed cane - A gentleman's cane with a dangling chain leash. Authority meets restrain, the perfect prop to tame the beast your collar is struggling to contain.">
+          data-info="Right handed cane - A gentleman's cane with a dangling chain leash. Authority meets restrain, the perfect prop to tame the beast your collar is struggling to contain."
+          data-info-mobile="Authority meets restraint. The perfect prop to tame the beast.">
           <img src="/src/assets/CorrectStickDressUp.png" alt="Correct Stick">
         </div>
         <div class="create-skin__draggable create-skin__draggable--wrong-cane"
-          data-info="Left handed cane - A gentleman's cane with a dangling chain leash. Authority meets restraint. Close enough to confuse you but maybe try the right hand.">
+          data-info="Left handed cane - A gentleman's cane with a dangling chain leash. Authority meets restraint. Close enough to confuse you but maybe try the right hand."
+          data-info-mobile="Close enough to confuse you but maybe try the right hand.">
           <img src="/src/assets/WrongCaneDressUp.png" alt="Wrong Cane">
         </div>
         <div class="create-skin__draggable create-skin__draggable--lock"
-          data-info="Lock - A sleek metal collar that keeps the beast on a leash. A reminder that the thing is still trapped underneath.">
+          data-info="Lock - A sleek metal collar that keeps the beast on a leash. A reminder that the thing is still trapped underneath."
+          data-info-mobile="Keeps the beast on a leash. The thing is still trapped underneath.">
           <img src="/src/assets/LockDressUp.png" alt="Lock">
         </div>
         <div class="create-skin__draggable create-skin__draggable--pants"
-          data-info="Walter pants - Runway trousers cut with Walter's exaggerated proportions. They already bend the body into a new silhouette, but they need the right top half to feel complete.">
+          data-info="Walter pants - Runway trousers cut with Walter's exaggerated proportions. They already bend the body into a new silhouette, but they need the right top half to feel complete."
+          data-info-mobile="Bend the body into a new silhouette. Need the right top to feel complete.">
           <img src="/src/assets/PantsDressUp.png" alt="Pants">
         </div>
       </div>
