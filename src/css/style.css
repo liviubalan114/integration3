@@ -3157,8 +3157,38 @@ strong {
 @media (min-width: 90rem) {
     /* Desktop 1440px styles */
 
+    .site-header {
+        padding: 1rem 4rem 0;
+    }
+
+    .logo-link::before {
+        width: 25.625rem;
+        height: 15.625rem;
+        top: -5rem;
+        left: -12rem;
+    }
+
     .tickets-btn {
-        font-size: 1.5rem; /* 24px */
+        font-size: 1.5rem;
+        /* 24px */
+    }
+
+    .hero-portrait {
+        z-index: 150;
+        /* Above header to allow portrait overflow */
+    }
+
+    .portrait-image {
+        width: 90%;
+        height: auto;
+        object-fit: contain;
+        margin: 2rem 0 0 -2rem;
+    }
+
+    .scroll-indicator img {
+        height: auto;
+        width: 13rem;
+        padding-top: 14rem;
     }
 
     .about-walter__text {
