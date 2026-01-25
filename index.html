@@ -50,8 +50,10 @@
     <div class="header-wrapper">
       <!-- Walter Portrait -->
       <div class="hero-portrait">
-        <img src="/src/assets/WalterHeader.png" alt="Walter Van Beirendonck portrait with decorative elements"
-          class="portrait-image">
+        <img src="/src/assets/WalterHeader.avif"
+          srcset="/src/assets/WalterHeader-270w.avif 270w, /src/assets/WalterHeader-649w.avif 649w, /src/assets/WalterHeader-829w.avif 829w, /src/assets/WalterHeader-972w.avif 972w, /src/assets/WalterHeader-1190w.avif 1190w, /src/assets/WalterHeader-1368w.avif 1368w"
+          sizes="(max-width: 768px) 50vw, (max-width: 1024px) 40vw, 600px"
+          alt="Walter Van Beirendonck portrait with decorative elements" class="portrait-image">
       </div>
 
       <!-- Hero Title -->
@@ -84,7 +86,7 @@
         <!-- Desktop-only interactive trigger -->
         <button class="intro__trigger desktop-only" aria-expanded="false" aria-controls="identity-text">
           <span class="intro__trigger-label">Ask Walter</span>
-          <img src="/src/assets/walterinteraction.png" alt="" class="intro__trigger-image" aria-hidden="true">
+          <img src="/src/assets/walterinteraction.avif" alt="" class="intro__trigger-image" aria-hidden="true">
         </button>
 
         <!-- Text content: visible on mobile, toggleable on desktop -->
@@ -98,7 +100,9 @@
       </div>
 
       <div class="intro__image">
-        <img src="/src/assets/Doll.png" alt="Baby representing origin and vulnerability" class="intro__image-media">
+        <img src="/src/assets/Doll.avif" srcset="/src/assets/Doll-300w.avif 300w, /src/assets/Doll-780w.avif 780w"
+          sizes="(max-width: 768px) 80vw, (max-width: 1024px) 50vw, 780px"
+          alt="Baby representing origin and vulnerability" class="intro__image-media">
       </div>
 
     </div>
@@ -112,7 +116,10 @@
 
         <!-- Title -->
         <div class="octopus__image">
-          <img src="/src/assets/Octopus.png" alt="Man with octopus tentacles emerging" class="octopus__image-media">
+          <img src="/src/assets/Octopus.avif"
+            srcset="/src/assets/Octopus-890w.avif 890w, /src/assets/Octopus-1580w.avif 1580w, /src/assets/Octopus-2052w.avif 2052w, /src/assets/Octopus-2303w.avif 2303w, /src/assets/Octopus-2700w.avif 2700w, /src/assets/Octopus-3050w.avif 3050w"
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 2000px" alt="Man with octopus tentacles emerging"
+            class="octopus__image-media">
         </div>
 
         <div class="octopus__title-wrapper">
@@ -138,10 +145,14 @@
 
   <!-- MoMu Section -->
   <section class="momu">
-    <img src="/src/assets/museum-background.svg" alt="" class="momu-background" aria-hidden="true">
+    <img src="/src/assets/museum-background.svg" alt="" class="momu-background momu-background-mobile"
+      aria-hidden="true">
+    <img src="" alt="" class="momu-background momu-background-desktop" aria-hidden="true">
+    <img src="" alt="you need a new skin" class="momu-title momu-title-svg">
+
     <div class="section-inner">
 
-      <h2 class="momu-title">you need a new skin</h2>
+      <h2 class="momu-title momu-title-text">you need a new skin</h2>
 
       <div class="momu-content">
         <p>Thankfully, there is someone who can help you. <strong>At MoMu, six pedestals wait</strong>. Each one honors
@@ -170,22 +181,28 @@
 
         <!-- Left pedestal (tablet/desktop only) -->
         <div class="artifacts__pedestal artifacts__pedestal--side artifacts__pedestal--left" id="artifactsPedestalLeft">
-          <img src="/src/assets/podium.png" alt="" class="artifacts__pedestal-image">
-          <img src="/src/assets/drikSpray.png" alt="" class="artifacts__artifact-image" id="artifactsImageLeft">
+          <img src="/src/assets/podium.avif"
+            srcset="/src/assets/podium-256w.avif 256w, /src/assets/podium-352w.avif 352w, /src/assets/podium-528w.avif 528w"
+            sizes="(max-width: 1024px) 150px, 180px" alt="" class="artifacts__pedestal-image">
+          <img src="/src/assets/drikSpray.avif" alt="" class="artifacts__artifact-image" id="artifactsImageLeft">
         </div>
 
         <!-- Center pedestal (main) -->
         <div class="artifacts__pedestal artifacts__pedestal--center" id="artifactsPedestalCenter">
-          <img src="/src/assets/podium.png" alt="" class="artifacts__pedestal-image">
-          <img src="/src/assets/WalterHat.png" alt="Walter's cap artifact" class="artifacts__artifact-image"
+          <img src="/src/assets/podium.avif"
+            srcset="/src/assets/podium-256w.avif 256w, /src/assets/podium-352w.avif 352w, /src/assets/podium-528w.avif 528w"
+            sizes="(max-width: 768px) 200px, 260px" alt="" class="artifacts__pedestal-image">
+          <img src="/src/assets/WalterHat.avif" alt="Walter's cap artifact" class="artifacts__artifact-image"
             id="artifactsImageCenter">
         </div>
 
         <!-- Right pedestal (tablet/desktop only) -->
         <div class="artifacts__pedestal artifacts__pedestal--side artifacts__pedestal--right"
           id="artifactsPedestalRight">
-          <img src="/src/assets/podium.png" alt="" class="artifacts__pedestal-image">
-          <img src="/src/assets/AnnInk.png" alt="" class="artifacts__artifact-image" id="artifactsImageRight">
+          <img src="/src/assets/podium.avif"
+            srcset="/src/assets/podium-256w.avif 256w, /src/assets/podium-352w.avif 352w, /src/assets/podium-528w.avif 528w"
+            sizes="(max-width: 1024px) 150px, 180px" alt="" class="artifacts__pedestal-image">
+          <img src="/src/assets/AnnInk.avif" alt="" class="artifacts__artifact-image" id="artifactsImageRight">
         </div>
 
         <button class="artifacts__nav artifacts__nav--next" id="artifactsNext" aria-label="Next artifact"></button>
@@ -269,28 +286,35 @@
           <img src="/src/assets/blue-triangle.svg" alt="" class="pukpuk__shape pukpuk__shape--blue">
 
           <!-- Card (interactive / animated object) -->
-          <img src="/src/assets/sketch.png" alt="Design sketch held by Walter" class="pukpuk__card">
-
-          <!-- Main Figure -->
-          <img src="/src/assets/pukpuk.png" alt="Walter Van Beirendonck reimagined figure" class="pukpuk__figure">
+          <img src="/src/assets/sketch.avif"
+            srcset="/src/assets/sketch-240w.avif 240w, /src/assets/sketch-468w.avif 468w, /src/assets/sketch-800w.avif 800w"
+            sizes="(max-width: 768px) 30vw, 200px" alt="Design sketch held by Walter" class="pukpuk__card">
 
         </div>
 
-        <p class="pukpuk__alternate-message">perhaps it's not them who can help you</p>
+        <p class="pukpuk__alternate-message">Perhaps the wrong artifact was chosen</p>
 
-        <div class="pukpuk__content">
+        <div class="pukpuk__row">
 
-          <p class="pukpuk__description"><strong>Last of the Antwerp Six</strong> still designing under his own label.
-            The one who revolutionized Belgian fashion and put Antwerp on the global map, <strong>Walter Van
-              Beirendonck</strong> describes himself as a <em>"storyteller"</em> who always conceives his catwalk shows
-            in tandem with his collections.</p>
-          <p class="pukpuk__subtitle">KNOWN FOR HIS BOLD AESTHETIC ROOTED IN:</p>
+          <!-- Main Figure -->
+          <img src="/src/assets/pukpuk.avif" alt="Walter Van Beirendonck reimagined figure" class="pukpuk__figure">
 
-          <ul class="pukpuk__tags">
-            <li class="pukpuk__tag">SUPERNATURAL</li>
-            <li class="pukpuk__tag">SCIENCE FICTION</li>
-            <li class="pukpuk__tag">SPIRITUALITY</li>
-          </ul>
+          <div class="pukpuk__content">
+
+            <p class="pukpuk__description"><strong>Last of the Antwerp Six</strong> still designing under his own label.
+              The one who revolutionized Belgian fashion and put Antwerp on the global map, <strong>Walter Van
+                Beirendonck</strong> describes himself as a <em>"storyteller"</em> who always conceives his catwalk
+              shows
+              in tandem with his collections.</p>
+            <p class="pukpuk__subtitle">KNOWN FOR HIS BOLD AESTHETIC ROOTED IN:</p>
+
+            <ul class="pukpuk__tags">
+              <li class="pukpuk__tag">SUPERNATURAL</li>
+              <li class="pukpuk__tag">SCIENCE FICTION</li>
+              <li class="pukpuk__tag">SPIRITUALITY</li>
+            </ul>
+
+          </div>
 
         </div>
 
@@ -303,23 +327,30 @@
 
   <!-- About Walter Section -->
   <section class="about-walter">
-    <img src="/src/assets/costumes.png" alt="Walter figure" class="about-walter__figure">
-    <img src="/src/assets/secondBlock.svg" alt="" class="about-walter__background" aria-hidden="true">
+    <img src="/src/assets/costumes.avif" srcset="/src/assets/costumes-288w.avif 288w, /src/assets/costumes.avif 422w"
+      sizes="(max-width: 768px) 25vw, 150px" alt="Walter figure" class="about-walter__figure">
+    <img src="/src/assets/secondBlock.svg" alt="" class="about-walter__background about-walter__background--mobile"
+      aria-hidden="true">
+    <img src="" alt="" class="about-walter__background about-walter__background--desktop" aria-hidden="true">
     <div class="about-walter__inner">
 
       <div class="about-walter__content">
         <h2 class="about-walter__title">Fashion as Statement, Skin as Story</h2>
 
-        <p class="about-walter__text">Walter Van Beirendonck's designs fuse synthetic experimentation with traditional
-          embroidery and craftsmanship, blending a futuristic vision with tactile heritage. His garments, <strong>while
-            wearable</strong>, are vehicles for philosophy, protest, and <strong>identity</strong>. On the runway, his
-          use of surreal silhouettes and symbolic accessories challenges how we perceive both fashion and the body
-          itself.</p>
+        <div class="about-walter__text-wrapper">
+          <p class="about-walter__text">Walter Van Beirendonck's designs fuse synthetic experimentation with traditional
+            embroidery and craftsmanship, blending a futuristic vision with tactile heritage. His garments,
+            <strong>while
+              wearable</strong>, are vehicles for philosophy, protest, and <strong>identity</strong>. On the runway, his
+            use of surreal silhouettes and symbolic accessories challenges how we perceive both fashion and the body
+            itself.
+          </p>
 
-        <p class="about-walter__text">His bold aesthetic is defined by <strong>vibrant colours, sinister masks, and
-            provocative titles.</strong> With a mix of strong graphics, innovative cuts, and clashing colour palettes,
-          Van Beirendonck draws from pop music, comics, and global traditions creating a world that's both playful and
-          confrontational.</p>
+          <p class="about-walter__text">His bold aesthetic is defined by <strong>vibrant colours, sinister masks, and
+              provocative titles.</strong> With a mix of strong graphics, innovative cuts, and clashing colour palettes,
+            Van Beirendonck draws from pop music, comics, and global traditions creating a world that's both playful and
+            confrontational.</p>
+        </div>
       </div>
 
     </div>
@@ -340,11 +371,14 @@
       <!-- Desktop-only interactive trigger -->
       <button class="no-more-hiding__trigger desktop-only" aria-expanded="false" aria-controls="no-hiding-content">
         <span class="no-more-hiding__trigger-label">what does he believe</span>
-        <img src="/src/assets/walterinteraction.png" alt="" class="no-more-hiding__trigger-image" aria-hidden="true">
+        <img src="/src/assets/walterinteraction.avif" alt="" class="no-more-hiding__trigger-image" aria-hidden="true">
       </button>
 
       <div class="no-more-hiding__image-container">
-        <img src="/src/assets/woman.png" alt="Angel figure" class="no-more-hiding__image no-more-hiding__image--angel">
+        <img src="/src/assets/woman.avif"
+          srcset="/src/assets/woman-520w.avif 520w, /src/assets/woman-1068w.avif 1068w, /src/assets/woman-1340w.avif 1340w, /src/assets/woman-1680w.avif 1680w, /src/assets/woman-1953w.avif 1953w"
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 1400px" alt="Angel figure"
+          class="no-more-hiding__image no-more-hiding__image--angel">
       </div>
 
       <div class="no-more-hiding__text">
@@ -356,7 +390,9 @@
       </div>
 
       <div class="no-more-hiding__image-container">
-        <img src="/src/assets/beast.png" alt="Beast emerging"
+        <img src="/src/assets/beast.avif"
+          srcset="/src/assets/beast-470w.avif 470w, /src/assets/beast-960w.avif 960w, /src/assets/beast-1218w.avif 1218w, /src/assets/beast-1520w.avif 1520w"
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 1440px" alt="Beast emerging"
           class="no-more-hiding__image no-more-hiding__image--beast">
       </div>
 
@@ -371,65 +407,78 @@
   <section class="create-skin" id="createSkinSection">
     <div class="create-skin__inner">
       <h2 class="create-skin__title">CREATE YOUR NEW SKIN</h2>
+      <p class="create-skin__intro">This is where you create your new skin, drag, combine and learn to see how to make
+        the best skin suited for you</p>
 
       <div class="create-skin__info-panel">
         <div class="create-skin__info-content">
-          <p id="createSkinInfoText">Hover over shapes to learn more...</p>
+          <p id="createSkinInfoText">Interact with the clothes to learn more and create your new skin</p>
         </div>
       </div>
 
       <div class="create-skin__drag-area" id="createSkinDragArea">
         <!-- Shadow silhouette - non-interactive background -->
         <div class="create-skin__shadow">
-          <img src="/src/assets/ShadowDressUp.png" alt="Walter Shadow">
+          <img src="/src/assets/ShadowDressUp.avif" alt="Walter Shadow">
         </div>
 
         <!-- Fusion items (desktop only) -->
         <div class="create-skin__draggable create-skin__draggable--normal-suit"
-          data-info="Suit - A normal fancy suit built for boardrooms and banquets. You can almost see the exact spot where a <strong>protection symbol would sit and ruin its politeness.</strong>">
-          <img src="/src/assets/NormalSuitDressUp.png" alt="Normal Suit">
+          data-info="Suit - A normal fancy suit built for boardrooms and banquets. You can almost see the exact spot where a <strong>protection symbol would sit and ruin its politeness.</strong>"
+          data-info-mobile="Built for boardrooms. A <strong>protection symbol would ruin its politeness.</strong>">
+          <img src="/src/assets/NormalSuitDressUp.avif" alt="Normal Suit">
         </div>
         <div class="create-skin__draggable create-skin__draggable--shield"
-          data-info="Papilla warrior shield - A bright shield that turns the chest into a battlefield. It protects, but strapped alone it feels like it's <strong>searching for a more ordinary suit to corrupt.</strong>">
-          <img src="/src/assets/ShieldDressUp.png" alt="Shield">
+          data-info="Papilla warrior shield - A bright shield that turns the chest into a battlefield. It protects, but strapped alone it feels like it's <strong>searching for a more ordinary suit to corrupt.</strong>"
+          data-info-mobile="Protects the chest. <strong>Searching for a suit to corrupt.</strong>">
+          <img src="/src/assets/ShieldDressUp.avif" alt="Shield">
         </div>
         <div class="create-skin__draggable create-skin__draggable--voodoo"
-          data-info="Voodoo mask - An ancient carved mask that smells of rituals and old gods. Too sacred alone, as if <strong>it's waiting for something shameless</strong> to latch onto it.">
-          <img src="/src/assets/VoodooDressUp.png" alt="Voodoo">
+          data-info="Voodoo mask - An ancient carved mask that smells of rituals and old gods. Too sacred alone, as if <strong>it's waiting for something shameless</strong> to latch onto it."
+          data-info-mobile="Smells of rituals and old gods. <strong>Waiting for something shameless.</strong>">
+          <img src="/src/assets/VoodooDressUp.avif" alt="Voodoo">
         </div>
         <div class="create-skin__draggable create-skin__draggable--bdsm"
-          data-info="BDSM mask - A studded leather hood with zipper mouth and eye slits. It screams control and surrender, but <strong>feels incomplete without an ancient mask</strong> to haunt its shine.">
-          <img src="/src/assets/BdsmDressUp.png" alt="BDSM">
+          data-info="BDSM mask - A studded leather hood with zipper mouth and eye slits. It screams control and surrender, but <strong>feels incomplete without an ancient mask</strong> to haunt its shine."
+          data-info-mobile="Control and surrender. <strong>Incomplete without an ancient mask.</strong>">
+          <img src="/src/assets/BdsmDressUp.avif" alt="BDSM">
         </div>
         <div class="create-skin__draggable create-skin__draggable--wrong-mask"
-          data-info="Striped Walter mask - Voodoo spirit stitched to a fetish hood. Made from Voodoo and Bdsm. Good for your disguise but are you sure that color fits you?">
-          <img src="/src/assets/WrongMaskDressUp.png" alt="Wrong Mask">
+          data-info="Striped Walter mask - Voodoo spirit stitched to a fetish hood. Made from Voodoo and Bdsm. Good for your disguise but are you sure that color fits you?"
+          data-info-mobile="Made from voodoo and bdsm. Good disguise but are you sure that color fits you?">
+          <img src="/src/assets/WrongMaskDressUp.avif" alt="Wrong Mask">
         </div>
 
         <!-- Other draggable items (desktop only) -->
         <div class="create-skin__draggable create-skin__draggable--bow"
-          data-info="Neck bow - A soft ribbon tied too perfectly to be innocent. It's decoration now, one that would make people suspect nothing.">
-          <img src="/src/assets/BowDressUp.png" alt="Bow">
+          data-info="Neck bow - A soft ribbon tied too perfectly to be innocent. It's decoration now, one that would make people suspect nothing."
+          data-info-mobile="Tied too perfectly to be innocent. Makes people suspect nothing.">
+          <img src="/src/assets/BowDressUp.avif" alt="Bow">
         </div>
         <div class="create-skin__draggable create-skin__draggable--hat"
-          data-info="Walter hat - A hand‑made Walter hat that turns the head into a cartoon thought bubble. Optional armor for when you want the joke to sit on top.">
-          <img src="/src/assets/HatDressUp.png" alt="Hat">
+          data-info="Walter hat - A hand‑made Walter hat that turns the head into a cartoon thought bubble. Optional armor for when you want the joke to sit on top."
+          data-info-mobile="Turns the head into a cartoon. Optional armor for when you want the joke on top.">
+          <img src="/src/assets/HatDressUp.avif" alt="Hat">
         </div>
         <div class="create-skin__draggable create-skin__draggable--stick"
-          data-info="Right handed cane - A gentleman's cane with a dangling chain leash. Authority meets restrain, the perfect prop to tame the beast your collar is struggling to contain.">
-          <img src="/src/assets/CorrectStickDressUp.png" alt="Correct Stick">
+          data-info="Right handed cane - A gentleman's cane with a dangling chain leash. Authority meets restrain, the perfect prop to tame the beast your collar is struggling to contain."
+          data-info-mobile="Authority meets restraint. The perfect prop to tame the beast.">
+          <img src="/src/assets/CorrectStickDressUp.avif" alt="Correct Stick">
         </div>
         <div class="create-skin__draggable create-skin__draggable--wrong-cane"
-          data-info="Left handed cane - A gentleman's cane with a dangling chain leash. Authority meets restraint. Close enough to confuse you but maybe try the right hand.">
-          <img src="/src/assets/WrongCaneDressUp.png" alt="Wrong Cane">
+          data-info="Left handed cane - A gentleman's cane with a dangling chain leash. Authority meets restraint. Close enough to confuse you but maybe try the right hand."
+          data-info-mobile="Close enough to confuse you but maybe try the right hand.">
+          <img src="/src/assets/WrongCaneDressUp.avif" alt="Wrong Cane">
         </div>
         <div class="create-skin__draggable create-skin__draggable--lock"
-          data-info="Lock - A sleek metal collar that keeps the beast on a leash. A reminder that the thing is still trapped underneath.">
-          <img src="/src/assets/LockDressUp.png" alt="Lock">
+          data-info="Lock - A sleek metal collar that keeps the beast on a leash. A reminder that the thing is still trapped underneath."
+          data-info-mobile="Keeps the beast on a leash. The thing is still trapped underneath.">
+          <img src="/src/assets/LockDressUp.avif" alt="Lock">
         </div>
         <div class="create-skin__draggable create-skin__draggable--pants"
-          data-info="Walter pants - Runway trousers cut with Walter's exaggerated proportions. They already bend the body into a new silhouette, but they need the right top half to feel complete.">
-          <img src="/src/assets/PantsDressUp.png" alt="Pants">
+          data-info="Walter pants - Runway trousers cut with Walter's exaggerated proportions. They already bend the body into a new silhouette, but they need the right top half to feel complete."
+          data-info-mobile="Bend the body into a new silhouette. Need the right top to feel complete.">
+          <img src="/src/assets/PantsDressUp.avif" alt="Pants">
         </div>
       </div>
 
@@ -494,25 +543,33 @@
         <div class="epilogue__scroll-content">
 
           <div class="epilogue__item epilogue__item--red">
-            <img src="/src/assets/RedHorizontal1.png" alt="Costume 1" class="epilogue__image epilogue__image--red">
+            <img src="/src/assets/RedHorizontal1.avif"
+              srcset="/src/assets/RedHorizontal1-157w.avif 157w, /src/assets/RedHorizontal1-314w.avif 314w, /src/assets/RedHorizontal1-421w.avif 421w"
+              sizes="(max-width: 768px) 25vw, 150px" alt="Costume 1" class="epilogue__image epilogue__image--red">
           </div>
 
           <div class="epilogue__item epilogue__item--yellow">
-            <img src="/src/assets/YellowHorizontal2.png" alt="Costume 2"
-              class="epilogue__image epilogue__image--yellow">
+            <img src="/src/assets/YellowHorizontal2.avif"
+              srcset="/src/assets/YellowHorizontal2-160w.avif 160w, /src/assets/YellowHorizontal2.avif 316w"
+              sizes="(max-width: 768px) 25vw, 150px" alt="Costume 2" class="epilogue__image epilogue__image--yellow">
           </div>
 
           <div class="epilogue__item epilogue__item--green">
-            <img src="/src/assets/GreenHorizontal3.png" alt="Costume 3" class="epilogue__image epilogue__image--green">
+            <img src="/src/assets/GreenHorizontal3.avif"
+              srcset="/src/assets/GreenHorizontal3-160w.avif 160w, /src/assets/GreenHorizontal3-320w.avif 320w, /src/assets/GreenHorizontal3.avif 405w"
+              sizes="(max-width: 768px) 25vw, 150px" alt="Costume 3" class="epilogue__image epilogue__image--green">
           </div>
 
           <div class="epilogue__item epilogue__item--brown">
-            <img src="/src/assets/BornwHorizontal4.png" alt="Costume 4" class="epilogue__image epilogue__image--brown">
+            <img src="/src/assets/BornwHorizontal4.avif"
+              srcset="/src/assets/BornwHorizontal4-168w.avif 168w, /src/assets/BornwHorizontal4-336w.avif 336w, /src/assets/BornwHorizontal4-452w.avif 452w"
+              sizes="(max-width: 768px) 25vw, 150px" alt="Costume 4" class="epilogue__image epilogue__image--brown">
           </div>
 
           <div class="epilogue__item epilogue__item--orange">
-            <img src="/src/assets/OrangeHorizontal5.png" alt="Costume 5"
-              class="epilogue__image epilogue__image--orange">
+            <img src="/src/assets/OrangeHorizontal5.avif"
+              srcset="/src/assets/OrangeHorizontal5-132w.avif 132w, /src/assets/OrangeHorizontal5-288w.avif 288w, /src/assets/OrangeHorizontal5.avif 375w"
+              sizes="(max-width: 768px) 25vw, 150px" alt="Costume 5" class="epilogue__image epilogue__image--orange">
           </div>
 
           <!-- Add more costume items as needed -->
@@ -545,7 +602,9 @@
 
   <!-- Footer -->
   <footer class="site-footer">
-    <img src="/src/assets/MobileFooter.svg" alt="" class="site-footer__background" aria-hidden="true">
+    <img src="/src/assets/MobileFooter.svg" alt="" class="site-footer__background site-footer__background--mobile"
+      aria-hidden="true">
+    <img src="" alt="" class="site-footer__background site-footer__background--desktop" aria-hidden="true">
     <div class="site-footer__inner">
 
       <h2 class="site-footer__heading">want to hear the stories of the other Antwerp six?</h2>
@@ -555,15 +614,20 @@
       <a href="https://visit.momu.be/#/tickets/time?group=timeSlot_and_day"
         class="site-footer__button site-footer__button--secondary" target="_blank" rel="noopener">TICKETS</a>
 
+      <div class="site-footer__image-links">
+        <a href="https://www.momu.be/nl/collection-stories/christian-dior" target="_blank" rel="noopener"
+          class="site-footer__image-link">
+          <img src="/src/assets/dior-dress.avif"
+            srcset="/src/assets/dior-dress-416w.avif 416w, /src/assets/dior-dress-637w.avif 637w, /src/assets/dior-dress-800w.avif 800w"
+            sizes="(max-width: 768px) 40vw, 210px" alt="Dior dress" class="site-footer__dress">
+        </a>
 
-      <a href="https://www.momu.be/nl/collection-stories/christian-dior" target="_blank" rel="noopener"
-        class="site-footer__image-link">
-        <img src="/src/assets/dior-dress.png" alt="Dior dress" class="site-footer__dress">
-      </a>
-
-      <a href="https://www.momu.be" target="_blank" rel="noopener" class="site-footer__image-link">
-        <img src="/src/assets/museum-exhibit.png" alt="Museum exhibition" class="site-footer__museum">
-      </a>
+        <a href="https://www.momu.be" target="_blank" rel="noopener" class="site-footer__image-link">
+          <img src="/src/assets/museum-exhibit.avif"
+            srcset="/src/assets/museum-exhibit-532w.avif 532w, /src/assets/museum-exhibit-798w.avif 798w, /src/assets/museum-exhibit-1110w.avif 1110w, /src/assets/museum-exhibit-1430w.avif 1430w, /src/assets/museum-exhibit-1690w.avif 1690w"
+            sizes="(max-width: 768px) 50vw, 270px" alt="Museum exhibition" class="site-footer__museum">
+        </a>
+      </div>
 
       <p class="site-footer__social-label">Follow momu on:</p>
 

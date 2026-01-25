@@ -11,30 +11,72 @@ import {
     initContinuousAnimations,
     dragFeedback,
     dragSnapBack,
-    initBrushEffect
+    initBrushEffect,
+    initTextScrollAnimations,
+    initImageAnimations
 } from './gsap.js';
 
 // Import images for artifacts carousel (Vite handles paths)
-import WalterHatImg from '../assets/WalterHat.png';
-import AnnInkImg from '../assets/AnnInk.png';
-import DriesLipImg from '../assets/DriesLip.png';
-import MarinaBagImg from '../assets/MarinaBag.png';
-import DirkFootImg from '../assets/DirkFoot.png';
-import DrikSprayImg from '../assets/drikSpray.png';
+import WalterHatImg from '../assets/WalterHat.avif';
+import AnnInkImg from '../assets/AnnInk.avif';
+import DriesLipImg from '../assets/DriesLip.avif';
+import MarinaBagImg from '../assets/MarinaBag.avif';
+import DirkFootImg from '../assets/DirkFoot.avif';
+import DrikSprayImg from '../assets/drikSpray.avif';
 
 // Import images for dress-up interaction
-import WalterSuitDressUpImg from '../assets/WalterSuitDressUp.png';
-import WalterMaskDressUpImg from '../assets/WalterMaskDressUp.png';
-import WrongMaskDressUpImg from '../assets/WrongMaskDressUp.png';
-import BowDressUpImg from '../assets/BowDressUp.png';
-import HatDressUpImg from '../assets/HatDressUp.png';
-import CorrectStickDressUpImg from '../assets/CorrectStickDressUp.png';
-import WrongCaneDressUpImg from '../assets/WrongCaneDressUp.png';
-import LockDressUpImg from '../assets/LockDressUp.png';
-import PantsDressUpImg from '../assets/PantsDressUp.png';
+import WalterSuitDressUpImg from '../assets/WalterSuitDressUp.avif';
+import WalterMaskDressUpImg from '../assets/WalterMaskDressUp.avif';
+import WrongMaskDressUpImg from '../assets/WrongMaskDressUp.avif';
+import BowDressUpImg from '../assets/BowDressUp.avif';
+import HatDressUpImg from '../assets/HatDressUp.avif';
+import CorrectStickDressUpImg from '../assets/CorrectStickDressUp.avif';
+import WrongCaneDressUpImg from '../assets/WrongCaneDressUp.avif';
+import LockDressUpImg from '../assets/LockDressUp.avif';
+import PantsDressUpImg from '../assets/PantsDressUp.avif';
+import NormalSuitDressUpImg from '../assets/NormalSuitDressUp.avif';
+import ShadowDressUpImg from '../assets/ShadowDressUp.avif';
+import ShieldDressUpImg from '../assets/ShieldDressUp.avif';
+import VoodooDressUpImg from '../assets/VoodooDressUp.avif';
+import BdsmDressUpImg from '../assets/BdsmDressUp.avif';
+
+// Import section images (only used ones)
+import MomuDesktopTabletImg from '../assets/MomuDesktopTablet.svg';
+import SkinTextImg from '../assets/skinText.svg';
+import CostumesImg from '../assets/costumes.avif';
+
+// Import background SVGs for CSS (only used ones)
+import MobileFooterImg from '../assets/MobileFooter.svg';
+import FooterDesktopImg from '../assets/FooterDesktop.svg';
+import WalterDesktopSectionImg from '../assets/walterDesktopsection.svg';
+import LeftRedImg from '../assets/leftRed.svg';
+import RightPurpleImg from '../assets/rightPurple.svg';
+import SecondBlockImg from '../assets/secondBlock.svg';
 
 // Register GSAP plugins
 gsap.registerPlugin(Draggable);
+
+// Set CSS custom properties for background images
+document.documentElement.style.setProperty('--mobile-footer-bg', `url(${MobileFooterImg})`);
+document.documentElement.style.setProperty('--footer-desktop-bg', `url(${FooterDesktopImg})`);
+document.documentElement.style.setProperty('--momu-desktop-bg', `url(${MomuDesktopTabletImg})`);
+document.documentElement.style.setProperty('--walter-desktop-bg', `url(${WalterDesktopSectionImg})`);
+document.documentElement.style.setProperty('--left-red-bg', `url(${LeftRedImg})`);
+document.documentElement.style.setProperty('--right-purple-bg', `url(${RightPurpleImg})`);
+
+// Set momu section image sources
+const momuDesktopImg = document.querySelector('.momu-background-desktop');
+const skinTextImg = document.querySelector('.momu-title-svg');
+if (momuDesktopImg) momuDesktopImg.src = MomuDesktopTabletImg;
+if (skinTextImg) skinTextImg.src = SkinTextImg;
+
+// Set about-walter section image sources
+const walterFigureImg = document.querySelector('.about-walter__figure');
+const walterBackgroundMobileImg = document.querySelector('.about-walter__background--mobile');
+const walterBackgroundDesktopImg = document.querySelector('.about-walter__background--desktop');
+if (walterFigureImg) walterFigureImg.src = CostumesImg;
+if (walterBackgroundMobileImg) walterBackgroundMobileImg.src = SecondBlockImg;
+if (walterBackgroundDesktopImg) walterBackgroundDesktopImg.src = WalterDesktopSectionImg;
 
 // Initialize brush effect only on desktop (1024px and above)
 if (window.innerWidth >= 1024) {
@@ -117,6 +159,11 @@ const ArtifactsCarousel = () => {
 
     // Track if entrance animation has played
     let hasPlayedEntrance = false;
+
+    // Initialize background text centering - clear any GSAP transforms
+    if (backgroundTextEl) {
+        gsap.set(backgroundTextEl, { clearProps: "all" });
+    }
 
     // Initialize with entrance animation
     const init = () => {
@@ -321,16 +368,29 @@ const CreateSkinInteraction = () => {
     if (!dragArea) return;
 
     // Default info text
-    const DEFAULT_INFO = 'Hover over shapes to learn more...';
+    const DEFAULT_INFO = 'Interact with the clothes to learn more and create your new skin';
 
     // Helper function to add info hover handlers
     const addInfoHoverHandlers = (element) => {
+        // Mouse events for desktop
         element.addEventListener('mouseenter', function () {
-            const info = this.getAttribute('data-info');
+            const isMobile = window.innerWidth < 768;
+            const info = isMobile ?
+                (this.getAttribute('data-info-mobile') || this.getAttribute('data-info')) :
+                this.getAttribute('data-info');
             if (info && infoText) infoText.innerHTML = info;
         });
         element.addEventListener('mouseleave', function () {
             if (infoText) infoText.textContent = DEFAULT_INFO;
+        });
+
+        // Touch events for tablet
+        element.addEventListener('touchstart', function () {
+            const isMobile = window.innerWidth < 768;
+            const info = isMobile ?
+                (this.getAttribute('data-info-mobile') || this.getAttribute('data-info')) :
+                this.getAttribute('data-info');
+            if (info && infoText) infoText.innerHTML = info;
         });
     };
 
@@ -613,8 +673,14 @@ const CreateSkinInteraction = () => {
             fullSize.style.zIndex = '999';
         }
 
+        // Copy mobile info attribute if it exists
+        const mobileInfo = preview.getAttribute('data-info-mobile');
+        if (mobileInfo) {
+            fullSize.setAttribute('data-info-mobile', mobileInfo);
+        }
+
         if (window.innerWidth < 768) {
-            const info = fullSize.getAttribute('data-info');
+            const info = fullSize.getAttribute('data-info-mobile') || fullSize.getAttribute('data-info');
             if (info && infoText) {
                 infoText.innerHTML = info;
             }
@@ -678,21 +744,22 @@ const CreateSkinInteraction = () => {
             drawerContent.innerHTML = '';
 
             const mobileShapes = [
-                { className: 'suit', previewSize: '4rem', fullSize: '11.5rem', image: WalterSuitDressUpImg, info: 'Walter suit - Tailored suit fused with a papilla shield. Perfect protection, perfect blend, half office, half battlefield. For the one that never sleeps' },
-                { className: 'mask', previewSize: '3.5rem', fullSize: '5rem', image: WalterMaskDressUpImg, info: 'Walter mask - Voodoo spirit stitched to a fetish hood. Sacred and obscene at once, looks like you are hiding your darkest secrets under it..' },
-                { className: 'wrong-mask', previewSize: '3rem', fullSize: '4rem', image: WrongMaskDressUpImg, info: 'Striped Walter mask - Voodoo spirit stitched to a fetish hood. Made from Voodoo and Bdsm. Good for your disguise but are you sure that color fits you?' },
-                { className: 'bow', previewSize: '2.5rem', fullSize: '2rem', image: BowDressUpImg, info: "Neck bow - A soft ribbon tied too perfectly to be innocent. It's decoration now, one that would make people suspect nothing." },
-                { className: 'hat', previewSize: '3rem', fullSize: '5rem', image: HatDressUpImg, info: 'Walter hat - A hand‑made Walter hat that turns the head into a cartoon thought bubble. Optional armor for when you want the joke to sit on top.' },
-                { className: 'stick', previewSize: '1.5rem', fullSize: '3.5rem', image: CorrectStickDressUpImg, info: "Right handed cane - A gentleman's cane with a dangling chain leash. Authority meets restrain, the perfect prop to tame the beast your collar is struggling to contain." },
-                { className: 'wrong-cane', previewSize: '1rem', fullSize: '2.5rem', image: WrongCaneDressUpImg, info: "Left handed cane - A gentleman's cane with a dangling chain leash. Authority meets restraint. Close enough to confuse you but maybe try the right hand." },
-                { className: 'lock', previewSize: '2.5rem', fullSize: '2.5rem', image: LockDressUpImg, info: 'Lock - A sleek metal collar that keeps the beast on a leash. A reminder that the thing is still trapped underneath.' },
-                { className: 'pants', previewSize: '3rem', fullSize: '8rem', image: PantsDressUpImg, info: "Walter pants - Runway trousers cut with Walter's exaggerated proportions. They already bend the body into a new silhouette, but they need the right top half to feel complete." }
+                { className: 'suit', previewSize: '4rem', fullSize: '11.5rem', image: WalterSuitDressUpImg, info: 'Walter suit - Tailored suit fused with a papilla shield. Perfect protection, perfect blend, half office, half battlefield. For the one that never sleeps', infoMobile: 'Tailored suit fused with a shield. Half office, half battlefield.' },
+                { className: 'mask', previewSize: '3.5rem', fullSize: '5rem', image: WalterMaskDressUpImg, info: 'Walter mask - Voodoo spirit stitched to a fetish hood. Sacred and obscene at once, looks like you are hiding your darkest secrets under it..', infoMobile: 'Sacred and obscene. Hiding your darkest secrets under it.' },
+                { className: 'wrong-mask', previewSize: '3rem', fullSize: '4rem', image: WrongMaskDressUpImg, info: 'Striped Walter mask - Voodoo spirit stitched to a fetish hood. Made from Voodoo and Bdsm. Good for your disguise but are you sure that color fits you?', infoMobile: 'Made from voodoo and bdsm. Good disguise but are you sure that color fits you?' },
+                { className: 'bow', previewSize: '2.5rem', fullSize: '2rem', image: BowDressUpImg, info: "Neck bow - A soft ribbon tied too perfectly to be innocent. It's decoration now, one that would make people suspect nothing.", infoMobile: 'Tied too perfectly to be innocent. Makes people suspect nothing.' },
+                { className: 'hat', previewSize: '3rem', fullSize: '5rem', image: HatDressUpImg, info: 'Walter hat - A hand‑made Walter hat that turns the head into a cartoon thought bubble. Optional armor for when you want the joke to sit on top.', infoMobile: 'Turns the head into a cartoon. Optional armor for when you want the joke on top.' },
+                { className: 'stick', previewSize: '1.5rem', fullSize: '3.5rem', image: CorrectStickDressUpImg, info: "Right handed cane - A gentleman's cane with a dangling chain leash. Authority meets restrain, the perfect prop to tame the beast your collar is struggling to contain.", infoMobile: 'Authority meets restraint. The perfect prop to tame the beast.' },
+                { className: 'wrong-cane', previewSize: '1rem', fullSize: '2.5rem', image: WrongCaneDressUpImg, info: "Left handed cane - A gentleman's cane with a dangling chain leash. Authority meets restraint. Close enough to confuse you but maybe try the right hand.", infoMobile: 'Close enough to confuse you but maybe try the right hand.' },
+                { className: 'lock', previewSize: '2.5rem', fullSize: '2.5rem', image: LockDressUpImg, info: 'Lock - A sleek metal collar that keeps the beast on a leash. A reminder that the thing is still trapped underneath.', infoMobile: 'Keeps the beast on a leash. The thing is still trapped underneath.' },
+                { className: 'pants', previewSize: '3rem', fullSize: '8rem', image: PantsDressUpImg, info: "Walter pants - Runway trousers cut with Walter's exaggerated proportions. They already bend the body into a new silhouette, but they need the right top half to feel complete.", infoMobile: 'Bend the body into a new silhouette. Need the right top to feel complete.' }
             ];
 
             mobileShapes.forEach((shape, index) => {
                 const preview = document.createElement('div');
                 preview.className = 'create-skin__preview ' + shape.className;
                 preview.setAttribute('data-info', shape.info);
+                preview.setAttribute('data-info-mobile', shape.infoMobile);
                 preview.setAttribute('data-shape-class', shape.className);
                 preview.setAttribute('data-shape-index', index);
                 preview.setAttribute('data-full-size', shape.fullSize);
@@ -745,13 +812,117 @@ const CreateSkinInteraction = () => {
     });
 };
 
+// ================================================
+// INTRO SECTION - WALTER TRIGGER
+// ================================================
+const IntroTrigger = () => {
+    const trigger = document.querySelector('.intro__trigger');
+    const text = document.querySelector('.intro__text');
+
+    if (!trigger || !text) return;
+
+    trigger.addEventListener('click', () => {
+        const isVisible = text.classList.contains('is-visible');
+
+        if (isVisible) {
+            text.classList.remove('is-visible');
+            trigger.setAttribute('aria-expanded', 'false');
+        } else {
+            text.classList.add('is-visible');
+            trigger.setAttribute('aria-expanded', 'true');
+        }
+    });
+};
+
+// ================================================
+// NO MORE HIDING SECTION - WALTER TRIGGER
+// ================================================
+const NoMoreHidingTrigger = () => {
+    const trigger = document.querySelector('.no-more-hiding__trigger');
+    const quote = document.querySelector('.no-more-hiding__quote');
+
+    if (!trigger || !quote) return;
+
+    trigger.addEventListener('click', () => {
+        const isVisible = quote.classList.contains('is-visible');
+
+        if (isVisible) {
+            quote.classList.remove('is-visible');
+            trigger.setAttribute('aria-expanded', 'false');
+        } else {
+            quote.classList.add('is-visible');
+            trigger.setAttribute('aria-expanded', 'true');
+        }
+    });
+};
+
+// Draggable horizontal scroll for epilogue costumes (desktop)
+const EpilogueDraggableScroll = () => {
+    const container = document.querySelector('.epilogue__scroll-container');
+    const content = document.querySelector('.epilogue__scroll-content');
+
+    if (!container || !content) return;
+
+    // Only enable on desktop (1024px+)
+    if (window.innerWidth < 1024) return;
+
+    // Calculate bounds
+    const updateBounds = () => {
+        const containerWidth = container.offsetWidth;
+        const contentWidth = content.scrollWidth;
+        const maxScroll = contentWidth - containerWidth;
+
+        return { minX: -maxScroll, maxX: 0 };
+    };
+
+    let bounds = updateBounds();
+
+    // Create draggable
+    Draggable.create(content, {
+        type: 'x',
+        bounds: bounds,
+        inertia: true,
+        edgeResistance: 0.65,
+        cursor: 'grab',
+        activeCursor: 'grabbing',
+        onPress: function () {
+            content.style.cursor = 'grabbing';
+        },
+        onRelease: function () {
+            content.style.cursor = 'grab';
+        }
+    });
+
+    // Update bounds on resize
+    window.addEventListener('resize', () => {
+        bounds = updateBounds();
+        const draggable = Draggable.get(content);
+        if (draggable) {
+            draggable.applyBounds(bounds);
+        }
+    });
+
+    // Set initial cursor
+    content.style.cursor = 'grab';
+};
+
 // Initialize when DOM is ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
         ArtifactsCarousel();
         CreateSkinInteraction();
+        initTextScrollAnimations();
+        initImageAnimations();
+        IntroTrigger();
+        NoMoreHidingTrigger();
+        EpilogueDraggableScroll();
     });
 } else {
     ArtifactsCarousel();
     CreateSkinInteraction();
+    initTextScrollAnimations();
+    initImageAnimations();
+    IntroTrigger();
+    NoMoreHidingTrigger();
+    EpilogueDraggableScroll();
 }

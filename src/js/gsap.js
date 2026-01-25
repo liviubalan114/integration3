@@ -3,6 +3,9 @@
 // ================================================
 
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 // Initial entrance animation from below
 export const entranceAnimation = (labelEl, quoteEl, centerPedestal, callback) => {
@@ -42,6 +45,8 @@ export const transitionAnimation = (labelEl, quoteEl, backgroundTextEl, centerIm
         ease: "power2.inOut"
     })
         .to(backgroundTextEl, {
+            xPercent: -50,
+            yPercent: -50,
             scale: 1.1,
             opacity: 0,
             duration: 0.3,
@@ -71,6 +76,8 @@ export const transitionAnimation = (labelEl, quoteEl, backgroundTextEl, centerIm
             ease: "power2.out"
         }, "<0.1")
         .to(backgroundTextEl, {
+            xPercent: -50,
+            yPercent: -50,
             scale: 1,
             opacity: 1,
             duration: 0.4,
@@ -87,11 +94,11 @@ export const showWalterSuccess = (centerPedestal) => {
 
     // Animate glow pulse
     gsap.fromTo(glow,
-        { scale: 0.3, opacity: 1 },
+        { scale: 0.5, opacity: 1 },
         {
-            scale: 3.5,
+            scale: 2,
             opacity: 0,
-            duration: 2.5,
+            duration: 4,
             ease: "power2.out",
             onComplete: () => glow.remove()
         }
@@ -151,16 +158,8 @@ export const initContinuousAnimations = (leftPedestal, rightPedestal, background
         });
     }
 
-    // Background text very subtle rotation (only on desktop)
-    if (window.innerWidth >= 768 && backgroundTextEl) {
-        gsap.to(backgroundTextEl, {
-            rotation: 3,
-            duration: 8,
-            ease: "sine.inOut",
-            repeat: -1,
-            yoyo: true
-        });
-    }
+    // Background text rotation disabled - conflicts with CSS centering
+    // TODO: Fix centering issue if animation is needed later
 };
 
 // Enhanced drag feedback with elastic resistance
@@ -344,4 +343,344 @@ export const initBrushEffect = () => {
         window.removeEventListener('resize', resize);
         canvas.remove();
     };
+};
+
+// Text fade animations on scroll
+export const initTextScrollAnimations = () => {
+    // Select all text elements to animate (excluding artifacts title and footer)
+    const textElements = gsap.utils.toArray('h1, h2, h3, h4, p, blockquote, .artifacts__label, .artifacts__quote');
+
+    // Filter out artifacts title and footer elements
+    const filteredElements = textElements.filter(el => {
+        return !el.classList.contains('artifacts__title') &&
+            !el.closest('.site-footer');
+    });
+
+    filteredElements.forEach(element => {
+        // Adjust start point based on screen size - earlier on tablet
+        const isTablet = window.matchMedia('(min-width: 768px)').matches;
+        const startPoint = isTablet ? "top 80%" : "top 95%";
+
+        gsap.fromTo(element,
+            {
+                opacity: 0,
+                y: 40,
+                rotation: -2
+            },
+            {
+                opacity: 1,
+                y: 0,
+                rotation: 0,
+                duration: 0.5,
+                ease: "back.out(1.5)",
+                scrollTrigger: {
+                    trigger: element,
+                    start: startPoint,
+                    end: "top 25%",
+                    toggleActions: "play reverse play reverse",
+                    scrub: 0.3
+                }
+            }
+        );
+    });
+
+    // Animate colored block elements sliding in from left
+    const coloredBlocks = gsap.utils.toArray('.artifacts__title, .no-more-hiding__quote, .pukpuk__tag');
+    const isTablet = window.matchMedia('(min-width: 768px)').matches;
+    const blockStartPoint = isTablet ? "top 90%" : "top 100%";
+
+    coloredBlocks.forEach(block => {
+        gsap.fromTo(block,
+            {
+                x: -100,
+                opacity: 0
+            },
+            {
+                x: 0,
+                opacity: 1,
+                duration: 0.8,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: block,
+                    start: blockStartPoint,
+                    toggleActions: "play reverse play reverse"
+                }
+            }
+        );
+    });
+
+    // Pukpuk card falling animation
+    const pukpukCard = document.querySelector('.pukpuk__card');
+    if (pukpukCard) {
+        const isTablet = window.matchMedia('(min-width: 768px)').matches;
+        const cardStartPoint = isTablet ? "top 75%" : "top 85%";
+
+        gsap.fromTo(pukpukCard,
+            {
+                y: -200,
+                rotation: -30,
+                opacity: 0
+            },
+            {
+                y: 0,
+                rotation: 17,
+                opacity: 1,
+                duration: 1.5,
+                ease: "bounce.out",
+                scrollTrigger: {
+                    trigger: pukpukCard,
+                    start: cardStartPoint,
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
+    }
+};
+
+// ================================================
+// IMAGE ENTRANCE ANIMATIONS
+// ================================================
+
+export const initImageAnimations = () => {
+    const isTablet = window.matchMedia('(min-width: 768px)').matches;
+
+    // Hero portrait - scale up from small
+    const heroPortrait = document.querySelector('.portrait-image');
+    if (heroPortrait) {
+        gsap.fromTo(heroPortrait,
+            { scale: 0.8, opacity: 0 },
+            {
+                scale: 1,
+                opacity: 1,
+                duration: 1.2,
+                ease: "back.out(1.4)",
+                delay: 0.3
+            }
+        );
+    }
+
+    // Hero title lines - stagger in
+    const titleLines = gsap.utils.toArray('.title-line-1, .title-line-2');
+    gsap.fromTo(titleLines,
+        { y: 60, opacity: 0, skewY: 3 },
+        {
+            y: 0,
+            opacity: 1,
+            skewY: 0,
+            duration: 0.8,
+            stagger: 0.2,
+            ease: "power3.out",
+            delay: 0.5
+        }
+    );
+
+    // Intro doll image - float up
+    const dollImage = document.querySelector('.intro__image-media');
+    if (dollImage) {
+        gsap.fromTo(dollImage,
+            { y: 80, opacity: 0, scale: 0.9 },
+            {
+                y: 0,
+                opacity: 1,
+                scale: 1,
+                duration: 1,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: dollImage,
+                    start: isTablet ? "top 85%" : "top 95%",
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
+    }
+
+    // Octopus image - emerge from side
+    const octopusImage = document.querySelector('.octopus__image-media');
+    if (octopusImage) {
+        gsap.fromTo(octopusImage,
+            { x: -100, opacity: 0, rotation: -5 },
+            {
+                x: 0,
+                opacity: 1,
+                rotation: 0,
+                duration: 1.2,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: octopusImage,
+                    start: isTablet ? "top 80%" : "top 90%",
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
+    }
+
+    // Pukpuk figure - slide up with bounce
+    const pukpukFigure = document.querySelector('.pukpuk__figure');
+    if (pukpukFigure) {
+        gsap.fromTo(pukpukFigure,
+            { y: 100, opacity: 0 },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 1,
+                ease: "back.out(1.2)",
+                scrollTrigger: {
+                    trigger: pukpukFigure,
+                    start: isTablet ? "top 85%" : "top 95%",
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
+    }
+
+    // About Walter figure - scale and fade
+    const walterFigure = document.querySelector('.about-walter__figure');
+    if (walterFigure) {
+        gsap.fromTo(walterFigure,
+            { scale: 0.85, opacity: 0, y: 50 },
+            {
+                scale: 1,
+                opacity: 1,
+                y: 0,
+                duration: 1.2,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: walterFigure,
+                    start: isTablet ? "top 85%" : "top 95%",
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
+    }
+
+    // No more hiding - angel and beast images
+    const angelImage = document.querySelector('.no-more-hiding__image--angel');
+    const beastImage = document.querySelector('.no-more-hiding__image--beast');
+
+    if (angelImage) {
+        gsap.fromTo(angelImage,
+            { x: -80, opacity: 0 },
+            {
+                x: 0,
+                opacity: 1,
+                duration: 1,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: angelImage,
+                    start: isTablet ? "top 85%" : "top 95%",
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
+    }
+
+    if (beastImage) {
+        gsap.fromTo(beastImage,
+            { x: 80, opacity: 0, scale: 0.9 },
+            {
+                x: 0,
+                opacity: 1,
+                scale: 1,
+                duration: 1.2,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: beastImage,
+                    start: isTablet ? "top 85%" : "top 95%",
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
+    }
+
+    // Triangle shapes - pop in
+    const blueTriangle = document.querySelector('.pukpuk__shape--blue');
+    const yellowTriangle = document.querySelector('.pukpuk__shape--yellow');
+
+    if (blueTriangle) {
+        gsap.fromTo(blueTriangle,
+            { scale: 0, rotation: -45, opacity: 0 },
+            {
+                scale: 1,
+                rotation: 0,
+                opacity: 1,
+                duration: 0.8,
+                ease: "back.out(2)",
+                scrollTrigger: {
+                    trigger: blueTriangle,
+                    start: "top 90%",
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
+    }
+
+    if (yellowTriangle) {
+        gsap.fromTo(yellowTriangle,
+            { scale: 0, rotation: 45, opacity: 0 },
+            {
+                scale: 1,
+                rotation: 0,
+                opacity: 1,
+                duration: 0.8,
+                ease: "back.out(2)",
+                scrollTrigger: {
+                    trigger: yellowTriangle,
+                    start: "top 95%",
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
+    }
+
+    // Epilogue costume images - stagger fade in
+    const costumeImages = gsap.utils.toArray('.epilogue__item img');
+    costumeImages.forEach((img, i) => {
+        gsap.fromTo(img,
+            { opacity: 0, y: 30, scale: 0.95 },
+            {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                duration: 0.6,
+                delay: i * 0.1,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: img.closest('.epilogue__scroll-container') || img,
+                    start: "top 85%",
+                    toggleActions: "play none none none"
+                }
+            }
+        );
+    });
+
+    // Freedom text - dramatic entrance
+    const freedomText = document.querySelector('.no-more-hiding__freedom-text');
+    if (freedomText) {
+        gsap.fromTo(freedomText,
+            { scale: 0.5, opacity: 0 },
+            {
+                scale: 1,
+                opacity: 1,
+                duration: 1,
+                ease: "elastic.out(1, 0.5)",
+                scrollTrigger: {
+                    trigger: freedomText,
+                    start: isTablet ? "top 80%" : "top 90%",
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
+    }
+
+    // Scroll indicator bounce
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    if (scrollIndicator) {
+        gsap.to(scrollIndicator, {
+            y: 10,
+            duration: 1,
+            ease: "sine.inOut",
+            repeat: -1,
+            yoyo: true
+        });
+    }
 };
