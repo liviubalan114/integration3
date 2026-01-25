@@ -436,3 +436,270 @@ export const initTextScrollAnimations = () => {
         );
     }
 };
+
+// ================================================
+// IMAGE ENTRANCE ANIMATIONS
+// ================================================
+
+export const initImageAnimations = () => {
+    const isTablet = window.matchMedia('(min-width: 768px)').matches;
+
+    // Hero portrait - scale up from small
+    const heroPortrait = document.querySelector('.portrait-image');
+    if (heroPortrait) {
+        gsap.fromTo(heroPortrait,
+            { scale: 0.8, opacity: 0 },
+            {
+                scale: 1,
+                opacity: 1,
+                duration: 1.2,
+                ease: "back.out(1.4)",
+                delay: 0.3
+            }
+        );
+    }
+
+    // Hero title lines - stagger in
+    const titleLines = gsap.utils.toArray('.title-line-1, .title-line-2');
+    gsap.fromTo(titleLines,
+        { y: 60, opacity: 0, skewY: 3 },
+        {
+            y: 0,
+            opacity: 1,
+            skewY: 0,
+            duration: 0.8,
+            stagger: 0.2,
+            ease: "power3.out",
+            delay: 0.5
+        }
+    );
+
+    // Intro doll image - float up
+    const dollImage = document.querySelector('.intro__image-media');
+    if (dollImage) {
+        gsap.fromTo(dollImage,
+            { y: 80, opacity: 0, scale: 0.9 },
+            {
+                y: 0,
+                opacity: 1,
+                scale: 1,
+                duration: 1,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: dollImage,
+                    start: isTablet ? "top 85%" : "top 95%",
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
+    }
+
+    // Octopus image - emerge from side
+    const octopusImage = document.querySelector('.octopus__image-media');
+    if (octopusImage) {
+        gsap.fromTo(octopusImage,
+            { x: -100, opacity: 0, rotation: -5 },
+            {
+                x: 0,
+                opacity: 1,
+                rotation: 0,
+                duration: 1.2,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: octopusImage,
+                    start: isTablet ? "top 80%" : "top 90%",
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
+    }
+
+    // Pukpuk figure - slide up with bounce
+    const pukpukFigure = document.querySelector('.pukpuk__figure');
+    if (pukpukFigure) {
+        gsap.fromTo(pukpukFigure,
+            { y: 100, opacity: 0 },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 1,
+                ease: "back.out(1.2)",
+                scrollTrigger: {
+                    trigger: pukpukFigure,
+                    start: isTablet ? "top 85%" : "top 95%",
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
+    }
+
+    // About Walter figure - scale and fade
+    const walterFigure = document.querySelector('.about-walter__figure');
+    if (walterFigure) {
+        gsap.fromTo(walterFigure,
+            { scale: 0.85, opacity: 0, y: 50 },
+            {
+                scale: 1,
+                opacity: 1,
+                y: 0,
+                duration: 1.2,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: walterFigure,
+                    start: isTablet ? "top 85%" : "top 95%",
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
+    }
+
+    // No more hiding - angel and beast images
+    const angelImage = document.querySelector('.no-more-hiding__image--angel');
+    const beastImage = document.querySelector('.no-more-hiding__image--beast');
+
+    if (angelImage) {
+        gsap.fromTo(angelImage,
+            { x: -80, opacity: 0 },
+            {
+                x: 0,
+                opacity: 1,
+                duration: 1,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: angelImage,
+                    start: isTablet ? "top 85%" : "top 95%",
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
+    }
+
+    if (beastImage) {
+        gsap.fromTo(beastImage,
+            { x: 80, opacity: 0, scale: 0.9 },
+            {
+                x: 0,
+                opacity: 1,
+                scale: 1,
+                duration: 1.2,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: beastImage,
+                    start: isTablet ? "top 85%" : "top 95%",
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
+    }
+
+    // Triangle shapes - pop in
+    const blueTriangle = document.querySelector('.pukpuk__shape--blue');
+    const yellowTriangle = document.querySelector('.pukpuk__shape--yellow');
+
+    if (blueTriangle) {
+        gsap.fromTo(blueTriangle,
+            { scale: 0, rotation: -45, opacity: 0 },
+            {
+                scale: 1,
+                rotation: 0,
+                opacity: 1,
+                duration: 0.8,
+                ease: "back.out(2)",
+                scrollTrigger: {
+                    trigger: blueTriangle,
+                    start: "top 90%",
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
+    }
+
+    if (yellowTriangle) {
+        gsap.fromTo(yellowTriangle,
+            { scale: 0, rotation: 45, opacity: 0 },
+            {
+                scale: 1,
+                rotation: 0,
+                opacity: 1,
+                duration: 0.8,
+                ease: "back.out(2)",
+                scrollTrigger: {
+                    trigger: yellowTriangle,
+                    start: "top 95%",
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
+    }
+
+    // Create skin shadow silhouette - fade in
+    const shadowSilhouette = document.querySelector('.create-skin__shadow');
+    if (shadowSilhouette) {
+        gsap.fromTo(shadowSilhouette,
+            { opacity: 0, scale: 0.95 },
+            {
+                opacity: 1,
+                scale: 1,
+                duration: 1,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: shadowSilhouette,
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
+    }
+
+    // Epilogue costume images - stagger fade in
+    const costumeImages = gsap.utils.toArray('.epilogue__item img');
+    costumeImages.forEach((img, i) => {
+        gsap.fromTo(img,
+            { opacity: 0, y: 30, scale: 0.95 },
+            {
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                duration: 0.6,
+                delay: i * 0.1,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: img.closest('.epilogue__scroll-container') || img,
+                    start: "top 85%",
+                    toggleActions: "play none none none"
+                }
+            }
+        );
+    });
+
+    // Freedom text - dramatic entrance
+    const freedomText = document.querySelector('.no-more-hiding__freedom-text');
+    if (freedomText) {
+        gsap.fromTo(freedomText,
+            { scale: 0.5, opacity: 0 },
+            {
+                scale: 1,
+                opacity: 1,
+                duration: 1,
+                ease: "elastic.out(1, 0.5)",
+                scrollTrigger: {
+                    trigger: freedomText,
+                    start: isTablet ? "top 80%" : "top 90%",
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
+    }
+
+    // Scroll indicator bounce
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    if (scrollIndicator) {
+        gsap.to(scrollIndicator, {
+            y: 10,
+            duration: 1,
+            ease: "sine.inOut",
+            repeat: -1,
+            yoyo: true
+        });
+    }
+};

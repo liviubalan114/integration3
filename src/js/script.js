@@ -12,7 +12,8 @@ import {
     dragFeedback,
     dragSnapBack,
     initBrushEffect,
-    initTextScrollAnimations
+    initTextScrollAnimations,
+    initImageAnimations
 } from './gsap.js';
 
 // Import images for artifacts carousel (Vite handles paths)
@@ -891,6 +892,7 @@ if (document.readyState === 'loading') {
         ArtifactsCarousel();
         CreateSkinInteraction();
         initTextScrollAnimations();
+        initImageAnimations();
         IntroTrigger();
         NoMoreHidingTrigger();
     });
@@ -898,6 +900,7 @@ if (document.readyState === 'loading') {
     ArtifactsCarousel();
     CreateSkinInteraction();
     initTextScrollAnimations();
+    initImageAnimations();
     IntroTrigger();
     NoMoreHidingTrigger();
 }
