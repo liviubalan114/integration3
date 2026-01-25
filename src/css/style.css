@@ -21,7 +21,6 @@
 
 
     --section-spacing-mobile: 2rem;
-    --section-spacing-tablet: 3rem;
     --section-spacing-desktop: 4rem;
 
     --font-size-xs: .35rem;
@@ -351,7 +350,7 @@ strong {
 
 /* Identity Text */
 .intro__text {
-    max-width: 90rem;
+    max-width: 50rem;
     margin: 0 auto;
 }
 
@@ -645,8 +644,7 @@ strong {
 }
 
 .pukpuk__title-line_2 {
-    padding-left: 32rem;
-    /* margin-top: 30rem; */
+    padding-left: 7rem;
 }
 
 .pukpuk__layout {
@@ -686,7 +684,11 @@ strong {
     justify-self: center;
     align-self: center;
     margin-left: -5em;
-    margin-top: -27rem;
+    margin-top: -28rem;
+}
+
+.pukpuk--inactive .pukpuk__figure {
+    margin-top: -37rem;
 }
 
 /* Card (Top Layer) */
@@ -718,10 +720,8 @@ strong {
 }
 
 .pukpuk__description {
-    font-size: 1.5rem;
+    font-size: var(--font-size-text);
     line-height: 1.6;
-    margin-left: 4rem;
-    margin-top: 2rem;
 }
 
 .pukpuk__subtitle {
@@ -736,18 +736,12 @@ strong {
 }
 
 .pukpuk__tags {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
+    display: flex;
+    flex-direction: column;
     gap: var(--whitespace-s);
     list-style: none;
     padding: 0;
     margin: 0;
-}
-
-.pukpuk__tag:nth-child(3) {
-    grid-column: 1 / -1;
-    justify-self: center;
-    margin-top: 2rem;
 }
 
 .pukpuk__tag {
@@ -996,7 +990,7 @@ strong {
 
 .momu-cta {
     font-family: var(--font-family-lalezar);
-    font-size: 2.5rem;
+    font-size: clamp(1.25rem, 5vw, 1.5625rem);
     font-weight: 400;
     color: #FFE100;
     margin: 0;
@@ -1004,7 +998,7 @@ strong {
     text-transform: uppercase;
     text-align: left;
     line-height: 1.145;
-    max-width: 78rem;
+    max-width: 28rem;
 }
 
 /* SVG background - fills entire section */
@@ -1017,27 +1011,13 @@ strong {
     z-index: 1;
 }
 
-/* Mobile: show mobile background and text title, hide desktop versions */
-.momu-background-mobile {
-    display: block;
-}
-
+/* Hide desktop-only elements on mobile */
 .momu-background-desktop {
     display: none;
 }
 
-.momu-title-text {
-    display: block;
-}
-
 .momu-title-svg {
     display: none;
-    grid-column: 1;
-    grid-row: 1;
-    justify-self: center;
-    align-self: start;
-    z-index: 3;
-    margin-top: 2rem;
 }
 
 .momu .section-inner {
@@ -1072,8 +1052,8 @@ strong {
     font-family: 'Lalezar', cursive;
     font-size: clamp(5rem, 20vw, 15rem);
     font-weight: bold;
-    color: rgba(255, 225, 0, 0.20);
-    z-index: -1;
+    color: rgba(255, 225, 0, 0.15);
+    z-index: 0;
     pointer-events: none;
     white-space: nowrap;
     transition: opacity 0.3s ease;
@@ -1092,13 +1072,13 @@ strong {
 
 .artifacts__label {
     font-family: 'Lalezar', cursive;
-    font-size: 2rem;
+    font-size: clamp(1.25rem, 3vw, 1.5rem);
     color: #000000;
     text-transform: uppercase;
     letter-spacing: 0.07em;
     text-align: center;
     line-height: 1.2;
-    margin-bottom: var(--whitespace-m);
+    margin-bottom: var(--whitespace-s);
     transition: opacity 0.3s ease;
 }
 
@@ -1268,18 +1248,19 @@ strong {
 /* Walter success glow effect */
 .artifacts__walter-glow {
     position: absolute;
-    inset: -4rem;
+    inset: -3rem;
     border-radius: 50%;
     background: radial-gradient(circle,
-            rgba(0, 255, 255, 0.8) 0%,
-            rgba(138, 43, 226, 0.75) 25%,
-            rgba(255, 240, 0, 0.7) 50%,
-            rgba(255, 0, 0, 0.5) 70%,
-            transparent 90%);
+            rgba(255, 240, 0, 1) 0%,
+            rgba(255, 200, 0, 0.95) 20%,
+            rgba(255, 100, 50, 0.9) 35%,
+            rgba(200, 0, 0, 0.8) 50%,
+            rgba(148, 41, 37, 0.6) 60%,
+            transparent 75%);
     pointer-events: none;
     z-index: 0;
-    -webkit-filter: blur(6px);
-    filter: blur(6px);
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
 }
 
 /* Title bar */
@@ -1415,6 +1396,7 @@ strong {
     z-index: 2;
 }
 
+/* Hide desktop-only background on mobile */
 .about-walter__background--desktop {
     display: none;
 }
@@ -1479,23 +1461,28 @@ strong {
     grid-template-rows: 1fr;
     min-height: 100vh;
     margin-top: var(--section-spacing-mobile);
-    background-image: url('/src/assets/MobileFooter.svg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 .site-footer__background {
-    display: none;
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    z-index: 1;
 }
 
+/* Hide desktop-only background on mobile */
+.site-footer__background--desktop {
+    display: none;
+}
 
 .site-footer__inner {
     grid-column: 1;
     grid-row: 1;
     justify-self: center;
     align-self: center;
-    padding: 3rem 1.5rem 7rem;
+    padding: 3rem 1.5rem 2rem;
     width: 100%;
     max-width: 100%;
     display: flex;
@@ -1511,7 +1498,7 @@ strong {
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--color-white);
-    margin: 2rem 0 1.375rem 0;
+    margin: 0 0 1.375rem 0;
 }
 
 .site-footer__subheading {
@@ -1569,14 +1556,6 @@ strong {
     margin-bottom: 3rem;
 }
 
-.site-footer__image-links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3rem;
-    margin-bottom: 2rem;
-}
-
 .site-footer__image-link {
     display: block;
     transition: transform 0.3s ease;
@@ -1600,7 +1579,7 @@ strong {
 .site-footer__dress {
     width: 100%;
     height: auto;
-    margin-bottom: -2rem;
+    margin-bottom: 3rem;
 }
 
 .site-footer__museum {
@@ -1608,10 +1587,8 @@ strong {
     height: auto;
     aspect-ratio: 823 / 686;
     object-fit: cover;
-    margin-bottom: 1rem;
-    margin-top: 2rem;
+    margin-bottom: 4rem;
 }
-
 
 .site-footer__social-label {
     font-family: var(--font-family-inter);
@@ -1697,18 +1674,6 @@ strong {
     margin-bottom: 1rem;
     padding: 1rem 1.5rem;
     font-weight: 400;
-    text-align: left;
-    width: fit-content;
-}
-
-.create-skin__intro {
-    font-family: var(--font-family-lalezar);
-    color: #00BCD4;
-    font-size: 1.3rem;
-    line-height: 1.4;
-    margin-bottom: 1.5rem;
-    font-weight: 400;
-    text-align: left;
 }
 
 /* Info Panel */
@@ -2250,19 +2215,19 @@ strong {
     }
 
     .intro__image-media {
-        width: 63vw;
+        width: 95vw;
         max-width: none;
         height: auto;
-        margin-left: 6rem;
+        margin-left: -2rem;
         margin-top: -9rem;
     }
 
     .intro__text {
         display: flex;
         flex-direction: row;
-        width: 50rem;
-        gap: 3rem;
-        margin-top: -2rem;
+        width: 39rem;
+        gap: 7rem;
+        margin-top: 0rem;
     }
 
     p {
@@ -2283,7 +2248,7 @@ strong {
 
     .octopus__title {
         font-family: var(--font-family-lalezar);
-        font-size: 2.5rem;
+        font-size: clamp(1.25rem, 1.5rem, 1.75rem);
         font-weight: 400;
         color: var(--color-purple);
         margin: 0;
@@ -2291,23 +2256,22 @@ strong {
         letter-spacing: 0.02em;
         text-transform: uppercase;
         display: flex;
-        margin-top: -7rem;
-        margin-left: 6rem;
+        margin-top: -4rem;
+        margin-left: 2rem;
         flex-direction: column;
     }
 
     .octopus__image-media {
-        width: 95%;
+        width: 116%;
         max-width: none;
         height: auto;
         display: block;
-        margin-left: 12%;
+        margin-left: 2%;
     }
 
     .octopus__text {
-        width: 33rem;
-        margin-left: 45rem;
-        margin-top: -3rem;
+        width: 25rem;
+        margin-left: 19rem;
     }
 
     .octopus {
@@ -2320,11 +2284,11 @@ strong {
     /* --- MOMU SECTION --- */
     .momu {
         background-image: url('/src/assets/MomuDesktopTablet.svg');
-        background-size: 100%;
+        background-size: 120%;
         background-position: center;
         background-repeat: no-repeat;
-        min-height: 190vh;
-        padding-top: 19rem;
+        min-height: 120vh;
+        padding-top: 3rem;
         padding-bottom: 3rem;
     }
 
@@ -2372,8 +2336,8 @@ strong {
 
     .momu-title-svg {
         display: block;
-        margin-top: -3rem;
-        width: 64rem;
+        margin-top: 1rem;
+        width: 31rem;
         height: auto;
     }
 
@@ -2638,6 +2602,10 @@ strong {
         background-image: url('/src/assets/FooterDesktop.svg');
     }
 
+    .site-footer__background--mobile {
+        display: none;
+    }
+
     .site-footer__inner {
         padding: 4rem 3rem;
         align-items: center;
@@ -2740,6 +2708,7 @@ strong {
         font-size: 12rem;
         left: 50%;
         transform: translate(-50%, -50%);
+        text-align: center;
     }
 
     .artifacts__pedestal--side {
@@ -2754,37 +2723,37 @@ strong {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 12rem;
+        gap: var(--whitespace-l);
         width: 100%;
         margin-bottom: var(--whitespace-s);
     }
 
     .artifacts__quote {
         font-family: 'Inter', sans-serif;
-        font-size: 1.5em;
+        font-size: 1.125rem;
         font-style: italic;
         font-weight: 400;
         color: #000000;
         text-align: center;
         line-height: 1.43;
-        max-width: 50rem;
+        max-width: 30rem;
         padding: 0 var(--whitespace-base);
-        margin-bottom: calc(var(--whitespace-l) + 5rem);
+        margin-bottom: calc(var(--whitespace-l) + 2rem);
         min-height: 6rem;
         transition: opacity 0.3s ease;
     }
 
     .artifacts__title {
-        font-family: Lalezar, cursive;
-        font-size: 3rem;
-        color: rgb(255, 225, 0);
+        font-family: 'Lalezar', cursive;
+        font-size: clamp(1.5rem, 4vw, 2rem);
+        color: #FFE100;
         text-transform: uppercase;
         letter-spacing: 0.07em;
         line-height: 1;
         text-align: center;
-        background-color: rgb(148, 41, 37);
+        background-color: #942925;
         width: 100%;
-        max-width: 64rem;
+        max-width: 34rem;
         padding: 1rem;
         margin-bottom: var(--whitespace-m);
         margin-top: -2rem;
@@ -2793,7 +2762,7 @@ strong {
     /* --- PUKPUK SECTION --- */
     .pukpuk__title {
         font-family: var(--font-family-lalezar);
-        font-size: 5rem;
+        font-size: 3rem;
         font-weight: 400;
         color: var(--color-purple);
         margin-left: 9rem;
@@ -2803,12 +2772,12 @@ strong {
     .pukpuk__figure {
         grid-column: 1;
         grid-row: 1;
-        max-width: 52%;
+        max-width: 60%;
         z-index: 2;
         justify-self: flex-start;
         align-self: flex-start;
         margin-left: 0rem;
-        margin-top: 1rem;
+        margin-top: -2rem;
         transform: translateZ(0);
         will-change: filter;
     }
@@ -2831,19 +2800,18 @@ strong {
     .pukpuk__shape--blue {
         grid-column: 1;
         grid-row: 1;
-        width: 68%;
+        width: 60%;
         z-index: 1;
         justify-self: start;
         align-self: start;
-        margin-top: -9rem;
-        margin-left: -14rem;
+        margin-top: -5rem;
+        margin-left: -4rem;
     }
 
     .pukpuk__shape--yellow {
-        width: 51%;
+        width: 50%;
         margin: var(--whitespace-l) auto 0;
-        margin-right: -11rem;
-        margin-top: -4rem;
+        margin-right: -4rem;
     }
 
     .pukpuk__row {
@@ -2861,13 +2829,13 @@ strong {
     .pukpuk__card {
         grid-column: 1;
         grid-row: 1;
-        width: 10%;
+        width: 13%;
         z-index: 3;
         justify-self: center;
         align-self: start;
-        margin-right: 16rem;
+        margin-right: 6rem;
         transform: rotate(17deg);
-        margin-top: 3rem;
+        margin-top: 0rem;
     }
 
     .pukpuk__content {
@@ -2879,28 +2847,26 @@ strong {
     }
 
     .pukpuk__subtitle {
-        font-size: 1.5rem;
+        font-size: 1rem;
         font-weight: 700;
         letter-spacing: 0.05em;
-        margin-bottom: var(--whitespace-m);
+        margin-bottom: var(--whitespace-s);
         font-family: var(--font-family-lalezar);
         line-height: 1.2;
         color: var(--color-red);
-        max-width: 55rem;
-        margin-left: 7rem;
-        margin-top: 1rem;
+        max-width: -1rem;
     }
 
     .pukpuk__tag {
         padding: var(--whitespace-xs) var(--whitespace-s);
         background-color: var(--color-purple);
         color: var(--color-gray-cyan);
-        font-size: 1.5rem;
+        font-size: var(--font-size-s);
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.05em;
         border-radius: 0.25rem;
-        width: 21rem;
+        width: 14rem;
         padding-left: 3.5rem;
     }
 
@@ -3301,6 +3267,121 @@ strong {
 
     .artifact--dirkvs {
         margin-top: -8.8rem !important;
+    }
+
+    /* --- INTRO SECTION --- */
+    .intro__image-media {
+        width: 63vw;
+        margin-left: 6rem;
+    }
+
+    .intro__text {
+        width: 50rem;
+        gap: 3rem;
+        margin-top: -2rem;
+    }
+
+    /* --- OCTOPUS SECTION --- */
+    .octopus__title {
+        font-size: 2.5rem;
+        margin-top: -7rem;
+        margin-left: 6rem;
+    }
+
+    .octopus__image-media {
+        width: 95%;
+        margin-left: 12%;
+    }
+
+    .octopus__text {
+        width: 33rem;
+        margin-left: 45rem;
+        margin-top: -3rem;
+    }
+
+    /* --- MOMU SECTION --- */
+    .momu {
+        background-size: 100%;
+        min-height: 190vh;
+        padding-top: 19rem;
+    }
+
+    .momu-title-svg {
+        margin-top: -3rem;
+        width: 50rem;
+    }
+
+    /* --- NO MORE HIDING SECTION --- */
+    .no-more-hiding__image--angel {
+        width: 89%;
+        margin-left: -16%;
+        margin-top: 1.5rem;
+    }
+
+    .no-more-hiding__image--beast {
+        width: 80%;
+        margin-left: 32%;
+    }
+
+    .no-more-hiding__text {
+        gap: 21rem;
+    }
+
+    /* --- ARTIFACTS SECTION --- */
+    .artifacts__carousel {
+        gap: 12rem;
+    }
+
+    .artifacts__quote {
+        font-size: 1.5em;
+        max-width: 50rem;
+        margin-bottom: calc(var(--whitespace-l) + 5rem);
+    }
+
+    .artifacts__title {
+        font-size: 3rem;
+        max-width: 64rem;
+    }
+
+    /* --- PUKPUK SECTION --- */
+    .pukpuk__title {
+        font-size: 5rem;
+    }
+
+    .pukpuk__figure {
+        max-width: 52%;
+        margin-top: 1rem;
+    }
+
+    .pukpuk__shape--blue {
+        width: 68%;
+        margin-top: -9rem;
+        margin-left: -14rem;
+    }
+
+    .pukpuk__shape--yellow {
+        width: 51%;
+        margin-right: -11rem;
+        margin-top: -4rem;
+    }
+
+    .pukpuk__card {
+        width: 10%;
+        margin-right: 16rem;
+        margin-top: 3rem;
+    }
+
+    .pukpuk__subtitle {
+        font-size: 1.5rem;
+        margin-bottom: var(--whitespace-m);
+        max-width: 55rem;
+        margin-left: 7rem;
+        margin-top: 1rem;
+    }
+
+    .pukpuk__tag {
+        font-size: 1.5rem;
+        width: 21rem;
     }
 
 }

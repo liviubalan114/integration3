@@ -858,6 +858,28 @@ const IntroTrigger = () => {
     });
 };
 
+// ================================================
+// NO MORE HIDING SECTION - WALTER TRIGGER
+// ================================================
+const NoMoreHidingTrigger = () => {
+    const trigger = document.querySelector('.no-more-hiding__trigger');
+    const quote = document.querySelector('.no-more-hiding__quote');
+
+    if (!trigger || !quote) return;
+
+    trigger.addEventListener('click', () => {
+        const isVisible = quote.classList.contains('is-visible');
+
+        if (isVisible) {
+            quote.classList.remove('is-visible');
+            trigger.setAttribute('aria-expanded', 'false');
+        } else {
+            quote.classList.add('is-visible');
+            trigger.setAttribute('aria-expanded', 'true');
+        }
+    });
+};
+
 // Initialize when DOM is ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
@@ -865,10 +887,12 @@ if (document.readyState === 'loading') {
         CreateSkinInteraction();
         initTextScrollAnimations();
         IntroTrigger();
+        NoMoreHidingTrigger();
     });
 } else {
     ArtifactsCarousel();
     CreateSkinInteraction();
     initTextScrollAnimations();
     IntroTrigger();
+    NoMoreHidingTrigger();
 }
