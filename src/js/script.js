@@ -189,6 +189,11 @@ const ArtifactsCarousel = () => {
     // Track if entrance animation has played
     let hasPlayedEntrance = false;
 
+    // Initialize background text centering - clear any GSAP transforms
+    if (backgroundTextEl) {
+        gsap.set(backgroundTextEl, { clearProps: "all" });
+    }
+
     // Initialize with entrance animation
     const init = () => {
         setupEventListeners();
