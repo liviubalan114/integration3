@@ -14,24 +14,8 @@ import {
     initBrushEffect
 } from './gsap.js';
 
-// Import all images for artifacts carousel
-import WalterHatImg from '../assets/WalterHat.png';
-import AnnInkImg from '../assets/AnnInk.png';
-import DriesLipImg from '../assets/DriesLip.png';
-import MarinaBagImg from '../assets/MarinaBag.png';
-import DirkFootImg from '../assets/DirkFoot.png';
-import DrikSprayImg from '../assets/drikSpray.png';
-
-// Import all images for dress-up interaction
-import WalterSuitDressUpImg from '../assets/WalterSuitDressUp.png';
-import WalterMaskDressUpImg from '../assets/WalterMaskDressUp.png';
-import WrongMaskDressUpImg from '../assets/WrongMaskDressUp.png';
-import BowDressUpImg from '../assets/BowDressUp.png';
-import HatDressUpImg from '../assets/HatDressUp.png';
-import CorrectStickDressUpImg from '../assets/CorrectStickDressUp.png';
-import WrongCaneDressUpImg from '../assets/WrongCaneDressUp.png';
-import LockDressUpImg from '../assets/LockDressUp.png';
-import PantsDressUpImg from '../assets/PantsDressUp.png';
+// Base URL for assets (handles /integration3/ base path in production)
+const BASE = import.meta.env.BASE_URL;
 
 // Register GSAP plugins
 gsap.registerPlugin(Draggable);
@@ -48,42 +32,42 @@ const ArtifactsCarousel = () => {
             name: "WALTER",
             title: "The visionary storyteller",
             quote: '"For me, it is important that clothes are representative of the <strong>spirit of the wearer</strong>, as opposed <strong>to the body wearing them.</strong>"',
-            image: WalterHatImg,
+            image: `${BASE}assets/WalterHat.png`,
             className: "artifact--walter"
         },
         {
             name: "ANN",
             title: "The gothic romantic",
             quote: '"For me, Black is poetic. How do you imagine a poet? In a bright yellow jacket? <strong>Probably not.</strong>"',
-            image: AnnInkImg,
+            image: `${BASE}assets/AnnInk.png`,
             className: "artifact--ann"
         },
         {
             name: "DRIES",
             title: "The textile poet",
             quote: '"Clothes is just something you put on to cover yourself. <strong>Fashion is a way to communicate.</strong>"',
-            image: DriesLipImg,
+            image: `${BASE}assets/DriesLip.png`,
             className: "artifact--dries"
         },
         {
             name: "MARINA",
             title: "The quiet deconstructor",
             quote: '"Reworking is not about recycling. <strong>It\'s about reconciliation.</strong>"',
-            image: MarinaBagImg,
+            image: `${BASE}assets/MarinaBag.png`,
             className: "artifact--marina"
         },
         {
             name: "DIRK B",
             title: "The athletic revolutionary",
             quote: '"Fashion and football were two different and remote worlds, <strong>impossible to synthesize.</strong>"',
-            image: DirkFootImg,
+            image: `${BASE}assets/DirkFoot.png`,
             className: "artifact--dirkb"
         },
         {
             name: "DIRK VS",
             title: "The playful experimenter",
             quote: '"I don\'t like perfection or being too literal. I need to be able to <strong>break it</strong> in order to create a balance."',
-            image: DrikSprayImg,
+            image: `${BASE}assets/drikSpray.png`,
             className: "artifact--dirkvs"
         }
     ];
@@ -340,14 +324,14 @@ const CreateSkinInteraction = () => {
             items: ['.create-skin__draggable--normal-suit', '.create-skin__draggable--shield'],
             fused: false,
             fusedElement: null,
-            fusedImage: WalterSuitDressUpImg,
+            fusedImage: `${BASE}assets/WalterSuitDressUp.png`,
             fusedName: 'Walter Suit'
         },
         mask: {
             items: ['.create-skin__draggable--voodoo', '.create-skin__draggable--bdsm'],
             fused: false,
             fusedElement: null,
-            fusedImage: WalterMaskDressUpImg,
+            fusedImage: `${BASE}assets/WalterMaskDressUp.png`,
             fusedName: 'Walter Mask'
         }
     };
@@ -678,15 +662,15 @@ const CreateSkinInteraction = () => {
             drawerContent.innerHTML = '';
 
             const mobileShapes = [
-                { className: 'suit', previewSize: '4rem', fullSize: '11.5rem', image: WalterSuitDressUpImg, info: 'Walter suit - Tailored suit fused with a papilla shield. Perfect protection, perfect blend, half office, half battlefield. For the one that never sleeps' },
-                { className: 'mask', previewSize: '3.5rem', fullSize: '5rem', image: WalterMaskDressUpImg, info: 'Walter mask - Voodoo spirit stitched to a fetish hood. Sacred and obscene at once, looks like you are hiding your darkest secrets under it..' },
-                { className: 'wrong-mask', previewSize: '3rem', fullSize: '4rem', image: WrongMaskDressUpImg, info: 'Striped Walter mask - Voodoo spirit stitched to a fetish hood. Made from Voodoo and Bdsm. Good for your disguise but are you sure that color fits you?' },
-                { className: 'bow', previewSize: '2.5rem', fullSize: '2rem', image: BowDressUpImg, info: "Neck bow - A soft ribbon tied too perfectly to be innocent. It's decoration now, one that would make people suspect nothing." },
-                { className: 'hat', previewSize: '3rem', fullSize: '5rem', image: HatDressUpImg, info: 'Walter hat - A hand‑made Walter hat that turns the head into a cartoon thought bubble. Optional armor for when you want the joke to sit on top.' },
-                { className: 'stick', previewSize: '1.5rem', fullSize: '3.5rem', image: CorrectStickDressUpImg, info: "Right handed cane - A gentleman's cane with a dangling chain leash. Authority meets restrain, the perfect prop to tame the beast your collar is struggling to contain." },
-                { className: 'wrong-cane', previewSize: '1rem', fullSize: '2.5rem', image: WrongCaneDressUpImg, info: "Left handed cane - A gentleman's cane with a dangling chain leash. Authority meets restraint. Close enough to confuse you but maybe try the right hand." },
-                { className: 'lock', previewSize: '2.5rem', fullSize: '2.5rem', image: LockDressUpImg, info: 'Lock - A sleek metal collar that keeps the beast on a leash. A reminder that the thing is still trapped underneath.' },
-                { className: 'pants', previewSize: '3rem', fullSize: '8rem', image: PantsDressUpImg, info: "Walter pants - Runway trousers cut with Walter's exaggerated proportions. They already bend the body into a new silhouette, but they need the right top half to feel complete." }
+                { className: 'suit', previewSize: '4rem', fullSize: '11.5rem', image: `${BASE}assets/WalterSuitDressUp.png`, info: 'Walter suit - Tailored suit fused with a papilla shield. Perfect protection, perfect blend, half office, half battlefield. For the one that never sleeps' },
+                { className: 'mask', previewSize: '3.5rem', fullSize: '5rem', image: `${BASE}assets/WalterMaskDressUp.png`, info: 'Walter mask - Voodoo spirit stitched to a fetish hood. Sacred and obscene at once, looks like you are hiding your darkest secrets under it..' },
+                { className: 'wrong-mask', previewSize: '3rem', fullSize: '4rem', image: `${BASE}assets/WrongMaskDressUp.png`, info: 'Striped Walter mask - Voodoo spirit stitched to a fetish hood. Made from Voodoo and Bdsm. Good for your disguise but are you sure that color fits you?' },
+                { className: 'bow', previewSize: '2.5rem', fullSize: '2rem', image: `${BASE}assets/BowDressUp.png`, info: "Neck bow - A soft ribbon tied too perfectly to be innocent. It's decoration now, one that would make people suspect nothing." },
+                { className: 'hat', previewSize: '3rem', fullSize: '5rem', image: `${BASE}assets/HatDressUp.png`, info: 'Walter hat - A hand‑made Walter hat that turns the head into a cartoon thought bubble. Optional armor for when you want the joke to sit on top.' },
+                { className: 'stick', previewSize: '1.5rem', fullSize: '3.5rem', image: `${BASE}assets/CorrectStickDressUp.png`, info: "Right handed cane - A gentleman's cane with a dangling chain leash. Authority meets restrain, the perfect prop to tame the beast your collar is struggling to contain." },
+                { className: 'wrong-cane', previewSize: '1rem', fullSize: '2.5rem', image: `${BASE}assets/WrongCaneDressUp.png`, info: "Left handed cane - A gentleman's cane with a dangling chain leash. Authority meets restraint. Close enough to confuse you but maybe try the right hand." },
+                { className: 'lock', previewSize: '2.5rem', fullSize: '2.5rem', image: `${BASE}assets/LockDressUp.png`, info: 'Lock - A sleek metal collar that keeps the beast on a leash. A reminder that the thing is still trapped underneath.' },
+                { className: 'pants', previewSize: '3rem', fullSize: '8rem', image: `${BASE}assets/PantsDressUp.png`, info: "Walter pants - Runway trousers cut with Walter's exaggerated proportions. They already bend the body into a new silhouette, but they need the right top half to feel complete." }
             ];
 
             mobileShapes.forEach((shape, index) => {
