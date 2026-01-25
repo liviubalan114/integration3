@@ -357,6 +357,10 @@ export const initTextScrollAnimations = () => {
     });
 
     filteredElements.forEach(element => {
+        // Adjust start point based on screen size - earlier on tablet
+        const isTablet = window.matchMedia('(min-width: 768px)').matches;
+        const startPoint = isTablet ? "top 80%" : "top 95%";
+
         gsap.fromTo(element,
             {
                 opacity: 0,
@@ -371,7 +375,7 @@ export const initTextScrollAnimations = () => {
                 ease: "back.out(1.5)",
                 scrollTrigger: {
                     trigger: element,
-                    start: "top 95%",
+                    start: startPoint,
                     end: "top 25%",
                     toggleActions: "play reverse play reverse",
                     scrub: 0.3
@@ -382,6 +386,8 @@ export const initTextScrollAnimations = () => {
 
     // Animate colored block elements sliding in from left
     const coloredBlocks = gsap.utils.toArray('.artifacts__title, .no-more-hiding__quote, .pukpuk__tag');
+    const isTablet = window.matchMedia('(min-width: 768px)').matches;
+    const blockStartPoint = isTablet ? "top 80%" : "top 95%";
 
     coloredBlocks.forEach(block => {
         gsap.fromTo(block,
@@ -396,7 +402,7 @@ export const initTextScrollAnimations = () => {
                 ease: "power3.out",
                 scrollTrigger: {
                     trigger: block,
-                    start: "top 95%",
+                    start: blockStartPoint,
                     toggleActions: "play reverse play reverse"
                 }
             }
@@ -406,6 +412,9 @@ export const initTextScrollAnimations = () => {
     // Pukpuk card falling animation
     const pukpukCard = document.querySelector('.pukpuk__card');
     if (pukpukCard) {
+        const isTablet = window.matchMedia('(min-width: 768px)').matches;
+        const cardStartPoint = isTablet ? "top 75%" : "top 85%";
+
         gsap.fromTo(pukpukCard,
             {
                 y: -200,
@@ -420,7 +429,7 @@ export const initTextScrollAnimations = () => {
                 ease: "bounce.out",
                 scrollTrigger: {
                     trigger: pukpukCard,
-                    start: "top 85%",
+                    start: cardStartPoint,
                     toggleActions: "play none none reverse"
                 }
             }

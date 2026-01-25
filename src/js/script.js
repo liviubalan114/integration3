@@ -99,6 +99,14 @@ const skinTextImg = document.querySelector('.momu-title-svg');
 if (momuDesktopImg) momuDesktopImg.src = MomuDesktopTabletImg;
 if (skinTextImg) skinTextImg.src = SkinTextImg;
 
+// Set about-walter section image sources
+const walterFigureImg = document.querySelector('.about-walter__figure');
+const walterBackgroundMobileImg = document.querySelector('.about-walter__background--mobile');
+const walterBackgroundDesktopImg = document.querySelector('.about-walter__background--desktop');
+if (walterFigureImg) walterFigureImg.src = CostumesImg;
+if (walterBackgroundMobileImg) walterBackgroundMobileImg.src = SecondBlockImg;
+if (walterBackgroundDesktopImg) walterBackgroundDesktopImg.src = WalterDesktopSectionImg;
+
 // Initialize brush effect only on desktop (1024px and above)
 if (window.innerWidth >= 1024) {
     initBrushEffect();
