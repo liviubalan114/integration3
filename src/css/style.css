@@ -685,6 +685,7 @@ strong {
     justify-self: center;
     align-self: center;
     margin-left: -5em;
+    margin-top: -27rem;
 }
 
 /* Card (Top Layer) */
@@ -2588,6 +2589,95 @@ strong {
         padding: 1rem;
         margin-bottom: var(--whitespace-m);
         margin-top: -2rem;
+    }
+
+    /* --- PUKPUK SECTION --- */
+    .pukpuk__title {
+        font-family: var(--font-family-lalezar);
+        font-size: 3rem;
+        font-weight: 400;
+        color: var(--color-purple);
+        margin-left: 9rem;
+        letter-spacing: 0.02em;
+    }
+
+    .pukpuk__figure {
+        grid-column: 1;
+        grid-row: 1;
+        max-width: 60%;
+        z-index: 2;
+        justify-self: flex-start;
+        align-self: flex-start;
+        margin-left: 0rem;
+    }
+
+    .pukpuk__shape--blue {
+        grid-column: 1;
+        grid-row: 1;
+        width: 60%;
+        z-index: 1;
+        justify-self: start;
+        align-self: start;
+        margin-top: -5rem;
+        margin-left: -4rem;
+    }
+
+    .pukpuk__shape--yellow {
+        width: 50%;
+        margin: var(--whitespace-l) auto 0;
+        margin-right: -4rem;
+    }
+
+    .pukpuk__row {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: var(--whitespace-l);
+        margin-top: -25rem;
+    }
+
+    .pukpuk__card {
+        grid-column: 1;
+        grid-row: 1;
+        width: 13%;
+        z-index: 3;
+        justify-self: center;
+        align-self: start;
+        margin-right: 6rem;
+        transform: rotate(17deg);
+        margin-top: 0rem;
+    }
+
+    .pukpuk__content {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-left: -3rem;
+        margin-top: 6rem;
+    }
+
+    .pukpuk__subtitle {
+        font-size: 1rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        margin-bottom: var(--whitespace-s);
+        font-family: var(--font-family-lalezar);
+        line-height: 1.2;
+        color: var(--color-red);
+        max-width: -1rem;
+    }
+
+    .pukpuk__tag {
+        padding: var(--whitespace-xs) var(--whitespace-s);
+        background-color: var(--color-purple);
+        color: var(--color-gray-cyan);
+        font-size: var(--font-size-s);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        border-radius: 0.25rem;
+        width: 14rem;
+        padding-left: 3.5rem;
     }
 
     /* --- CREATE SKIN INTERACTION --- */
