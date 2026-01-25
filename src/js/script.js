@@ -16,54 +16,54 @@ import {
 } from './gsap.js';
 
 // Import images for artifacts carousel (Vite handles paths)
-import WalterHatImg from '../assets/WalterHat.png';
-import AnnInkImg from '../assets/AnnInk.png';
-import DriesLipImg from '../assets/DriesLip.png';
-import MarinaBagImg from '../assets/MarinaBag.png';
-import DirkFootImg from '../assets/DirkFoot.png';
-import DrikSprayImg from '../assets/drikSpray.png';
+import WalterHatImg from '../assets/WalterHat.avif';
+import AnnInkImg from '../assets/AnnInk.avif';
+import DriesLipImg from '../assets/DriesLip.avif';
+import MarinaBagImg from '../assets/MarinaBag.avif';
+import DirkFootImg from '../assets/DirkFoot.avif';
+import DrikSprayImg from '../assets/drikSpray.avif';
 
 // Import images for dress-up interaction
-import WalterSuitDressUpImg from '../assets/WalterSuitDressUp.png';
-import WalterMaskDressUpImg from '../assets/WalterMaskDressUp.png';
-import WrongMaskDressUpImg from '../assets/WrongMaskDressUp.png';
-import BowDressUpImg from '../assets/BowDressUp.png';
-import HatDressUpImg from '../assets/HatDressUp.png';
-import CorrectStickDressUpImg from '../assets/CorrectStickDressUp.png';
-import WrongCaneDressUpImg from '../assets/WrongCaneDressUp.png';
-import LockDressUpImg from '../assets/LockDressUp.png';
-import PantsDressUpImg from '../assets/PantsDressUp.png';
-import NormalSuitDressUpImg from '../assets/NormalSuitDressUp.png';
-import ShadowDressUpImg from '../assets/ShadowDressUp.png';
-import ShieldDressUpImg from '../assets/ShieldDressUp.png';
-import VoodooDressUpImg from '../assets/VoodooDressUp.png';
-import BdsmDressUpImg from '../assets/BdsmDressUp.png';
+import WalterSuitDressUpImg from '../assets/WalterSuitDressUp.avif';
+import WalterMaskDressUpImg from '../assets/WalterMaskDressUp.avif';
+import WrongMaskDressUpImg from '../assets/WrongMaskDressUp.avif';
+import BowDressUpImg from '../assets/BowDressUp.avif';
+import HatDressUpImg from '../assets/HatDressUp.avif';
+import CorrectStickDressUpImg from '../assets/CorrectStickDressUp.avif';
+import WrongCaneDressUpImg from '../assets/WrongCaneDressUp.avif';
+import LockDressUpImg from '../assets/LockDressUp.avif';
+import PantsDressUpImg from '../assets/PantsDressUp.avif';
+import NormalSuitDressUpImg from '../assets/NormalSuitDressUp.avif';
+import ShadowDressUpImg from '../assets/ShadowDressUp.avif';
+import ShieldDressUpImg from '../assets/ShieldDressUp.avif';
+import VoodooDressUpImg from '../assets/VoodooDressUp.avif';
+import BdsmDressUpImg from '../assets/BdsmDressUp.avif';
 
 // Import section images
 import MomuDesktopTabletImg from '../assets/MomuDesktopTablet.svg';
 import SkinTextImg from '../assets/skinText.svg';
-import WalterHeaderImg from '../assets/WalterHeader.png';
-import WalterSuitImg from '../assets/WalterSuit.png';
-import CostumesImg from '../assets/costumes.png';
-import OctopusImg from '../assets/Octopus.png';
-import MuseumImg from '../assets/Museum.png';
-import MuseumExhibitImg from '../assets/museum-exhibit.png';
-import PodiumImg from '../assets/podium.png';
-import PukpukImg from '../assets/pukpuk.png';
-import BeastImg from '../assets/beast.png';
-import WomanImg from '../assets/woman.png';
-import DollImg from '../assets/Doll.png';
-import SketchImg from '../assets/sketch.png';
-import WalterInteractionImg from '../assets/walterinteraction.png';
-import DiorImg from '../assets/Dior.png';
-import DiorDressImg from '../assets/dior-dress.png';
+import WalterHeaderImg from '../assets/WalterHeader.avif';
+import WalterSuitImg from '../assets/WalterSuit.avif';
+import CostumesImg from '../assets/costumes.avif';
+import OctopusImg from '../assets/Octopus.avif';
+import MuseumImg from '../assets/Museum.avif';
+import MuseumExhibitImg from '../assets/museum-exhibit.avif';
+import PodiumImg from '../assets/podium.avif';
+import PukpukImg from '../assets/pukpuk.avif';
+import BeastImg from '../assets/beast.avif';
+import WomanImg from '../assets/woman.avif';
+import DollImg from '../assets/Doll.avif';
+import SketchImg from '../assets/sketch.avif';
+import WalterInteractionImg from '../assets/walterinteraction.avif';
+import DiorImg from '../assets/Dior.avif';
+import DiorDressImg from '../assets/dior-dress.avif';
 
 // Import costume/epilogue images
-import RedHorizontal1Img from '../assets/RedHorizontal1.png';
-import YellowHorizontal2Img from '../assets/YellowHorizontal2.png';
-import GreenHorizontal3Img from '../assets/GreenHorizontal3.png';
-import BornwHorizontal4Img from '../assets/BornwHorizontal4.png';
-import OrangeHorizontal5Img from '../assets/OrangeHorizontal5.png';
+import RedHorizontal1Img from '../assets/RedHorizontal1.avif';
+import YellowHorizontal2Img from '../assets/YellowHorizontal2.avif';
+import GreenHorizontal3Img from '../assets/GreenHorizontal3.avif';
+import BornwHorizontal4Img from '../assets/BornwHorizontal4.avif';
+import OrangeHorizontal5Img from '../assets/OrangeHorizontal5.avif';
 
 // Import background SVGs for CSS
 import MobileFooterImg from '../assets/MobileFooter.svg';
@@ -72,7 +72,7 @@ import WalterDesktopSectionImg from '../assets/walterDesktopsection.svg';
 import LeftRedImg from '../assets/leftRed.svg';
 import RightPurpleImg from '../assets/rightPurple.svg';
 import SecondBlockImg from '../assets/secondBlock.svg';
-import FirstBlockImg from '../assets/firstBlock.png';
+import FirstBlockImg from '../assets/firstBlock.avif';
 import MuseumBackgroundImg from '../assets/museum-background.svg';
 import MomuLogoImg from '../assets/momu-logo.svg';
 import FirstMLogoImg from '../assets/firstMLogo.svg';
@@ -80,7 +80,7 @@ import SecondMLogoImg from '../assets/secondMLogo.svg';
 import ArrowImg from '../assets/Arrow.svg';
 import BlueTriangleImg from '../assets/blue-triangle.svg';
 import YellowTriangleImg from '../assets/yellow-triangle.svg';
-import LockImg from '../assets/Lock.png';
+import LockImg from '../assets/Lock.avif';
 
 // Register GSAP plugins
 gsap.registerPlugin(Draggable);
