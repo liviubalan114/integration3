@@ -2214,6 +2214,12 @@ strong {
         justify-self: center;
     }
 
+    .scroll-indicator img {
+        height: auto;
+        width: clamp(10rem, 20vw, 10rem);
+        padding-top: 6rem;
+    }
+
     /* --- INTRO SECTION --- */
     .intro {
         padding: var(--section-spacing-tablet) var(--whitespace-m);
@@ -2391,6 +2397,18 @@ strong {
         text-align: left;
     }
 
+    .no-more-hiding__freedom-text {
+        font-family: var(--font-family-lalezar);
+        font-size: 4rem;
+        font-weight: 400;
+        color: var(--color-purple);
+        line-height: 1.1;
+        margin: 0;
+        margin-top: -4rem;
+        letter-spacing: 0.02em;
+        text-align: left;
+    }
+
     .no-more-hiding__quote {
         display: block;
         text-align: left;
@@ -2455,9 +2473,34 @@ strong {
         padding: 0 var(--whitespace-xl);
     }
 
-    .new-you__content {
-        gap: var(--whitespace-xl);
+    .new-you__scroll-hint {
+        font-family: var(--font-family-inter);
+        font-size: 0.875rem;
+        color: var(--color-black);
+        opacity: 0.6;
+        margin: var(--whitespace-m) 0 var(--whitespace-l);
         padding: 0 var(--whitespace-xl);
+        text-align: left;
+    }
+
+    .new-you__content {
+        display: flex;
+        flex-direction: column;
+        gap: var(--whitespace-base);
+        padding: 0 var(--whitespace-m);
+        align-content: stretch;
+        align-items: center;
+    }
+
+    .new-you__text {
+        font-family: var(--font-family-inter);
+        font-size: 1rem;
+        line-height: 1.5;
+        color: var(--color-black);
+        margin: 0;
+        letter-spacing: -0.011em;
+        width: 24rem;
+        margin-bottom: 2rem;
     }
 
     /* --- EPILOGUE / COSTUMES --- */
@@ -2468,6 +2511,31 @@ strong {
 
     .epilogue__item {
         width: 22rem;
+    }
+
+    .epilogue__item--red {
+        width: 15rem;
+        margin-top: 2rem;
+    }
+
+    .epilogue__item--yellow {
+        width: 12.5rem;
+        margin-top: 1rem;
+    }
+
+    .epilogue__item--green {
+        width: 16rem;
+        margin-top: 1.5rem;
+    }
+
+    .epilogue__item--brown {
+        width: 16.5rem;
+        margin-top: 2.5rem;
+    }
+
+    .epilogue__item--orange {
+        width: 15rem;
+        margin-top: 2.2rem;
     }
 
     /* --- FOOTER --- */
@@ -2876,6 +2944,31 @@ strong {
 
     .epilogue__item {
         width: 25rem;
+    }
+
+    .epilogue__item--red {
+        width: 9.8rem;
+        margin-top: 2rem;
+    }
+
+    .epilogue__item--yellow {
+        width: 7.8rem;
+        margin-top: 1rem;
+    }
+
+    .epilogue__item--green {
+        width: 10rem;
+        margin-top: 1.5rem;
+    }
+
+    .epilogue__item--brown {
+        width: 10.5rem;
+        margin-top: 2.5rem;
+    }
+
+    .epilogue__item--orange {
+        width: 9rem;
+        margin-top: 2.2rem;
     }
 
     /* --- ARTIFACTS CAROUSEL --- */
