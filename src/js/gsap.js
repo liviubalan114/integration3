@@ -151,16 +151,8 @@ export const initContinuousAnimations = (leftPedestal, rightPedestal, background
         });
     }
 
-    // Background text very subtle rotation (only on desktop)
-    if (window.innerWidth >= 768 && backgroundTextEl) {
-        gsap.to(backgroundTextEl, {
-            rotation: 3,
-            duration: 8,
-            ease: "sine.inOut",
-            repeat: -1,
-            yoyo: true
-        });
-    }
+    // Background text rotation disabled - conflicts with CSS centering
+    // TODO: Fix centering issue if animation is needed later
 };
 
 // Enhanced drag feedback with elastic resistance

@@ -1056,8 +1056,8 @@ strong {
     font-family: 'Lalezar', cursive;
     font-size: clamp(5rem, 20vw, 15rem);
     font-weight: bold;
-    color: rgba(255, 225, 0, 0.15);
-    z-index: 0;
+    color: rgba(255, 225, 0, 0.20);
+    z-index: -1;
     pointer-events: none;
     white-space: nowrap;
     transition: opacity 0.3s ease;
@@ -1460,23 +1460,23 @@ strong {
     grid-template-rows: 1fr;
     min-height: 100vh;
     margin-top: var(--section-spacing-mobile);
+    background-image: url('/src/assets/MobileFooter.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .site-footer__background {
-    grid-column: 1;
-    grid-row: 1;
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-    z-index: 1;
+    display: none;
 }
+
 
 .site-footer__inner {
     grid-column: 1;
     grid-row: 1;
     justify-self: center;
     align-self: center;
-    padding: 3rem 1.5rem 2rem;
+    padding: 3rem 1.5rem 7rem;
     width: 100%;
     max-width: 100%;
     display: flex;
@@ -1492,7 +1492,7 @@ strong {
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--color-white);
-    margin: 0 0 1.375rem 0;
+    margin: 2rem 0 1.375rem 0;
 }
 
 .site-footer__subheading {
@@ -1550,6 +1550,14 @@ strong {
     margin-bottom: 3rem;
 }
 
+.site-footer__image-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
 .site-footer__image-link {
     display: block;
     transition: transform 0.3s ease;
@@ -1573,7 +1581,7 @@ strong {
 .site-footer__dress {
     width: 100%;
     height: auto;
-    margin-bottom: 3rem;
+    margin-bottom: -2rem;
 }
 
 .site-footer__museum {
@@ -1581,8 +1589,11 @@ strong {
     height: auto;
     aspect-ratio: 823 / 686;
     object-fit: cover;
-    margin-bottom: 4rem;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
 }
+
+.site-footer__social-label {}
 
 .site-footer__social-label {
     font-family: var(--font-family-inter);
@@ -2295,9 +2306,9 @@ strong {
 
     .momu-background-desktop {
         display: block;
-        width: 80%;
-        height: 80%;
-        object-fit: contain;
+        width: 120%;
+        height: 120%;
+        object-fit: cover;
     }
 
     .momu-title-text {
@@ -2423,9 +2434,113 @@ strong {
         width: 22rem;
     }
 
+    /* --- FOOTER --- */
+    .site-footer {
+        background-image: url('/src/assets/FooterDesktop.svg');
+    }
+
+    .site-footer__inner {
+        padding: 4rem 3rem;
+        align-items: center;
+        text-align: left;
+    }
+
+    .site-footer__heading {
+        font-size: 2.5rem;
+        max-width: 35rem;
+        margin: 7rem 0 -1rem 0;
+    }
+
+    .site-footer__subheading {
+        font-size: 1.25rem;
+        margin-bottom: 0rem;
+    }
+
+    .site-footer__inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+    }
+
+    .site-footer__heading {
+        grid-column: 1 / -1;
+    }
+
+    .site-footer__subheading {
+        grid-column: 1 / -1;
+    }
+
+    .site-footer__button {
+        width: 100%;
+        max-width: 11rem;
+        height: 3rem;
+        font-size: 1.125rem;
+    }
+
+    .site-footer__button--primary {
+        margin-bottom: 0;
+        justify-self: start;
+    }
+
+    .site-footer__button--secondary {
+        margin-bottom: 0;
+        justify-self: start;
+        margin-left: -8rem;
+    }
+
+    .site-footer__image-links {
+        flex-direction: row;
+        grid-column: 1 / -1;
+        gap: 5rem;
+        margin-bottom: 4rem;
+    }
+
+    .site-footer__image-link {
+        max-width: 10rem;
+    }
+
+    .site-footer__dress,
+    .site-footer__museum {
+        width: 130%;
+    }
+
+    .site-footer__museum {
+        width: 140%;
+    }
+
+    .site-footer__social-label {
+        grid-column: 1 / -1;
+        font-size: 1.125rem;
+        margin-bottom: -0.5rem;
+    }
+
+    .site-footer__social-icons {
+        grid-column: 1;
+        justify-self: start;
+        margin-bottom: -2rem;
+    }
+
+    .site-footer__social-link svg {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .site-footer__logo {
+        grid-column: 2;
+        justify-self: end;
+        margin-bottom: 0;
+    }
+
+    .site-footer__logo svg {
+        width: 4rem;
+    }
+
     /* --- ARTIFACTS CAROUSEL --- */
     .artifacts__background-text {
         display: block;
+        font-size: 12rem;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 
     .artifacts__pedestal--side {
@@ -2434,6 +2549,30 @@ strong {
 
     .artifacts__nav {
         display: none;
+    }
+
+    .artifacts__carousel {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--whitespace-l);
+        width: 100%;
+        margin-bottom: var(--whitespace-s);
+    }
+
+    .artifacts__quote {
+        font-family: 'Inter', sans-serif;
+        font-size: 1.125rem;
+        font-style: italic;
+        font-weight: 400;
+        color: #000000;
+        text-align: center;
+        line-height: 1.43;
+        max-width: 30rem;
+        padding: 0 var(--whitespace-base);
+        margin-bottom: calc(var(--whitespace-l) + 2rem);
+        min-height: 6rem;
+        transition: opacity 0.3s ease;
     }
 
     /* --- CREATE SKIN INTERACTION --- */
