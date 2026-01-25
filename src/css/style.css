@@ -2290,6 +2290,9 @@ strong {
         min-height: 120vh;
         padding-top: 3rem;
         padding-bottom: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .momu-background {
@@ -2300,6 +2303,15 @@ strong {
         display: flex;
         flex-direction: column;
         align-items: center;
+        order: 2;
+    }
+
+    .momu-title-svg {
+        display: block;
+        margin-top: 7rem;
+        width: 31rem;
+        height: auto;
+        order: 1;
     }
 
     .momu-content {
@@ -2332,13 +2344,6 @@ strong {
 
     .momu-title-text {
         display: none;
-    }
-
-    .momu-title-svg {
-        display: block;
-        margin-top: 1rem;
-        width: 31rem;
-        height: auto;
     }
 
     /* --- NO MORE HIDING SECTION --- */
@@ -2600,6 +2605,8 @@ strong {
     /* --- FOOTER --- */
     .site-footer {
         background-image: url('/src/assets/FooterDesktop.svg');
+        background-size: cover;
+        background-position: center top;
     }
 
     .site-footer__background--mobile {
@@ -2608,6 +2615,7 @@ strong {
 
     .site-footer__inner {
         padding: 4rem 3rem;
+        padding-top: 8rem;
         align-items: center;
         text-align: left;
     }
