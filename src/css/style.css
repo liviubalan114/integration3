@@ -2181,28 +2181,39 @@ strong {
         font-weight: 400;
         color: var(--color-purple);
         letter-spacing: 0.02em;
-        margin-left: 3rem;
+        margin-left: 2rem;
     }
 
     .intro__image-media {
-        width: 90vw;
+        width: 95vw;
         max-width: none;
         height: auto;
-        margin-left: 1rem;
+        margin-left: -2rem;
         margin-top: -9rem;
     }
 
     .intro__text {
         display: flex;
         flex-direction: row;
-        width: 38rem;
+        width: 39rem;
         gap: 7rem;
+        margin-top: 0rem;
+    }
+
+    p {
+        color: var(--color-black);
+        font-size: var(--font-size-text-tablet);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.6;
+        margin: 0 0 var(--whitespace-m);
     }
 
     /* --- OCTOPUS SECTION --- */
     .octopus {
         padding: var(--section-spacing-tablet) var(--whitespace-m);
         overflow: hidden;
+        margin-top: -7rem;
     }
 
     .octopus__title {
@@ -2215,15 +2226,44 @@ strong {
         letter-spacing: 0.02em;
         text-transform: uppercase;
         display: flex;
+        margin-top: -4rem;
+        margin-left: 2rem;
         flex-direction: column;
     }
 
     .octopus__image-media {
-        width: 122%;
+        width: 116%;
         max-width: none;
         height: auto;
         display: block;
-        margin-left: -2%;
+        margin-left: 2%;
+    }
+
+    .octopus__text {
+        width: 25rem;
+        margin-left: 19rem;
+    }
+
+    /* --- MOMU SECTION --- */
+    .momu-content {
+        display: flex;
+        flex-direction: row;
+        gap: var(--whitespace-m);
+        color: var(--color-white);
+        margin-bottom: var(--whitespace-xl);
+        max-width: 28rem;
+        flex-wrap: nowrap;
+        align-content: center;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .momu-content p {
+        color: var(--color-white);
+        font-size: var(--font-size-text-tablet);
+        line-height: 1.4;
+        margin: 0;
+        width: 20rem;
     }
 
     /* --- NEW YOU SECTION --- */
