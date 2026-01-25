@@ -2179,10 +2179,11 @@ strong {
     }
 
     .scroll-indicator {
-        grid-column: 1;
+        grid-column: 1 / -1;
         grid-row: 2;
         margin-top: auto;
         align-self: end;
+        justify-self: center;
     }
 
     /* --- INTRO SECTION --- */
@@ -2262,6 +2263,12 @@ strong {
     }
 
     /* --- MOMU SECTION --- */
+    .momu .section-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .momu-content {
         display: flex;
         flex-direction: row;
@@ -2269,8 +2276,6 @@ strong {
         color: var(--color-white);
         margin-bottom: var(--whitespace-xl);
         max-width: 28rem;
-        flex-wrap: nowrap;
-        align-content: center;
         justify-content: center;
         align-items: flex-start;
     }
@@ -2290,6 +2295,9 @@ strong {
 
     .momu-background-desktop {
         display: block;
+        width: 80%;
+        height: 80%;
+        object-fit: contain;
     }
 
     .momu-title-text {
@@ -2299,15 +2307,16 @@ strong {
     .momu-title-svg {
         display: block;
         margin: 0 0 var(--whitespace-l);
+        width: 25rem;
+        height: auto;
     }
 
     /* --- NO MORE HIDING SECTION --- */
     .no-more-hiding__image--angel {
-        width: 54rem;
-        margin-left: -49%;
+        width: 119%;
+        margin-left: -42%;
         margin-top: 2.5rem;
         margin-bottom: 1.5rem;
-        height: 100%;
     }
 
     .no-more-hiding__image--beast {
@@ -2326,63 +2335,67 @@ strong {
         gap: 5rem;
     }
 
+    .no-more-hiding__title {
+        font-family: var(--font-family-lalezar);
+        font-size: clamp(2rem, 9rem, 3rem);
+        font-weight: 400;
+        color: var(--color-purple);
+        margin: 0;
+        letter-spacing: 0.02em;
+        text-align: left;
+    }
+
+    .no-more-hiding__quote {
+        display: block;
+        text-align: left;
+        background-color: #8B1E1E;
+        max-width: 50rem;
+        color: #FFE100;
+        font-family: var(--font-family-inter);
+        font-size: 1.262rem;
+        font-style: italic;
+        font-weight: 400;
+        line-height: 129.071%;
+        margin-left: -2rem;
+        padding-left: 3rem;
+        padding-bottom: 0.5rem;
+        padding-top: 0.5rem;
+        padding-right: 2rem;
+        width: 34rem;
+    }
+
     /* --- CREATE SKIN SECTION --- */
     .create-skin__drag-area {
         height: 80vh !important;
     }
 
-    .create-skin__draggable--voodoo {
-        width: 2.9rem;
-        top: 3.125rem;
-        right: 25%;
+    /* Scale all draggable items proportionally to match silhouette scaling */
+    .create-skin__draggable {
+        transform-origin: center center;
+        transform: scale(0.85);
     }
 
-    .create-skin__draggable--wrong-cane {
-        width: 2.1rem;
-        top: 15rem;
-        right: 30%;
+    /* Fused item sizes for tablet - !important needed to override inline JS styles */
+    .create-skin__fused-item[style*="width: 11.2rem"] {
+        width: 9.2rem !important;
     }
 
-    .create-skin__draggable--pants {
-        width: 6.2rem;
-        top: 15rem;
-        right: 1%;
+    .create-skin__fused-item[style*="width: 5rem"] {
+        width: 4rem !important;
     }
 
-    .create-skin__draggable--normal-suit {
-        width: 12rem;
-        top: 1rem;
-        left: 4%;
+    /* --- EPILOGUE SECTION --- */
+    .epilogue__scroll-content {
+        padding: 0 var(--whitespace-s) var(--whitespace-s);
+        gap: var(--whitespace-l);
     }
 
-    .create-skin__draggable--hat {
-        width: 4.5rem;
-        top: 5.875rem;
-        left: 30%;
-    }
-
-    .create-skin__draggable--stick {
-        width: 2.8rem;
-        top: 17.5rem;
-        left: 10%;
-    }
-
-    .create-skin__draggable--bdsm {
-        width: 3rem;
-        top: 15.5rem;
-        left: 27%;
-    }
-
-    .create-skin__draggable--wrong-mask {
-        width: 5rem;
-        top: 25rem;
-        left: 20%;
-    }
-
-    .create-skin__draggable--shield {
-        width: 4rem;
-        top: 15.75rem;
-        right: 17%;
+    .epilogue__image {
+        width: 55%;
+        height: auto;
+        object-fit: contain;
+        border-radius: 0.5rem;
+        transition: transform 0.3s ease;
     }
 
     /* --- NEW YOU SECTION --- */
