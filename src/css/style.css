@@ -3020,9 +3020,14 @@ strong {
     }
 
     /* --- EPILOGUE / COSTUMES --- */
+    .epilogue__scroll-container {
+        overflow: hidden;
+    }
+
     .epilogue__scroll-content {
         padding: 0 6rem var(--whitespace-xl);
         gap: var(--whitespace-xl);
+        user-select: none;
     }
 
     .epilogue__item {

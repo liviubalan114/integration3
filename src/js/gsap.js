@@ -632,25 +632,6 @@ export const initImageAnimations = () => {
         );
     }
 
-    // Create skin shadow silhouette - fade in
-    const shadowSilhouette = document.querySelector('.create-skin__shadow');
-    if (shadowSilhouette) {
-        gsap.fromTo(shadowSilhouette,
-            { opacity: 0, scale: 0.95 },
-            {
-                opacity: 1,
-                scale: 1,
-                duration: 1,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: shadowSilhouette,
-                    start: "top 85%",
-                    toggleActions: "play none none reverse"
-                }
-            }
-        );
-    }
-
     // Epilogue costume images - stagger fade in
     const costumeImages = gsap.utils.toArray('.epilogue__item img');
     costumeImages.forEach((img, i) => {

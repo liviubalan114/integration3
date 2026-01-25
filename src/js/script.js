@@ -886,6 +886,56 @@ const NoMoreHidingTrigger = () => {
     });
 };
 
+// Draggable horizontal scroll for epilogue costumes (desktop)
+const EpilogueDraggableScroll = () => {
+    const container = document.querySelector('.epilogue__scroll-container');
+    const content = document.querySelector('.epilogue__scroll-content');
+
+    if (!container || !content) return;
+
+    // Only enable on desktop (1024px+)
+    if (window.innerWidth < 1024) return;
+
+    // Calculate bounds
+    const updateBounds = () => {
+        const containerWidth = container.offsetWidth;
+        const contentWidth = content.scrollWidth;
+        const maxScroll = contentWidth - containerWidth;
+
+        return { minX: -maxScroll, maxX: 0 };
+    };
+
+    let bounds = updateBounds();
+
+    // Create draggable
+    Draggable.create(content, {
+        type: 'x',
+        bounds: bounds,
+        inertia: true,
+        edgeResistance: 0.65,
+        cursor: 'grab',
+        activeCursor: 'grabbing',
+        onPress: function () {
+            content.style.cursor = 'grabbing';
+        },
+        onRelease: function () {
+            content.style.cursor = 'grab';
+        }
+    });
+
+    // Update bounds on resize
+    window.addEventListener('resize', () => {
+        bounds = updateBounds();
+        const draggable = Draggable.get(content);
+        if (draggable) {
+            draggable.applyBounds(bounds);
+        }
+    });
+
+    // Set initial cursor
+    content.style.cursor = 'grab';
+};
+
 // Initialize when DOM is ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
@@ -895,6 +945,7 @@ if (document.readyState === 'loading') {
         initImageAnimations();
         IntroTrigger();
         NoMoreHidingTrigger();
+        EpilogueDraggableScroll();
     });
 } else {
     ArtifactsCarousel();
@@ -903,4 +954,5 @@ if (document.readyState === 'loading') {
     initImageAnimations();
     IntroTrigger();
     NoMoreHidingTrigger();
+    EpilogueDraggableScroll();
 }
