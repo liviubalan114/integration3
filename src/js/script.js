@@ -33,13 +33,65 @@ import CorrectStickDressUpImg from '../assets/CorrectStickDressUp.png';
 import WrongCaneDressUpImg from '../assets/WrongCaneDressUp.png';
 import LockDressUpImg from '../assets/LockDressUp.png';
 import PantsDressUpImg from '../assets/PantsDressUp.png';
+import NormalSuitDressUpImg from '../assets/NormalSuitDressUp.png';
+import ShadowDressUpImg from '../assets/ShadowDressUp.png';
+import ShieldDressUpImg from '../assets/ShieldDressUp.png';
+import VoodooDressUpImg from '../assets/VoodooDressUp.png';
+import BdsmDressUpImg from '../assets/BdsmDressUp.png';
 
-// Import momu section images
+// Import section images
 import MomuDesktopTabletImg from '../assets/MomuDesktopTablet.svg';
 import SkinTextImg from '../assets/skinText.svg';
+import WalterHeaderImg from '../assets/WalterHeader.png';
+import WalterSuitImg from '../assets/WalterSuit.png';
+import CostumesImg from '../assets/costumes.png';
+import OctopusImg from '../assets/Octopus.png';
+import MuseumImg from '../assets/Museum.png';
+import MuseumExhibitImg from '../assets/museum-exhibit.png';
+import PodiumImg from '../assets/podium.png';
+import PukpukImg from '../assets/pukpuk.png';
+import BeastImg from '../assets/beast.png';
+import WomanImg from '../assets/woman.png';
+import DollImg from '../assets/Doll.png';
+import SketchImg from '../assets/sketch.png';
+import WalterInteractionImg from '../assets/walterinteraction.png';
+import DiorImg from '../assets/Dior.png';
+import DiorDressImg from '../assets/dior-dress.png';
+
+// Import costume/epilogue images
+import RedHorizontal1Img from '../assets/RedHorizontal1.png';
+import YellowHorizontal2Img from '../assets/YellowHorizontal2.png';
+import GreenHorizontal3Img from '../assets/GreenHorizontal3.png';
+import BornwHorizontal4Img from '../assets/BornwHorizontal4.png';
+import OrangeHorizontal5Img from '../assets/OrangeHorizontal5.png';
+
+// Import background SVGs for CSS
+import MobileFooterImg from '../assets/MobileFooter.svg';
+import FooterDesktopImg from '../assets/FooterDesktop.svg';
+import WalterDesktopSectionImg from '../assets/walterDesktopsection.svg';
+import LeftRedImg from '../assets/leftRed.svg';
+import RightPurpleImg from '../assets/rightPurple.svg';
+import SecondBlockImg from '../assets/secondBlock.svg';
+import FirstBlockImg from '../assets/firstBlock.png';
+import MuseumBackgroundImg from '../assets/museum-background.svg';
+import MomuLogoImg from '../assets/momu-logo.svg';
+import FirstMLogoImg from '../assets/firstMLogo.svg';
+import SecondMLogoImg from '../assets/secondMLogo.svg';
+import ArrowImg from '../assets/Arrow.svg';
+import BlueTriangleImg from '../assets/blue-triangle.svg';
+import YellowTriangleImg from '../assets/yellow-triangle.svg';
+import LockImg from '../assets/Lock.png';
 
 // Register GSAP plugins
 gsap.registerPlugin(Draggable);
+
+// Set CSS custom properties for background images
+document.documentElement.style.setProperty('--mobile-footer-bg', `url(${MobileFooterImg})`);
+document.documentElement.style.setProperty('--footer-desktop-bg', `url(${FooterDesktopImg})`);
+document.documentElement.style.setProperty('--momu-desktop-bg', `url(${MomuDesktopTabletImg})`);
+document.documentElement.style.setProperty('--walter-desktop-bg', `url(${WalterDesktopSectionImg})`);
+document.documentElement.style.setProperty('--left-red-bg', `url(${LeftRedImg})`);
+document.documentElement.style.setProperty('--right-purple-bg', `url(${RightPurpleImg})`);
 
 // Set momu section image sources
 const momuDesktopImg = document.querySelector('.momu-background-desktop');

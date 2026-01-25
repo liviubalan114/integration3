@@ -2305,7 +2305,7 @@ strong {
 
     /* --- MOMU SECTION --- */
     .momu {
-        background-image: url('/src/assets/MomuDesktopTablet.svg');
+        background-image: var(--momu-desktop-bg);
         background-size: 120%;
         background-position: center;
         background-repeat: no-repeat;
@@ -2428,6 +2428,18 @@ strong {
         width: 34rem;
     }
 
+    /* --- ABOUT WALTER SECTION --- */
+    .about-walter {
+        background-image: var(--walter-desktop-bg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .about-walter__background {
+        display: none;
+    }
+
     /* --- CREATE SKIN SECTION --- */
     .create-skin__drag-area {
         height: 80vh !important;
@@ -2540,7 +2552,7 @@ strong {
 
     /* --- FOOTER --- */
     .site-footer {
-        background-image: url('/src/assets/FooterDesktop.svg');
+        background-image: var(--footer-desktop-bg);
     }
 
     .site-footer__inner {
@@ -3016,13 +3028,13 @@ strong {
 
     .create-skin::before {
         left: 0;
-        background-image: url('/src/assets/leftRed.svg');
+        background-image: var(--left-red-bg);
         background-position: left center;
     }
 
     .create-skin::after {
         right: 0;
-        background-image: url('/src/assets/rightPurple.svg');
+        background-image: var(--right-purple-bg);
         background-position: right center;
     }
 
