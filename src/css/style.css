@@ -3149,3 +3149,21 @@ strong {
         display: flex;
     }
 }
+
+/* ============================================================================
+   DESKTOP LARGE (1440px / 90rem) - Mac/MacBook Pro Standard
+   ============================================================================ */
+
+@media (min-width: 90rem) {
+    /* Desktop 1440px styles */
+
+    .tickets-btn {
+        font-size: 1.5rem; /* 24px */
+    }
+
+    .about-walter__text {
+        font-size: 1.5rem;
+        /* 24px */
+    }
+
+}
