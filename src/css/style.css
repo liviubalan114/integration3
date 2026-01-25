@@ -2308,7 +2308,7 @@ strong {
 
     .momu-title-svg {
         display: block;
-        margin-top: 7rem;
+        margin-top: 2rem;
         width: 31rem;
         height: auto;
         order: 1;
@@ -3030,27 +3030,27 @@ strong {
     }
 
     .epilogue__item--red {
-        width: 9.8rem;
+        width: 30rem;
         margin-top: 2rem;
     }
 
     .epilogue__item--yellow {
-        width: 7.8rem;
+        width: 23rem;
         margin-top: 1rem;
     }
 
     .epilogue__item--green {
-        width: 10rem;
+        width: 29rem;
         margin-top: 1.5rem;
     }
 
     .epilogue__item--brown {
-        width: 10.5rem;
+        width: 30.5rem;
         margin-top: 2.5rem;
     }
 
     .epilogue__item--orange {
-        width: 9rem;
+        width: 28rem;
         margin-top: 2.2rem;
     }
 
@@ -3145,6 +3145,179 @@ strong {
 
     .create-skin__drag-area .create-skin__draggable {
         display: flex;
+    }
+
+    .artifacts__label {
+        font-family: 'Lalezar', cursive;
+        font-size: 2rem;
+        color: #000000;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        text-align: center;
+        line-height: 1.2;
+        margin-bottom: var(--whitespace-s);
+        transition: opacity 0.3s ease;
+    }
+
+    /* --- DRESSUP CLOTHING ITEMS --- */
+    .create-skin__draggable--normal-suit {
+        width: 16rem;
+        top: 1rem;
+        left: 4%;
+    }
+
+    .create-skin__draggable--shield {
+        width: 5rem;
+        top: 15.75rem;
+        right: 17%;
+    }
+
+    .create-skin__draggable--bow {
+        width: 3rem;
+        top: 25rem;
+        left: 30%;
+    }
+
+    .create-skin__draggable--hat {
+        width: 6.5rem;
+        top: 5.875rem;
+        left: 30%;
+    }
+
+    .create-skin__draggable--stick {
+        width: 4rem;
+        top: 17.5rem;
+        left: 10%;
+    }
+
+    .create-skin__draggable--wrong-cane {
+        width: 3rem;
+        top: 15rem;
+        right: 30%;
+    }
+
+    .create-skin__draggable--voodoo {
+        width: 4rem;
+        top: 3.125rem;
+        right: 25%;
+    }
+
+    .create-skin__draggable--bdsm {
+        width: 4rem;
+        top: 15.5rem;
+        left: 27%;
+    }
+
+    .create-skin__draggable--wrong-mask {
+        width: 6.5rem;
+        top: 25rem;
+        left: 20%;
+    }
+
+    .create-skin__draggable--lock {
+        width: 1.5rem;
+        top: 5.875rem;
+        right: 5%;
+    }
+
+    .create-skin__draggable--pants {
+        width: 9rem;
+        top: 15rem;
+        right: 1%;
+    }
+
+    /* Fused item sizes for desktop */
+    .create-skin__fused-item[style*="width: 11.2rem"] {
+        width: 13.2rem !important;
+    }
+
+    .create-skin__fused-item[style*="width: 5rem"] {
+        width: 6rem !important;
+    }
+
+    /* --- FOOTER --- */
+    .site-footer__heading {
+        grid-column: 1 / -1;
+        font-size: 3rem;
+        max-width: 54rem;
+        margin: 7rem 0 -1rem 0;
+    }
+
+    .site-footer__subheading {
+        font-size: 1.5rem;
+        margin-bottom: 0rem;
+    }
+
+    .site-footer__button--secondary {
+        margin-bottom: 0;
+        justify-self: start;
+        margin-left: -29rem;
+    }
+
+    /* --- NEW YOU SECTION --- */
+    .new-you__text {
+        font-family: var(--font-family-inter);
+        font-size: 1.5rem;
+        line-height: 1.5;
+        color: var(--color-black);
+        margin: 0;
+        letter-spacing: -0.011em;
+        width: 39rem;
+        margin-bottom: 2rem;
+    }
+
+    .new-you__tribe {
+        font-family: var(--font-family-inter);
+        font-size: 1.5rem;
+        line-height: 1.5;
+        color: var(--color-black);
+        margin: 0;
+        letter-spacing: -0.011em;
+    }
+
+    .new-you__final {
+        font-family: var(--font-family-lalezar);
+        font-size: 2.5rem;
+        font-weight: 400;
+        color: var(--color-black);
+        margin: 0;
+        letter-spacing: -0.011em;
+        line-height: 1.5;
+        margin-top: 2rem;
+    }
+
+    .new-you__message-text {
+        font-family: var(--font-family-lalezar);
+        font-size: 2rem;
+        font-weight: 400;
+        color: #16E3FE;
+        margin: 0;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        line-height: normal;
+    }
+
+    .new-you__title {
+        font-size: 4rem;
+        padding: 0 var(--whitespace-xl);
+    }
+
+    .new-you__scroll-hint {
+        font-family: var(--font-family-inter);
+        font-size: 1.2rem;
+        color: var(--color-black);
+        opacity: 0.6;
+        margin: var(--whitespace-m) 0 var(--whitespace-l);
+        padding: 0 var(--whitespace-xl);
+        text-align: left;
+    }
+
+    .create-skin__intro {
+        width: 75rem;
+        color: #16E3FE;
+        font-family: var(--font-family-lalezar);
+        text-align: center;
+        font-size: 1.5rem;
     }
 }
 
