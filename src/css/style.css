@@ -351,7 +351,7 @@ strong {
 
 /* Identity Text */
 .intro__text {
-    max-width: 50rem;
+    max-width: 90rem;
     margin: 0 auto;
 }
 
@@ -2241,19 +2241,19 @@ strong {
     }
 
     .intro__image-media {
-        width: 95vw;
+        width: 63vw;
         max-width: none;
         height: auto;
-        margin-left: -2rem;
+        margin-left: 6rem;
         margin-top: -9rem;
     }
 
     .intro__text {
         display: flex;
         flex-direction: row;
-        width: 39rem;
-        gap: 7rem;
-        margin-top: 0rem;
+        width: 50rem;
+        gap: 3rem;
+        margin-top: -2rem;
     }
 
     p {
@@ -2274,7 +2274,7 @@ strong {
 
     .octopus__title {
         font-family: var(--font-family-lalezar);
-        font-size: clamp(1.25rem, 1.5rem, 1.75rem);
+        font-size: 2.5rem;
         font-weight: 400;
         color: var(--color-purple);
         margin: 0;
@@ -2282,22 +2282,23 @@ strong {
         letter-spacing: 0.02em;
         text-transform: uppercase;
         display: flex;
-        margin-top: -4rem;
-        margin-left: 2rem;
+        margin-top: -7rem;
+        margin-left: 6rem;
         flex-direction: column;
     }
 
     .octopus__image-media {
-        width: 116%;
+        width: 95%;
         max-width: none;
         height: auto;
         display: block;
-        margin-left: 2%;
+        margin-left: 12%;
     }
 
     .octopus__text {
-        width: 25rem;
-        margin-left: 19rem;
+        width: 33rem;
+        margin-left: 45rem;
+        margin-top: -3rem;
     }
 
     .octopus {
@@ -2957,6 +2958,12 @@ strong {
         padding: 0 6rem 4rem;
     }
 
+    .hero-title {
+        margin-top: 20rem;
+        margin-left: 17rem;
+        width: 22rem;
+    }
+
     .hero-title h1 {
         font-size: 5.5rem;
     }
@@ -2964,7 +2971,7 @@ strong {
     .title-line-1,
     .title-line-1 strong,
     .title-line-2 {
-        font-size: 5.5rem;
+        font-size: 3.5rem;
     }
 
     .hero-subtitle {
@@ -2975,24 +2982,33 @@ strong {
         margin-top: -4rem;
     }
 
-    .hero-title {
-        margin-top: 10rem;
-    }
-
     /* --- INTRO / IDENTITY SECTION --- */
     .intro {
         padding: var(--section-spacing-desktop) var(--whitespace-xl);
     }
 
     .intro__title {
-        font-size: 3rem;
+        font-size: 6rem;
+        text-align: center;
+    }
+
+    .intro__content {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 3rem;
+        align-items: center;
+        margin-bottom: var(--whitespace-s);
     }
 
     .intro__trigger {
         display: block;
+        grid-column: 1;
+        /* Walter's head on left */
     }
 
     .intro__text {
+        grid-column: 2;
+        /* Text on right */
         opacity: 0;
         max-height: 0;
         overflow: hidden;
@@ -3002,10 +3018,6 @@ strong {
     .intro__text.is-visible {
         opacity: 1;
         max-height: 30rem;
-    }
-
-    .intro__content {
-        margin-bottom: var(--whitespace-2xl);
     }
 
     .intro__image-media {
@@ -3157,6 +3169,11 @@ strong {
 @media (min-width: 90rem) {
     /* Desktop 1440px styles */
 
+    p {
+        font-size: 1.5rem;
+        /* 24px */
+    }
+
     .site-header {
         padding: 1rem 4rem 0;
     }
@@ -3173,22 +3190,63 @@ strong {
         /* 24px */
     }
 
+    .hero {
+        position: relative;
+        z-index: 101;
+        overflow: visible;
+        /* Allow portrait to extend above hero */
+    }
+
     .hero-portrait {
         z-index: 150;
-        /* Above header to allow portrait overflow */
+        margin-top: -6rem;
+        /* Pull portrait up into header area */
     }
 
     .portrait-image {
-        width: 90%;
+        width: 96%;
         height: auto;
         object-fit: contain;
-        margin: 2rem 0 0 -2rem;
+        margin: -1rem 0 0 -2rem;
+    }
+
+    .site-header {
+        background: transparent;
+        pointer-events: none;
+        /* Allows clicking through empty header space */
+    }
+
+    .site-header>* {
+        pointer-events: auto;
+        /* Logo and button remain clickable */
+    }
+
+    .hero-title h1 {
+        font-size: 4.3974rem;
+        /* 70.358px from Figma */
+        line-height: 0.88;
+        margin-left: 5rem;
+        margin-top: -5rem;
+    }
+
+    .title-line-1,
+    .title-line-2 {
+        font-family: 'Playfair Display', serif;
+        font-weight: 400;
+        line-height: 1.1;
+    }
+
+    .title-line-1 strong {
+        font-family: var(--font-family-lalezar);
+        font-weight: 400;
+        text-transform: uppercase;
+        line-height: 0.88;
     }
 
     .scroll-indicator img {
         height: auto;
         width: 13rem;
-        padding-top: 14rem;
+        padding-top: 5rem;
     }
 
     .about-walter__text {

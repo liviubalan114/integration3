@@ -836,15 +836,39 @@ const CreateSkinInteraction = () => {
     });
 };
 
+// ================================================
+// INTRO SECTION - WALTER TRIGGER
+// ================================================
+const IntroTrigger = () => {
+    const trigger = document.querySelector('.intro__trigger');
+    const text = document.querySelector('.intro__text');
+
+    if (!trigger || !text) return;
+
+    trigger.addEventListener('click', () => {
+        const isVisible = text.classList.contains('is-visible');
+
+        if (isVisible) {
+            text.classList.remove('is-visible');
+            trigger.setAttribute('aria-expanded', 'false');
+        } else {
+            text.classList.add('is-visible');
+            trigger.setAttribute('aria-expanded', 'true');
+        }
+    });
+};
+
 // Initialize when DOM is ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
         ArtifactsCarousel();
         CreateSkinInteraction();
         initTextScrollAnimations();
+        IntroTrigger();
     });
 } else {
     ArtifactsCarousel();
     CreateSkinInteraction();
     initTextScrollAnimations();
+    IntroTrigger();
 }
