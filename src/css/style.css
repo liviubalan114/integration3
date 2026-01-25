@@ -21,6 +21,7 @@
 
 
     --section-spacing-mobile: 2rem;
+    --section-spacing-tablet: 3rem;
     --section-spacing-desktop: 4rem;
 
     --font-size-xs: .35rem;
@@ -2053,26 +2054,32 @@ strong {
    ========================================================================== */
 @media (min-width: 48rem) {
 
+    :root {
+        --font-size-text-tablet: 1.125rem;
+        --section-spacing-tablet: 3rem;
+    }
+
     /* --- HEADER & HERO --- */
     .site-header {
-        padding: 2.5rem 4rem 0;
+        padding: 1rem 2rem 0;
     }
 
     .logo-link::before {
-        width: 15.625rem;
-        height: 15.625rem;
-        top: -5rem;
-        left: -5rem;
+        width: 17.625rem;
+        height: 13.625rem;
+        top: -6rem;
+        left: -7rem;
     }
 
     .momu-logo {
-        height: 4.5rem;
+        height: 3.5rem;
         width: auto;
+        margin-top: 1rem;
     }
 
     .tickets-btn {
-        padding: 0.875rem 2.5rem;
-        font-size: 1.125rem;
+        padding: 0.6rem 1rem;
+        font-size: 1.1rem;
         font-weight: 700;
     }
 
@@ -2147,11 +2154,11 @@ strong {
     }
 
     .portrait-image {
-        width: 100%;
+        width: 130%;
         height: auto;
         object-fit: contain;
         margin: 0;
-        margin-top: -2rem;
+        margin-top: 0rem;
     }
 
     .scroll-indicator {
@@ -2159,6 +2166,64 @@ strong {
         grid-row: 2;
         margin-top: auto;
         align-self: end;
+    }
+
+    /* --- INTRO SECTION --- */
+    .intro {
+        padding: var(--section-spacing-tablet) var(--whitespace-m);
+        margin-bottom: var(--whitespace-l);
+        overflow: hidden;
+    }
+
+    .intro__title {
+        font-family: var(--font-family-lalezar);
+        font-size: clamp(2rem, 3rem, 3rem);
+        font-weight: 400;
+        color: var(--color-purple);
+        letter-spacing: 0.02em;
+        margin-left: 3rem;
+    }
+
+    .intro__image-media {
+        width: 90vw;
+        max-width: none;
+        height: auto;
+        margin-left: 1rem;
+        margin-top: -9rem;
+    }
+
+    .intro__text {
+        display: flex;
+        flex-direction: row;
+        width: 38rem;
+        gap: 7rem;
+    }
+
+    /* --- OCTOPUS SECTION --- */
+    .octopus {
+        padding: var(--section-spacing-tablet) var(--whitespace-m);
+        overflow: hidden;
+    }
+
+    .octopus__title {
+        font-family: var(--font-family-lalezar);
+        font-size: clamp(1.25rem, 1.5rem, 1.75rem);
+        font-weight: 400;
+        color: var(--color-purple);
+        margin: 0;
+        line-height: 1.1;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .octopus__image-media {
+        width: 122%;
+        max-width: none;
+        height: auto;
+        display: block;
+        margin-left: -2%;
     }
 
     /* --- NEW YOU SECTION --- */
