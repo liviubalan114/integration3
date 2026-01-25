@@ -2434,13 +2434,34 @@ strong {
 
     /* --- ABOUT WALTER SECTION --- */
     .about-walter {
-        background-image: url('/src/assets/walterDesktopsection.svg');
-        background-size: 120%;
-        background-position: center;
-        background-repeat: no-repeat;
         min-height: 120vh;
         padding-top: 3rem;
         padding-bottom: 3rem;
+    }
+
+    .about-walter::before {
+        content: '';
+        grid-column: 1;
+        grid-row: 1;
+        background-image: url('/src/assets/walterDesktopsection.svg');
+        background-size: 160%;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+    }
+
+    .about-walter__figure {
+        width: 9rem;
+        margin-top: 6rem;
+        z-index: 1;
+    }
+
+    .about-walter__inner {
+        max-width: 90%;
+        z-index: 10;
+        position: relative;
     }
 
     .about-walter__background--mobile {
@@ -2456,8 +2477,11 @@ strong {
         flex-wrap: wrap;
         gap: 2rem;
         flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-top: 12rem;
+        position: relative;
+        z-index: 10;
     }
 
     .about-walter__title {
@@ -2471,6 +2495,13 @@ strong {
         flex-basis: 100%;
     }
 
+    .about-walter__text-wrapper {
+        display: flex;
+        flex-direction: row;
+        gap: 1.5rem;
+        width: 100%;
+    }
+
     .about-walter__text {
         font-family: var(--font-family-inter);
         font-size: 1.125rem;
@@ -2478,7 +2509,8 @@ strong {
         color: var(--color-white);
         line-height: 1.4;
         margin: 0;
-        max-width: 30rem;
+        flex: 1;
+        max-width: none;
     }
 
     /* --- CREATE SKIN SECTION --- */
