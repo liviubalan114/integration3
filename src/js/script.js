@@ -40,48 +40,18 @@ import ShieldDressUpImg from '../assets/ShieldDressUp.avif';
 import VoodooDressUpImg from '../assets/VoodooDressUp.avif';
 import BdsmDressUpImg from '../assets/BdsmDressUp.avif';
 
-// Import section images
+// Import section images (only used ones)
 import MomuDesktopTabletImg from '../assets/MomuDesktopTablet.svg';
 import SkinTextImg from '../assets/skinText.svg';
-import WalterHeaderImg from '../assets/WalterHeader.avif';
-import WalterSuitImg from '../assets/WalterSuit.avif';
 import CostumesImg from '../assets/costumes.avif';
-import OctopusImg from '../assets/Octopus.avif';
-import MuseumImg from '../assets/Museum.avif';
-import MuseumExhibitImg from '../assets/museum-exhibit.avif';
-import PodiumImg from '../assets/podium.avif';
-import PukpukImg from '../assets/pukpuk.avif';
-import BeastImg from '../assets/beast.avif';
-import WomanImg from '../assets/woman.avif';
-import DollImg from '../assets/Doll.avif';
-import SketchImg from '../assets/sketch.avif';
-import WalterInteractionImg from '../assets/walterinteraction.avif';
-import DiorImg from '../assets/Dior.avif';
-import DiorDressImg from '../assets/dior-dress.avif';
 
-// Import costume/epilogue images
-import RedHorizontal1Img from '../assets/RedHorizontal1.avif';
-import YellowHorizontal2Img from '../assets/YellowHorizontal2.avif';
-import GreenHorizontal3Img from '../assets/GreenHorizontal3.avif';
-import BornwHorizontal4Img from '../assets/BornwHorizontal4.avif';
-import OrangeHorizontal5Img from '../assets/OrangeHorizontal5.avif';
-
-// Import background SVGs for CSS
+// Import background SVGs for CSS (only used ones)
 import MobileFooterImg from '../assets/MobileFooter.svg';
 import FooterDesktopImg from '../assets/FooterDesktop.svg';
 import WalterDesktopSectionImg from '../assets/walterDesktopsection.svg';
 import LeftRedImg from '../assets/leftRed.svg';
 import RightPurpleImg from '../assets/rightPurple.svg';
 import SecondBlockImg from '../assets/secondBlock.svg';
-import FirstBlockImg from '../assets/firstBlock.avif';
-import MuseumBackgroundImg from '../assets/museum-background.svg';
-import MomuLogoImg from '../assets/momu-logo.svg';
-import FirstMLogoImg from '../assets/firstMLogo.svg';
-import SecondMLogoImg from '../assets/secondMLogo.svg';
-import ArrowImg from '../assets/Arrow.svg';
-import BlueTriangleImg from '../assets/blue-triangle.svg';
-import YellowTriangleImg from '../assets/yellow-triangle.svg';
-import LockImg from '../assets/Lock.avif';
 
 // Register GSAP plugins
 gsap.registerPlugin(Draggable);

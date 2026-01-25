@@ -2244,6 +2244,7 @@ strong {
         padding: var(--section-spacing-tablet) var(--whitespace-m);
         overflow: hidden;
         margin-top: -7rem;
+        margin-bottom: 13rem;
     }
 
     .octopus__title {
@@ -2272,13 +2273,6 @@ strong {
     .octopus__text {
         width: 25rem;
         margin-left: 19rem;
-    }
-
-    .octopus {
-        padding: var(--section-spacing-tablet) var(--whitespace-m);
-        overflow: hidden;
-        margin-top: -7rem;
-        margin-bottom: 13rem;
     }
 
     /* --- MOMU SECTION --- */
@@ -2513,20 +2507,6 @@ strong {
         width: 4.9rem !important;
     }
 
-    /* --- EPILOGUE SECTION --- */
-    .epilogue__scroll-content {
-        padding: 0 var(--whitespace-s) var(--whitespace-s);
-        gap: var(--whitespace-l);
-    }
-
-    .epilogue__image {
-        width: 55%;
-        height: auto;
-        object-fit: contain;
-        border-radius: 0.5rem;
-        transition: transform 0.3s ease;
-    }
-
     /* --- NEW YOU SECTION --- */
     .new-you {
         padding: var(--section-spacing-desktop) 0;
@@ -2571,6 +2551,14 @@ strong {
     .epilogue__scroll-content {
         padding: 0 var(--whitespace-xl) var(--whitespace-xl);
         gap: var(--whitespace-l);
+    }
+
+    .epilogue__image {
+        width: 55%;
+        height: auto;
+        object-fit: contain;
+        border-radius: 0.5rem;
+        transition: transform 0.3s ease;
     }
 
     .epilogue__item {
@@ -2618,30 +2606,21 @@ strong {
         padding-top: 8rem;
         align-items: center;
         text-align: left;
-    }
-
-    .site-footer__heading {
-        font-size: 2.5rem;
-        max-width: 35rem;
-        margin: 7rem 0 -1rem 0;
-    }
-
-    .site-footer__subheading {
-        font-size: 1.25rem;
-        margin-bottom: 0rem;
-    }
-
-    .site-footer__inner {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1.5rem;
     }
 
     .site-footer__heading {
+        font-size: 2.5rem;
+        max-width: 35rem;
+        margin: 7rem 0 -1rem 0;
         grid-column: 1 / -1;
     }
 
     .site-footer__subheading {
+        font-size: 1.25rem;
+        margin-bottom: 0rem;
         grid-column: 1 / -1;
     }
 
@@ -3027,6 +3006,7 @@ strong {
     .epilogue__scroll-content {
         padding: 0 6rem var(--whitespace-xl);
         gap: var(--whitespace-xl);
+        -webkit-user-select: none;
         user-select: none;
     }
 
