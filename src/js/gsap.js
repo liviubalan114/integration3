@@ -387,7 +387,7 @@ export const initTextScrollAnimations = () => {
     // Animate colored block elements sliding in from left
     const coloredBlocks = gsap.utils.toArray('.artifacts__title, .no-more-hiding__quote, .pukpuk__tag');
     const isTablet = window.matchMedia('(min-width: 768px)').matches;
-    const blockStartPoint = isTablet ? "top 80%" : "top 95%";
+    const blockStartPoint = isTablet ? "top 90%" : "top 100%";
 
     coloredBlocks.forEach(block => {
         gsap.fromTo(block,

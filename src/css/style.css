@@ -645,7 +645,8 @@ strong {
 }
 
 .pukpuk__title-line_2 {
-    padding-left: 7rem;
+    padding-left: 32rem;
+    /* margin-top: 30rem; */
 }
 
 .pukpuk__layout {
@@ -717,8 +718,10 @@ strong {
 }
 
 .pukpuk__description {
-    font-size: var(--font-size-text);
+    font-size: 1.5rem;
     line-height: 1.6;
+    margin-left: 4rem;
+    margin-top: 2rem;
 }
 
 .pukpuk__subtitle {
@@ -733,12 +736,18 @@ strong {
 }
 
 .pukpuk__tags {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
     gap: var(--whitespace-s);
     list-style: none;
     padding: 0;
     margin: 0;
+}
+
+.pukpuk__tag:nth-child(3) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin-top: 2rem;
 }
 
 .pukpuk__tag {
@@ -987,7 +996,7 @@ strong {
 
 .momu-cta {
     font-family: var(--font-family-lalezar);
-    font-size: clamp(1.25rem, 5vw, 1.5625rem);
+    font-size: 2.5rem;
     font-weight: 400;
     color: #FFE100;
     margin: 0;
@@ -995,7 +1004,7 @@ strong {
     text-transform: uppercase;
     text-align: left;
     line-height: 1.145;
-    max-width: 28rem;
+    max-width: 78rem;
 }
 
 /* SVG background - fills entire section */
@@ -1083,13 +1092,13 @@ strong {
 
 .artifacts__label {
     font-family: 'Lalezar', cursive;
-    font-size: clamp(1.25rem, 3vw, 1.5rem);
+    font-size: 2rem;
     color: #000000;
     text-transform: uppercase;
     letter-spacing: 0.07em;
     text-align: center;
     line-height: 1.2;
-    margin-bottom: var(--whitespace-s);
+    margin-bottom: var(--whitespace-m);
     transition: opacity 0.3s ease;
 }
 
@@ -2311,11 +2320,11 @@ strong {
     /* --- MOMU SECTION --- */
     .momu {
         background-image: url('/src/assets/MomuDesktopTablet.svg');
-        background-size: 120%;
+        background-size: 100%;
         background-position: center;
         background-repeat: no-repeat;
-        min-height: 120vh;
-        padding-top: 3rem;
+        min-height: 190vh;
+        padding-top: 19rem;
         padding-bottom: 3rem;
     }
 
@@ -2363,8 +2372,8 @@ strong {
 
     .momu-title-svg {
         display: block;
-        margin-top: 1rem;
-        width: 31rem;
+        margin-top: -3rem;
+        width: 64rem;
         height: auto;
     }
 
@@ -2745,37 +2754,37 @@ strong {
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: var(--whitespace-l);
+        gap: 12rem;
         width: 100%;
         margin-bottom: var(--whitespace-s);
     }
 
     .artifacts__quote {
         font-family: 'Inter', sans-serif;
-        font-size: 1.125rem;
+        font-size: 1.5em;
         font-style: italic;
         font-weight: 400;
         color: #000000;
         text-align: center;
         line-height: 1.43;
-        max-width: 30rem;
+        max-width: 50rem;
         padding: 0 var(--whitespace-base);
-        margin-bottom: calc(var(--whitespace-l) + 2rem);
+        margin-bottom: calc(var(--whitespace-l) + 5rem);
         min-height: 6rem;
         transition: opacity 0.3s ease;
     }
 
     .artifacts__title {
-        font-family: 'Lalezar', cursive;
-        font-size: clamp(1.5rem, 4vw, 2rem);
-        color: #FFE100;
+        font-family: Lalezar, cursive;
+        font-size: 3rem;
+        color: rgb(255, 225, 0);
         text-transform: uppercase;
         letter-spacing: 0.07em;
         line-height: 1;
         text-align: center;
-        background-color: #942925;
+        background-color: rgb(148, 41, 37);
         width: 100%;
-        max-width: 34rem;
+        max-width: 64rem;
         padding: 1rem;
         margin-bottom: var(--whitespace-m);
         margin-top: -2rem;
@@ -2784,7 +2793,7 @@ strong {
     /* --- PUKPUK SECTION --- */
     .pukpuk__title {
         font-family: var(--font-family-lalezar);
-        font-size: 3rem;
+        font-size: 5rem;
         font-weight: 400;
         color: var(--color-purple);
         margin-left: 9rem;
@@ -2794,12 +2803,12 @@ strong {
     .pukpuk__figure {
         grid-column: 1;
         grid-row: 1;
-        max-width: 60%;
+        max-width: 52%;
         z-index: 2;
         justify-self: flex-start;
         align-self: flex-start;
         margin-left: 0rem;
-        margin-top: -2rem;
+        margin-top: 1rem;
         transform: translateZ(0);
         will-change: filter;
     }
@@ -2822,18 +2831,19 @@ strong {
     .pukpuk__shape--blue {
         grid-column: 1;
         grid-row: 1;
-        width: 60%;
+        width: 68%;
         z-index: 1;
         justify-self: start;
         align-self: start;
-        margin-top: -5rem;
-        margin-left: -4rem;
+        margin-top: -9rem;
+        margin-left: -14rem;
     }
 
     .pukpuk__shape--yellow {
-        width: 50%;
+        width: 51%;
         margin: var(--whitespace-l) auto 0;
-        margin-right: -4rem;
+        margin-right: -11rem;
+        margin-top: -4rem;
     }
 
     .pukpuk__row {
@@ -2851,13 +2861,13 @@ strong {
     .pukpuk__card {
         grid-column: 1;
         grid-row: 1;
-        width: 13%;
+        width: 10%;
         z-index: 3;
         justify-self: center;
         align-self: start;
-        margin-right: 6rem;
+        margin-right: 16rem;
         transform: rotate(17deg);
-        margin-top: 0rem;
+        margin-top: 3rem;
     }
 
     .pukpuk__content {
@@ -2869,26 +2879,28 @@ strong {
     }
 
     .pukpuk__subtitle {
-        font-size: 1rem;
+        font-size: 1.5rem;
         font-weight: 700;
         letter-spacing: 0.05em;
-        margin-bottom: var(--whitespace-s);
+        margin-bottom: var(--whitespace-m);
         font-family: var(--font-family-lalezar);
         line-height: 1.2;
         color: var(--color-red);
-        max-width: -1rem;
+        max-width: 55rem;
+        margin-left: 7rem;
+        margin-top: 1rem;
     }
 
     .pukpuk__tag {
         padding: var(--whitespace-xs) var(--whitespace-s);
         background-color: var(--color-purple);
         color: var(--color-gray-cyan);
-        font-size: var(--font-size-s);
+        font-size: 1.5rem;
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 0.05em;
         border-radius: 0.25rem;
-        width: 14rem;
+        width: 21rem;
         padding-left: 3.5rem;
     }
 
@@ -3252,6 +3264,43 @@ strong {
     .about-walter__text {
         font-size: 1.5rem;
         /* 24px */
+    }
+
+    .momu p,
+    .about-walter p {
+        font-size: 1.5rem;
+        /* White text in momu and walter sections */
+    }
+
+    .artifacts__background-text {
+        font-size: 20rem;
+        margin-top: -8rem;
+    }
+
+    .artifact--walter {
+        margin-top: -3.5rem !important;
+    }
+
+    .artifact--ann {
+        margin-top: -8.3rem !important;
+        margin-left: 4rem !important;
+    }
+
+    .artifact--dries {
+        margin-top: -10rem !important;
+    }
+
+    .artifact--marina {
+        margin-top: -7rem !important;
+    }
+
+    .artifact--dirkb {
+        margin-top: -3.7rem !important;
+        width: 70% !important;
+    }
+
+    .artifact--dirkvs {
+        margin-top: -8.8rem !important;
     }
 
 }
