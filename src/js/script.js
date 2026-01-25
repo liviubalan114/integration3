@@ -33,8 +33,18 @@ import WrongCaneDressUpImg from '../assets/WrongCaneDressUp.png';
 import LockDressUpImg from '../assets/LockDressUp.png';
 import PantsDressUpImg from '../assets/PantsDressUp.png';
 
+// Import momu section images
+import MomuDesktopTabletImg from '../assets/MomuDesktopTablet.svg';
+import SkinTextImg from '../assets/skinText.svg';
+
 // Register GSAP plugins
 gsap.registerPlugin(Draggable);
+
+// Set momu section image sources
+const momuDesktopImg = document.querySelector('.momu-background-desktop');
+const skinTextImg = document.querySelector('.momu-title-svg');
+if (momuDesktopImg) momuDesktopImg.src = MomuDesktopTabletImg;
+if (skinTextImg) skinTextImg.src = SkinTextImg;
 
 // Initialize brush effect only on desktop (1024px and above)
 if (window.innerWidth >= 1024) {

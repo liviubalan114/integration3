@@ -1007,6 +1007,23 @@ strong {
     z-index: 1;
 }
 
+/* Mobile: show mobile background and text title, hide desktop versions */
+.momu-background-mobile {
+    display: block;
+}
+
+.momu-background-desktop {
+    display: none;
+}
+
+.momu-title-text {
+    display: block;
+}
+
+.momu-title-svg {
+    display: none;
+}
+
 .momu .section-inner {
     grid-column: 1;
     grid-row: 1;
@@ -2264,6 +2281,108 @@ strong {
         line-height: 1.4;
         margin: 0;
         width: 20rem;
+    }
+
+    /* Show desktop background and SVG title, hide mobile versions */
+    .momu-background-mobile {
+        display: none;
+    }
+
+    .momu-background-desktop {
+        display: block;
+    }
+
+    .momu-title-text {
+        display: none;
+    }
+
+    .momu-title-svg {
+        display: block;
+        margin: 0 0 var(--whitespace-l);
+    }
+
+    /* --- NO MORE HIDING SECTION --- */
+    .no-more-hiding__image--angel {
+        width: 54rem;
+        margin-left: -49%;
+        margin-top: 2.5rem;
+        margin-bottom: 1.5rem;
+        height: 100%;
+    }
+
+    .no-more-hiding__image--beast {
+        width: 120%;
+        margin-left: 20%;
+        margin-top: -3rem;
+    }
+
+    .no-more-hiding__text {
+        color: #000;
+        font-family: var(--font-family-inter);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.6;
+        display: flex;
+        gap: 5rem;
+    }
+
+    /* --- CREATE SKIN SECTION --- */
+    .create-skin__drag-area {
+        height: 80vh !important;
+    }
+
+    .create-skin__draggable--voodoo {
+        width: 2.9rem;
+        top: 3.125rem;
+        right: 25%;
+    }
+
+    .create-skin__draggable--wrong-cane {
+        width: 2.1rem;
+        top: 15rem;
+        right: 30%;
+    }
+
+    .create-skin__draggable--pants {
+        width: 6.2rem;
+        top: 15rem;
+        right: 1%;
+    }
+
+    .create-skin__draggable--normal-suit {
+        width: 12rem;
+        top: 1rem;
+        left: 4%;
+    }
+
+    .create-skin__draggable--hat {
+        width: 4.5rem;
+        top: 5.875rem;
+        left: 30%;
+    }
+
+    .create-skin__draggable--stick {
+        width: 2.8rem;
+        top: 17.5rem;
+        left: 10%;
+    }
+
+    .create-skin__draggable--bdsm {
+        width: 3rem;
+        top: 15.5rem;
+        left: 27%;
+    }
+
+    .create-skin__draggable--wrong-mask {
+        width: 5rem;
+        top: 25rem;
+        left: 20%;
+    }
+
+    .create-skin__draggable--shield {
+        width: 4rem;
+        top: 15.75rem;
+        right: 17%;
     }
 
     /* --- NEW YOU SECTION --- */
