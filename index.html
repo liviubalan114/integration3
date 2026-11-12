@@ -3,7 +3,8 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="description" content="You are a beast in a skin: an interactive MoMu story about Antwerp designer Walter Van Beirendonck." />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MoMu - Dress to Impress</title>
   <!-- Google Fonts -->
@@ -62,7 +63,7 @@
           <span class="title-line-1">You are a <strong>BEAST</strong></span>
           <span class="title-line-2">in a skin</span>
         </h1>
-        <p class="hero-subtitle">the story about <strong> Walter</strong> by Momu</p>
+        <p class="hero-subtitle">the story about <strong>Walter</strong> by MoMu</p>
       </div>
 
       <!-- Scroll Indicator -->
@@ -83,17 +84,18 @@
 
       <div class="intro__content">
 
-        <!-- Desktop-only interactive trigger -->
-        <button class="intro__trigger desktop-only" aria-expanded="false" aria-controls="identity-text">
-          <span class="intro__trigger-label">Ask Walter</span>
-          <img src="/src/assets/walterinteraction.avif" alt="" class="intro__trigger-image" aria-hidden="true">
-        </button>
-
-        <!-- Text content: visible on mobile, toggleable on desktop -->
+        <!-- Text content: readable on mobile; on desktop it starts redacted and Walter tears it open -->
         <div class="intro__text" id="identity-text">
           <p>Your whole life, you've <strong>hidden yourself</strong> inside that skin to blend in with the other beasts
             of this world.</p>
-          <p>You've tried to stay civilized. For years, this skin <strong>was your shield</strong> a form of protection,
+          <!-- Desktop-only interactive trigger: sits between the two columns -->
+          <button class="intro__trigger desktop-only" aria-expanded="false" aria-controls="identity-text">
+            <span class="intro__trigger-label">Ask Walter</span>
+            <span class="walter-head">
+              <img src="/src/assets/walterinteraction.avif" alt="" class="intro__trigger-image" aria-hidden="true">
+            </span>
+          </button>
+          <p>You've tried to stay civilized. For years, this skin <strong>was your shield</strong>, a form of protection,
             for yourself and for others.</p>
         </div>
 
@@ -133,7 +135,7 @@
 
         <div class="octopus__text">
           <p>You can no longer suppress them. Your skin starts to melt, <strong>to feel like a prison,</strong>
-            something you desperately want to shed. Your impulses, your desires, your rage, your cravings,your need of
+            something you desperately want to shed. Your impulses, your desires, your rage, your cravings, your need of
             control <strong>they will no longer sleep.</strong></p>
         </div>
 
@@ -147,8 +149,8 @@
   <section class="momu">
     <img src="/src/assets/museum-background.svg" alt="" class="momu-background momu-background-mobile"
       aria-hidden="true">
-    <img src="" alt="" class="momu-background momu-background-desktop" aria-hidden="true">
-    <img src="" alt="you need a new skin" class="momu-title momu-title-svg">
+    <img src="/src/assets/MomuDesktopTablet.svg" alt="" class="momu-background momu-background-desktop" aria-hidden="true">
+    <img src="/src/assets/skinText.svg" alt="You need a new skin" class="momu-title momu-title-svg">
 
     <div class="section-inner">
 
@@ -219,6 +221,10 @@
         <button class="artifacts__dot" data-index="5" aria-label="Go to Dirk Van Saene"></button>
       </div>
 
+      <a href="#pukpukSection" class="artifacts__unlock-hint" id="artifactsUnlockHint" hidden>
+        Walter's story is unlocked <span class="artifacts__unlock-arrow" aria-hidden="true">↓</span>
+      </a>
+
       <!-- All options visible when JavaScript is disabled -->
       <div class="artifacts__all-options" id="artifactsAllOptions">
         <div class="artifacts__option">
@@ -245,7 +251,7 @@
         <div class="artifacts__option">
           <h4 class="artifacts__option-name">MARINA</h4>
           <p class="artifacts__option-title">The quiet deconstructor</p>
-          <p class="artifacts__option-quote">"Reworking is not about recycling. It's about reconciliation"</p>
+          <p class="artifacts__option-quote">"Reworking is not about recycling. It's about reconciliation."</p>
         </div>
 
         <div class="artifacts__option">
@@ -309,9 +315,9 @@
             <p class="pukpuk__subtitle">KNOWN FOR HIS BOLD AESTHETIC ROOTED IN:</p>
 
             <ul class="pukpuk__tags">
-              <li class="pukpuk__tag">SUPERNATURAL</li>
-              <li class="pukpuk__tag">SCIENCE FICTION</li>
-              <li class="pukpuk__tag">SPIRITUALITY</li>
+              <li class="pukpuk__tag pukpuk__tag--yellow"><span class="pukpuk__tag-mark" aria-hidden="true"></span><span class="pukpuk__tag-index" aria-hidden="true">01</span><span class="pukpuk__tag-text">Supernatural</span></li>
+              <li class="pukpuk__tag pukpuk__tag--cyan"><span class="pukpuk__tag-mark" aria-hidden="true"></span><span class="pukpuk__tag-index" aria-hidden="true">02</span><span class="pukpuk__tag-text">Science fiction</span></li>
+              <li class="pukpuk__tag pukpuk__tag--purple"><span class="pukpuk__tag-mark" aria-hidden="true"></span><span class="pukpuk__tag-index" aria-hidden="true">03</span><span class="pukpuk__tag-text">Spirituality</span></li>
             </ul>
 
           </div>
@@ -331,7 +337,7 @@
       sizes="(max-width: 768px) 25vw, 150px" alt="Walter figure" class="about-walter__figure">
     <img src="/src/assets/secondBlock.svg" alt="" class="about-walter__background about-walter__background--mobile"
       aria-hidden="true">
-    <img src="" alt="" class="about-walter__background about-walter__background--desktop" aria-hidden="true">
+    <img src="/src/assets/walterDesktopsection.svg" alt="" class="about-walter__background about-walter__background--desktop" aria-hidden="true">
     <div class="about-walter__inner">
 
       <div class="about-walter__content">
@@ -368,12 +374,6 @@
         "Clothes must represent the spirit of the wearer"
       </blockquote>
 
-      <!-- Desktop-only interactive trigger -->
-      <button class="no-more-hiding__trigger desktop-only" aria-expanded="false" aria-controls="no-hiding-content">
-        <span class="no-more-hiding__trigger-label">what does he believe</span>
-        <img src="/src/assets/walterinteraction.avif" alt="" class="no-more-hiding__trigger-image" aria-hidden="true">
-      </button>
-
       <div class="no-more-hiding__image-container">
         <img src="/src/assets/woman.avif"
           srcset="/src/assets/woman-520w.avif 520w, /src/assets/woman-1068w.avif 1068w, /src/assets/woman-1340w.avif 1340w, /src/assets/woman-1680w.avif 1680w, /src/assets/woman-1953w.avif 1953w"
@@ -381,11 +381,18 @@
           class="no-more-hiding__image no-more-hiding__image--angel">
       </div>
 
-      <div class="no-more-hiding__text">
-        <p class="no-more-hiding__text-first">The one you seek doesn't offer comfort. He doesn't soothe the beast he
+      <div class="no-more-hiding__text" id="no-hiding-content">
+        <p class="no-more-hiding__text-first">The one you seek doesn't offer comfort. He doesn't soothe the beast, he
           gives it form. Walter <strong>creates a skin that doesn't conceal, but reveals</strong>. A second layer not to
           protect you, but to express you.</p>
-        <p>He believes. This new skin will <strong>reflect everything you are</strong>. It will not hide the hunger. It
+        <!-- Desktop-only interactive trigger: sits between the two columns -->
+        <button class="no-more-hiding__trigger desktop-only" aria-expanded="false" aria-controls="no-hiding-content">
+          <span class="no-more-hiding__trigger-label">what does he believe?</span>
+          <span class="no-more-hiding__trigger-head walter-head">
+            <img src="/src/assets/walterinteraction.avif" alt="" class="no-more-hiding__trigger-image" aria-hidden="true">
+          </span>
+        </button>
+        <p class="no-more-hiding__text-second">He believes. This new skin will <strong>reflect everything you are</strong>. It will not hide the hunger. It
           will not silence the wild. But for the first time, it will fit. And in that...</p>
       </div>
 
@@ -415,6 +422,8 @@
           <p id="createSkinInfoText">Interact with the clothes to learn more and create your new skin</p>
         </div>
       </div>
+
+      <p class="create-skin__tip"><span aria-hidden="true">✦</span> Some pieces fuse when you drop one onto another</p>
 
       <div class="create-skin__drag-area" id="createSkinDragArea">
         <!-- Shadow silhouette - non-interactive background -->
@@ -460,8 +469,8 @@
           data-info-mobile="Turns the head into a cartoon. Optional armor for when you want the joke on top.">
           <img src="/src/assets/HatDressUp.avif" alt="Hat">
         </div>
-        <div class="create-skin__draggable create-skin__draggable--stick"
-          data-info="Right handed cane - A gentleman's cane with a dangling chain leash. Authority meets restrain, the perfect prop to tame the beast your collar is struggling to contain."
+        <div class="create-skin__draggable create-skin__draggable--stick" data-piece="stick"
+          data-info="Right handed cane - A gentleman's cane with a dangling chain leash. Authority meets restraint, the perfect prop to tame the beast your collar is struggling to contain."
           data-info-mobile="Authority meets restraint. The perfect prop to tame the beast.">
           <img src="/src/assets/CorrectStickDressUp.avif" alt="Correct Stick">
         </div>
@@ -470,12 +479,12 @@
           data-info-mobile="Close enough to confuse you but maybe try the right hand.">
           <img src="/src/assets/WrongCaneDressUp.avif" alt="Wrong Cane">
         </div>
-        <div class="create-skin__draggable create-skin__draggable--lock"
+        <div class="create-skin__draggable create-skin__draggable--lock" data-piece="lock"
           data-info="Lock - A sleek metal collar that keeps the beast on a leash. A reminder that the thing is still trapped underneath."
           data-info-mobile="Keeps the beast on a leash. The thing is still trapped underneath.">
           <img src="/src/assets/LockDressUp.avif" alt="Lock">
         </div>
-        <div class="create-skin__draggable create-skin__draggable--pants"
+        <div class="create-skin__draggable create-skin__draggable--pants" data-piece="pants"
           data-info="Walter pants - Runway trousers cut with Walter's exaggerated proportions. They already bend the body into a new silhouette, but they need the right top half to feel complete."
           data-info-mobile="Bend the body into a new silhouette. Need the right top to feel complete.">
           <img src="/src/assets/PantsDressUp.avif" alt="Pants">
@@ -514,7 +523,7 @@
           <li><strong>Walter hat</strong> - A hand-made Walter hat that turns the head into a cartoon thought bubble.
             Optional armor for when you want the joke to sit on top.</li>
           <li><strong>Right handed cane</strong> - A gentleman's cane with a dangling chain leash. Authority meets
-            restrain, the perfect prop to tame the beast your collar is struggling to contain.</li>
+            restraint, the perfect prop to tame the beast your collar is struggling to contain.</li>
           <li><strong>Left handed cane</strong> - A gentleman's cane with a dangling chain leash. Authority meets
             restraint. Close enough to confuse you but maybe try the right hand.</li>
           <li><strong>Lock</strong> - A sleek metal collar that keeps the beast on a leash. A reminder that the thing is
@@ -534,8 +543,13 @@
   </section>
 
   <!-- The New You Section -->
-  <section class="new-you">
+  <section class="new-you" id="newYouSection">
     <div class="new-you__inner">
+      <!-- Runway: pinned + scroll-driven horizontally when JS/motion allow -->
+      <div class="new-you__runway" id="newYouRunway">
+      <div class="new-you__marquee" aria-hidden="true">
+        <span>THE NEW YOU • NO MORE HIDING • EVERY BEAST WEARS ITS TRUTH • </span><span>THE NEW YOU • NO MORE HIDING • EVERY BEAST WEARS ITS TRUTH • </span>
+      </div>
       <h2 class="new-you__title">The New You</h2>
 
       <!-- Horizontal scroll costumes -->
@@ -572,17 +586,16 @@
               sizes="(max-width: 768px) 25vw, 150px" alt="Costume 5" class="epilogue__image epilogue__image--orange">
           </div>
 
-          <!-- Add more costume items as needed -->
-
         </div>
       </div>
+      <div class="new-you__progress" aria-hidden="true"><span class="new-you__progress-bar"></span></div>
       <p class="new-you__scroll-hint">Scroll to see all possible skins →</p>
+      </div>
 
       <div class="new-you__content">
         <p class="new-you__text">
-          In Walter's world, fashion doesn't cover
-          <strong>, it reveals.</strong> Now, not just you, but every beast wears their truth. Each stitch a story, each
-          silhouette a signal. There is <strong>no more hiding</strong> not for you, not for them. Your siblings, your
+          In Walter's world, fashion doesn't cover, <strong>it reveals.</strong> Now, not just you, but every beast wears their truth. Each stitch a story, each
+          silhouette a signal. There is <strong>no more hiding</strong>, not for you, not for them. Your siblings, your
           lovers, your shadows all step forward, adorned. <strong>The costume is no longer a mask.</strong>
         </p>
 
@@ -590,13 +603,28 @@
           <p class="new-you__message-text">It's a message.</p>
         </div>
 
-        <p class="new-you__tribe">
-          You are <strong>not alone</strong> in your unveiling.<br>
-          You are part of a tribe that dares to be <strong>seen</strong>.
-        </p>
 
-        <p class="new-you__final">You are a beast in a world of beasts in new skins.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- Finale: the punchline, revealed word by word while pinned -->
+  <section class="finale" id="finaleSection">
+    <div class="finale__stage">
+      <p class="finale__line finale__line--alone">You are <span class="finale__mark">not alone</span> in your unveiling.</p>
+      <p class="finale__line finale__line--tribe">You are part of a tribe that dares to be <span
+          class="finale__seen">seen.</span></p>
+      <p class="finale__text">You are a <span class="finale__hl finale__hl--red">beast</span> in a world of <span
+          class="finale__hl finale__hl--purple">beasts</span> in <span class="finale__hl finale__hl--cyan">new
+          skins.</span></p>
+    </div>
+    <!-- The tribe gathers around you (decorative) -->
+    <div class="finale__tribe" aria-hidden="true">
+      <img src="/src/assets/RedHorizontal1-157w.avif" alt="" class="finale__member finale__member--1">
+      <img src="/src/assets/YellowHorizontal2-160w.avif" alt="" class="finale__member finale__member--2">
+      <img src="/src/assets/GreenHorizontal3-160w.avif" alt="" class="finale__member finale__member--3">
+      <img src="/src/assets/BornwHorizontal4-168w.avif" alt="" class="finale__member finale__member--4">
+      <img src="/src/assets/OrangeHorizontal5-132w.avif" alt="" class="finale__member finale__member--5">
     </div>
   </section>
 
@@ -604,7 +632,7 @@
   <footer class="site-footer">
     <img src="/src/assets/MobileFooter.svg" alt="" class="site-footer__background site-footer__background--mobile"
       aria-hidden="true">
-    <img src="" alt="" class="site-footer__background site-footer__background--desktop" aria-hidden="true">
+    <img src="/src/assets/FooterDesktop.svg" alt="" class="site-footer__background site-footer__background--desktop" aria-hidden="true">
     <div class="site-footer__inner">
 
       <h2 class="site-footer__heading">want to hear the stories of the other Antwerp six?</h2>
@@ -629,7 +657,7 @@
         </a>
       </div>
 
-      <p class="site-footer__social-label">Follow momu on:</p>
+      <p class="site-footer__social-label">Follow MoMu on:</p>
 
       <div class="site-footer__social-icons">
         <a href="https://www.instagram.com/momuantwerp/" class="site-footer__social-link" target="_blank" rel="noopener"

@@ -350,10 +350,18 @@ export const initTextScrollAnimations = () => {
     // Select all text elements to animate (excluding artifacts title and footer)
     const textElements = gsap.utils.toArray('h1, h2, h3, h4, p, blockquote, .artifacts__label, .artifacts__quote');
 
-    // Filter out artifacts title and footer elements
+    // Filter out elements that have their own choreographed animations
+    // (see effects.js) so two tweens never fight over the same element
+    const isDesktop = window.matchMedia('(min-width: 64rem)').matches;
     const filteredElements = textElements.filter(el => {
         return !el.classList.contains('artifacts__title') &&
-            !el.closest('.site-footer');
+            !el.closest('.site-footer') &&
+            !el.closest('.pukpuk__header') &&
+            !el.closest('.pukpuk__content') &&
+            !el.closest('.new-you') &&
+            !el.closest('.finale') &&
+            el.id !== 'createSkinInfoText' &&
+            !(isDesktop && el.closest('.no-more-hiding__text, .intro__text'));
     });
 
     filteredElements.forEach(element => {
@@ -385,7 +393,7 @@ export const initTextScrollAnimations = () => {
     });
 
     // Animate colored block elements sliding in from left
-    const coloredBlocks = gsap.utils.toArray('.artifacts__title, .no-more-hiding__quote, .pukpuk__tag');
+    const coloredBlocks = gsap.utils.toArray('.artifacts__title, .no-more-hiding__quote');
     const isTablet = window.matchMedia('(min-width: 768px)').matches;
     const blockStartPoint = isTablet ? "top 90%" : "top 100%";
 
@@ -408,33 +416,6 @@ export const initTextScrollAnimations = () => {
             }
         );
     });
-
-    // Pukpuk card falling animation
-    const pukpukCard = document.querySelector('.pukpuk__card');
-    if (pukpukCard) {
-        const isTablet = window.matchMedia('(min-width: 768px)').matches;
-        const cardStartPoint = isTablet ? "top 75%" : "top 85%";
-
-        gsap.fromTo(pukpukCard,
-            {
-                y: -200,
-                rotation: -30,
-                opacity: 0
-            },
-            {
-                y: 0,
-                rotation: 17,
-                opacity: 1,
-                duration: 1.5,
-                ease: "bounce.out",
-                scrollTrigger: {
-                    trigger: pukpukCard,
-                    start: cardStartPoint,
-                    toggleActions: "play none none reverse"
-                }
-            }
-        );
-    }
 };
 
 // ================================================
@@ -514,25 +495,6 @@ export const initImageAnimations = () => {
         );
     }
 
-    // Pukpuk figure - slide up with bounce
-    const pukpukFigure = document.querySelector('.pukpuk__figure');
-    if (pukpukFigure) {
-        gsap.fromTo(pukpukFigure,
-            { y: 100, opacity: 0 },
-            {
-                y: 0,
-                opacity: 1,
-                duration: 1,
-                ease: "back.out(1.2)",
-                scrollTrigger: {
-                    trigger: pukpukFigure,
-                    start: isTablet ? "top 85%" : "top 95%",
-                    toggleActions: "play none none reverse"
-                }
-            }
-        );
-    }
-
     // About Walter figure - scale and fade
     const walterFigure = document.querySelector('.about-walter__figure');
     if (walterFigure) {
@@ -591,67 +553,6 @@ export const initImageAnimations = () => {
             }
         );
     }
-
-    // Triangle shapes - pop in
-    const blueTriangle = document.querySelector('.pukpuk__shape--blue');
-    const yellowTriangle = document.querySelector('.pukpuk__shape--yellow');
-
-    if (blueTriangle) {
-        gsap.fromTo(blueTriangle,
-            { scale: 0, rotation: -45, opacity: 0 },
-            {
-                scale: 1,
-                rotation: 0,
-                opacity: 1,
-                duration: 0.8,
-                ease: "back.out(2)",
-                scrollTrigger: {
-                    trigger: blueTriangle,
-                    start: "top 90%",
-                    toggleActions: "play none none reverse"
-                }
-            }
-        );
-    }
-
-    if (yellowTriangle) {
-        gsap.fromTo(yellowTriangle,
-            { scale: 0, rotation: 45, opacity: 0 },
-            {
-                scale: 1,
-                rotation: 0,
-                opacity: 1,
-                duration: 0.8,
-                ease: "back.out(2)",
-                scrollTrigger: {
-                    trigger: yellowTriangle,
-                    start: "top 95%",
-                    toggleActions: "play none none reverse"
-                }
-            }
-        );
-    }
-
-    // Epilogue costume images - stagger fade in
-    const costumeImages = gsap.utils.toArray('.epilogue__item img');
-    costumeImages.forEach((img, i) => {
-        gsap.fromTo(img,
-            { opacity: 0, y: 30, scale: 0.95 },
-            {
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                duration: 0.6,
-                delay: i * 0.1,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: img.closest('.epilogue__scroll-container') || img,
-                    start: "top 85%",
-                    toggleActions: "play none none none"
-                }
-            }
-        );
-    });
 
     // Freedom text - dramatic entrance
     const freedomText = document.querySelector('.no-more-hiding__freedom-text');
